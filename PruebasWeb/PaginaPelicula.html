@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Peliculas</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='PaginaPelicula.css'>
+    <script src='main.js'></script>
+</head>
+
+
+<body class="pagina" >
+   
+    <header class="menu">
+        <a class= "tituloPagina" href="Principal.html">
+           Pelicula.com
+        </a>
+        
+           <nav>
+            
+                <div class="botonoera">
+                    <form class="caja_buscador" action="../../form-result.php" method="post" target="_blank">
+
+                       
+                      
+                            <input  class="buscador" type="search" name="busquedamusica" placeholder="Introduzca una peli">
+                      
+                          <input class="boton_input" type="submit" value="Buscar">
+                      
+              
+                      
+                      </form>
+                
+                    <a href="TopPeliculas.html"> 
+                        <button class="boton1" >TopPelis</button>
+                    </a>
+                    <a>
+                        <button class="boton2">Cartelera</button>
+                    </a>
+                    <a>
+                        <button class="boton3">Favoritos</button>
+                    </a>
+                    <a>
+                        <button class="boton4"> Contacto</button>
+                    </a>
+                   
+                   
+                    <a href="PaginaDeInicioSesion.html">
+                        <img class="imagenPerfil"src="recursos/pngwing.com.png"/>
+                    </a>
+
+                    
+                    
+                </div>
+           </nav>
+    </header>
+    <div class="main">
+        <div class="resumen">
+            <h1 class="tituo_peli"><strong>Avatar el sentido del agua</strong> </h1>
+            <a  class="link_cartelera" href="https://www.youtube.com/embed/FSyWAxUg3Go" target="_blank"">
+                <img  class=" cartelera "src=" carteleras/Avatar_El_sentido_del_agua-722646748-large.jpg" />
+            </a>
+        </div>
+
+        <div class="trailer_datos">
+
+
+
+            <div class="datosExtras">
+                <h1>Donde ver:</h1>
+                <div>
+                    <ul>
+                        <li>Netflix</li>
+                        <li>Actualmente en cines</li>
+                    </ul>
+                </div>
+
+                <h1>Puntuacion: 10/10</h1>
+
+                <h1>Reparto</h1>
+                
+                
+                <div class="caja_s">
+                    <h1 class="sinapsis">Sinopsis </h1>
+                    <h3 class="texto_sinopsis">Más de una década después de los acontecimientos de 'Avatar', los Na'vi Jake
+                        Sully, Neytiri y sus hijos viven en paz en los bosques de Pandora hasta que regresan los hombres del
+                        cielo. Entonces comienzan los problemas que persiguen sin descanso a la familia Sully, que decide
+                        hacer un gran sacrificio para mantener a su pueblo a salvo y seguir ellos con vida. (FILMAFFINITY)
+                    </h3>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+<script type="text/javascript">
+        $(window).load(function() {
+            $(".carga").fadeOut("slow");
+        });
+</script>
+
+</body>
+
+</html>

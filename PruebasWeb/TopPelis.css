@@ -1,0 +1,297 @@
+*{font-family: 'Times New Roman', Times, serif;}
+*,*::after, *::before  {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box
+}
+.pagina{
+    margin: 0px;
+    background-color:  rgb(39, 39, 39);
+    background: -webkit-linear-gradient((0deg, #ff7905 0%, #a8baab 100%));
+    background: linear-gradient(90deg, rgb(39, 39, 39) 0%, rgb(84, 84, 84) 31%, rgb(196, 82, 200) 94%);
+    width: 100%;
+    height: 100%;
+    animation: aparicion;
+    animation-duration: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.link_titulo{
+    text-decoration: none;
+}
+.cuerpo_principal{
+    
+    display: flex;
+    background: gray;;
+    margin: 0;
+}
+.tituloPagina{
+    text-decoration: none;
+    margin: 20px;   
+    color: aliceblue;
+    font-size: 34px;
+    text-align: center;
+}
+.tituloPagina:hover{
+    transform: scale(1.1)
+}
+.ubicacion_buscador{
+    padding: auto;
+} 
+
+.contendor_carga{
+    background-color: #8000ff;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 10100000;
+    
+}
+
+.carga{
+    border: 15px solid #ffffff;
+    border-top-color: #6d28b4;
+    border-top-style: groove;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite ;
+}
+
+    
+
+.menu{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-content: center;
+    background-color: black;
+    justify-content: space-between;
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+    -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+    box-shadow: 3px 3px 10px 3px #dddddd;   
+    width: 100%;
+    margin: auto;
+}
+
+
+.boton_dropdown{
+    position: relative;
+}
+
+.boton_input{
+    margin-right: 50px;
+    color: aliceblue;
+    background-color: transparent;
+    border-color:transparent ;
+    margin-left: 5px;
+}
+
+.boton_input:hover{
+    transform: scale(1.1);
+    background-color:  rgb(255, 145, 0);
+    box-shadow:  2px 2px 2px 1px rgb(226, 219, 219);
+    border-radius: 20px;
+    color: black;
+    
+}
+.buscador{
+    border-radius: 20px;;
+    background-color:   aliceblue;;
+}
+.buscador:hover{
+    transform: scale(1.05);
+    background-color: rgb(255, 145, 0);
+    box-shadow:   2px 2px 2px 1px  rgb(226, 219, 219);
+}
+
+
+nav{
+    display: flex;
+    justify-content: baseline;
+   
+}
+.botonoera{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    
+}
+.imagenPerfil{
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+}
+.imagenPerfil:hover{
+    transform: scale(1.1)
+
+}
+
+
+.boton1{
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: transparent;
+    margin: 19px;
+    color: aliceblue;
+    size-adjust: 20px;
+}
+.boton1:hover{
+    color: black;
+    transform: scale(1.2);
+    box-shadow:  2px 3px 4px 2px rgb(226, 219, 219);
+    background-color: rgb(255, 145, 0);
+}
+.boton2{
+    
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: transparent;
+    margin: 19px;
+    color: aliceblue;
+    size-adjust: 20px;
+    
+}
+.boton2:hover{
+    color: black;
+    transform: scale(1.2);
+    box-shadow:  2px 3px 4px 2px rgb(226, 219, 219);
+    background-color: rgb(255, 145, 0);
+}
+.boton3{
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: transparent;
+    margin: 19px;
+    color: aliceblue;
+    size-adjust: 20px;
+}
+.boton3:hover{
+    color: black;
+    transform: scale(1.2);
+    box-shadow:  2px 3px 4px 2px rgb(226, 219, 219);
+    background-color: rgb(255, 145, 0);
+}
+.boton4{
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: transparent;
+    margin: 19px;
+    color: aliceblue;
+    size-adjust: 20px;
+}
+.boton4:hover{
+    color: black;
+    transform: scale(1.2);
+    box-shadow:  2px 3px 4px 2px rgb(226, 219, 219);
+    background-color: rgb(255, 145, 0);
+}
+
+.pelicula_bloque{
+    
+    animation-name: aparicion;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border:aliceblue;
+    justify-items: center;
+    margin-left: 2.5%;
+    scale: 1;
+    margin: 10px;
+    opacity: 0;
+}
+.cartelera{
+    display: flex;
+    flex-direction: row;
+    justify-items: top;
+    width: 70%
+    
+}
+.cartelera:hover{
+    transform: scale(1.02);
+    
+}
+.texto_sinopsis{
+ color: aliceblue;  
+}
+
+.pelicula{
+    margin: 10px;
+    height: 240px;
+    width: 180px;
+    box-shadow:  3px 3px 3px 0px rgb(226, 219, 219);
+    border-radius: 20px;
+    
+}
+.titulo_peli{
+    margin: 10px;
+    color: aliceblue;
+    
+}
+.fecha_publicacion{
+    margin: 5px;
+}
+.puntuacion{
+    color: blanchedalmond;
+}
+.reparto{
+    color: antiquewhite
+}
+.fecha_publicacion{
+    color: antiquewhite;
+}
+.peli{
+    width: 70%;
+    text-decoration: none;
+}
+.slider{
+    text-decoration: null;
+}
+
+
+    
+
+
+@keyframes aparicion{
+    0%{
+        opacity: 0;
+        transform: scale(0.5) translateX(10px);
+    }
+   
+    50%{
+        opacity: 1;
+        transform: scale(0.5) translateX(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes girar{
+    from { transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+
+
+
+
+
+
+
