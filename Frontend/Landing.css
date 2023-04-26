@@ -47,6 +47,7 @@ nav span{
 }
 
 aside{
+    z-index: 1000;
     display: none;
     transform: translateX(-100%);
     background-color: black;
@@ -158,11 +159,13 @@ aside::-webkit-scrollbar-track{
 }
 .video{
     box-shadow:   #DA9B44;
-    margin-left: 0;
+    margin-left: 5%;
     margin-bottom: 1%;
     margin-top : 2%;
     height: auto;
-    width: 100%;
+    width: 90%;
+    z-index: 0;
+    
 }
 
 .cuerpo-prinipal{
@@ -177,7 +180,9 @@ aside::-webkit-scrollbar-track{
     padding: auto;
     color: aliceblue;
 }
-
+.cuerpo-prinipal h1{
+    color: aliceblue;
+}
 @media (max-width:1248px){
     .contenedor_botones{
      display: none;
@@ -200,7 +205,7 @@ aside::-webkit-scrollbar-track{
          margin-top: 56px;
          height: 100%;
          background-color: rgba(0, 0, 0,10) ;
-         z-index: 10;
+         
      }
      
      .numero_top{
