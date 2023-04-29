@@ -25,6 +25,10 @@ const datos= {
     nombre:"Juan",
     contraseña:"12345"
 
+   },
+   jesus:{
+    nombre:"jesus",
+    contraseña:"mongolo"
    }
 }
 
