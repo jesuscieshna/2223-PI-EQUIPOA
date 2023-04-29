@@ -13,7 +13,7 @@
 
 Jesús Chavero
 
-### <br />Modelo de datos
+### <br />MODELO DE DATOS
 
 Juan María Rangel y David Fernández <br />
 <br />
