@@ -12,6 +12,22 @@
 .block-sroll2{
     overflow: auto;
 }
+
+
+
+html{
+    
+    font-size: 62.5%;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+html::-webkit-scrollbar{
+    display: none;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #DA9B44;
+    overflow-y: auto;
+}
 .lds-ring {
     display: inline-block;
     position: absolute ;
@@ -42,36 +58,23 @@
 .loader{
     background-color: black;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
     z-index: 1000000000000000000000;
     clip-path: circle(150% at 100% 0);
-    transition:  clip-path 0.3s ease-in-out ;
+    transition: clip-path 0.3s ease-in-out ;
 }
 .loader2{
     clip-path: circle(0% at 100% 0);
 }
-
-
-html{
-
-    font-size: 62.5%;
-    font-family: sans-serif;
-    font-size: 17px;
-}
-html::-webkit-scrollbar{
-    display: none;
-}
-html::-webkit-scrollbar-thumb{
-    background-color: #DA9B44;
-    overflow-y: auto;
-}
+  
 
 
 body{
+
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0,10);
@@ -82,7 +85,6 @@ body{
     overflow-y: auto;
 }
 nav{
-    z-index: 100;
     display: flex;
     align-content: center;
     overflow: auto;
@@ -96,7 +98,6 @@ nav span{
 }
 
 aside{
-    z-index: 1000;
     display: none;
     transform: translateX(-100%);
     background-color: black;
@@ -150,7 +151,7 @@ aside::-webkit-scrollbar-track{
 
 
 .contenedor_botones div{
-    padding: 10px;
+    padding: 10px
 }
 .contenedor_botones div:hover{
     transition: ease-in 0.4s;
@@ -206,10 +207,17 @@ aside::-webkit-scrollbar-track{
     
     background-color: #156064 ;
 }
+.perfil{
+    
+    margin-left: auto;
+   border-radius: 20px;
+}
+
 .box_registrarse{
     display: flex;
     justify-items: center;
     align-items: center;
+    
 }
 .perfil svg{
     border-radius: 100px;
@@ -222,168 +230,204 @@ aside::-webkit-scrollbar-track{
     border-radius: 100px;
 
 }
-.video{
-    box-shadow:   #DA9B44;
-    margin-left: 5%;
-    margin-bottom: 1%;
-    margin-top : 5%;
-    height: auto;
-    width: 90%;
-    z-index: 0;
-    box-shadow: 0px 0px 5px 3px #DA9B44;
-    
-}
-
-
-.cuerpo-prinipal{
-    z-index: 0;
    
-    height: 100%;
-
-}
-
-.cuerpo-prinipal p {
-    word-wrap: break-word;
-    max-width: 70%;
-    padding: 1rem;
-    margin-top: 20px ;
-    padding: auto;
-    color: aliceblue;
-}
-.cuerpo-prinipal h1{
+.snap_dev{
     padding-top: 1rem;
-    padding-left: 1rem;
-    color: aliceblue;
+    padding-left: 2rem;
+    justify-content: center;
+    width: 25%;
+    color: #DA9B44;
 }
-.InicioYRegistro{
+.persona{
+    display: flex;
+    flex-direction: row;
+}
+.persona div a svg{
+    width: 24px;
+    height: 24px;
+    fill: aliceblue;
+}
+
+.cajon-imagenes{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding-bottom: 20px;
+    flex-grow: initial;
+    margin-top: 10%;
+    margin-left: 20vw;
+    align-items: center;
+    padding: auto;
+    width: 100%;
+
 }
-.InicioYRegistro a{
+.cajon-imagenes div{
+    margin-left:1rem;
+    margin-bottom: 0.5em;
+}
+
+.cajon-imagenes div h1{
+    padding: 1rem;
     color: #DA9B44;
-    text-align: center;
-    text-decoration: none;
-    font-size: 2rem;
+    font-size:medium ;
+
 }
+
+
+
 @media (max-width:1248px){
-    .contenedor_botones{
-     display: none;
-    }
-    .icono-menu{
-     display: block;
+    .imagen{
+        width: 400px ;
     }
     aside{
+        margin-top: 4.4rem;
+        display: flex;
+        height: 100%;
+        z-index: 1;
+    }
+    .icono-menu{
         display: block;
-        height: 110vh;
     }
-    .desplegar{
-        height: 110vh;
+    .contenedor_botones{
+        display: none;
     }
- }
- @media  (max-width:768px)
- 
- {
-     aside{
-         margin-top: 56px;
-         height: 100%;
-         background-color: rgba(0, 0, 0,10) ;
-         
-     }
-     
-     .numero_top{
-         text-align: left;
-         color: #DA9B44;
-         width: 10%;
-         height: 10%;
-         font-size: small;
- 
-     }
-     .contenedor_top{
-         display:flex;
-         flex-direction: row;
-         justify-content: space-between;
-         width: 100%;
-     }
-     .titulo{
-         font-size: 1em;
-         margin-left:5%;
-         color: #156064;
-     }
-     .contenedor_top{
-         display:flex;
-         flex-direction: column;
-         justify-content: space-between;
-            
-     }
-     .Datos{
-         margin-left: 10px;
-     }
-     .contenedor{
-         margin-left: 10px;
-     }
-    .desplegar{
+    .cajon-inicio{
+        margin-top: 17%;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
         
+    }
+    .cajon-inicio h1 {
+        margin-bottom: 1rem;
+        color: #DA9B44;
+    }
+    .cajon-imagenes{
+        display: flex;
+        flex-direction: row;
+
+        flex-wrap: wrap;
+        flex-grow: initial;
+        margin-top: 6%;
+        margin-left: 2vw;
+        align-items: center;
+        padding: auto;
+        width: 100%;
+    
+    }
+   
+}
+@media  (max-width:768px)
+
+{
+
+aside{
+    margin-top: 73px;
+    height:  100%;
+    background-color: rgba(0, 0, 0,10) ;
+    z-index: 1;
+}
+.desplegar{
+    z-index: 1;
+}
+
+
+.cajon-inicio{
+
+    margin-top: 25%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.cajon-inicio h1 {
+    margin-bottom: 1rem;
+    color: #DA9B44;
+}
+.buscador{
+    width: 150px;
+}
+.cajon-imagenes{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: initial;
+    margin-top: 6%;
+    margin-left: 2vw;
+    align-items: center;
+    padding: auto;
+    width: 100%;
+
+}
+}
+
+
+
+
+@media (max-width: 599px){
+
+    .buscador{
+        width: 100px;
+    }
+    .logo{
+        width: 120px;
+        height: 50px;
+    }
+    aside{
+        margin-top: 57px;
         height: 100%;
     }
-     .top{
+   
+}
+@media (max-width: 360px){
+    aside{
+        margin-top: 57px;
+        height: 100%;
+    }
+    .desplegar{
+        height: 100%;
+    }
+    .buscador{
+        margin-right: 15px;
+        width: 90px;
+    }
+    
+
+
+    .cajon-inicio{
+        margin-top: 25%;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        
+    }
+    .cajon-inicio h1 {
+        margin-bottom: 1rem;
+        color: #DA9B44;
+    }
+    .icono-menu{
+        width: 25px;
+        height: 25px;
+    }
+    .logo{
+        width: 120px;
+        height: 50px;
+    }
+
+
  
-         padding: 10px 2px;
-         display: flex;
-         flex-direction: row;
-         justify-content: left;
-         align-content: left;
-         width: 150%;
- 
- 
-     }
-     
-    .links_menu{
-         
- 
-         text-decoration: none;
-         margin-left: 20px;
-         color: #DA9B44;
-         width: 100%;
-     }
-     .icono-menu{
-         width: 20px;
-         height: 20px;
-         margin-left: 5px;
-     }
-     .logo{
-         margin-left: 10px;
-         width: 120px;
-         height: 50px;
-     }
-     .caja_buscador{
-         margin-left: 0px;
-         width: 30px;
-     }
-     .buscador{
-         width: 150px;
-     }
-     
- 
-     
- }
- @media (max-width: 360px){
-     aside{
-         margin-top: 57px;
-         height: 100%;
-     }
-     .desplegar{
-         height: 100%;
-     }
-     .buscador{
-         width: 120px;
-     }
- 
- }
- 
- 
+
+}
+
+
  @keyframes girar{
      from { transform: rotate(0deg);}
      to{transform: rotate(360deg);}
@@ -392,7 +436,7 @@ aside::-webkit-scrollbar-track{
  @keyframes aparecer {
      0%{
          transform: translateX(100%);
- 
+        
      }
      100%{
          transform: translateX(0%);
@@ -405,4 +449,7 @@ aside::-webkit-scrollbar-track{
     100% {
       transform: rotate(360deg);
     }
-  }
+  
+}
+
+ 

@@ -264,7 +264,7 @@ aside::-webkit-scrollbar-track{
     
 }
 .cajon-inicio h1 {
-    margin-top: 1rem;
+    margin-top: 0.2rem;
     margin-bottom: 1rem;
     color: #DA9B44;
 }
@@ -272,6 +272,7 @@ aside::-webkit-scrollbar-track{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 .cajon-inicio form input {
     border: 0;

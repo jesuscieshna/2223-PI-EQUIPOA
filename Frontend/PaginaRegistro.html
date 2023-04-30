@@ -58,9 +58,7 @@
                     </svg>
                     <a href="Contacto.html" class= "links_menu"> Contacto</a>
                 </div>
-                <div>
-                    <a href="PaginaDeInicioSesion.html"  class="botonRegistro">Iniciar Sesion</a>
-                </div>
+              
                 
             </div>
           
@@ -162,6 +160,7 @@
         </div>
         
     </div> 
+    
 
     <div>
         <a class="perfil" href="PaginaDeInicioSesion.html"> 
@@ -179,11 +178,17 @@
             <h1>Usuario:</h1>
             <input type="search" name="usuario" placeholder="Introduzca tu usuario">
             <h1>Contraseña:</h1>
-            <input type="search" name="contraseña" placeholder="Introduce tu contraseña">
-            <input class="boton_input" type="button" name="boton_inicio" value="Iniciar Sesion">
-            <a>¿Olvidaste tu contraseña?</a>
+            <input type="password" name="contraseña" placeholder="Introduce tu contraseña">
+           
+           
         </form>
-
+        <div>
+            <button id="input_boton" onclick="">Registrarse</button>
+            <button id="input_boton" onclick="redirigirAInicioSesion()">Iniciar Sesion</button>
+        </div>
+       
+        <a>¿Olvidaste tu contraseña?</a>
+        
     </div>
 
    

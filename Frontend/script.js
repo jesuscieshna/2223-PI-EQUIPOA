@@ -1,11 +1,11 @@
 
 window.addEventListener("load", () => {
-    setTimeout(() => {
+  
         document.getElementById("loader").classList.toggle("loader2")
         document.getElementById("html").classList.remove("block-sroll");
         document.getElementById("html").classList.add("block-sroll2");
    
-    },2000);
+   
  
    
 
@@ -59,7 +59,20 @@ function verify_usuario() {
 
        }
 
-       
+
+
+    
+function redirigirAInicioSesion(){
+    setTimeout(() => {
+        window.location.href="./PaginaDeInicioSesion.html"
+    }, 1000);
+}
+
+function redirigirARegistro(){
+    setTimeout(() => {
+        window.location.href="./PaginaRegistro.html"
+    }, 1000);
+}
 
 
 

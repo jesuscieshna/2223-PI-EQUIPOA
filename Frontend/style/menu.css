@@ -6,6 +6,28 @@
     font-family: sans-serif;
 
 }
+.block-sroll{
+    overflow: hidden;
+}
+.block-sroll2{
+    overflow: auto;
+}
+
+
+
+html{
+    
+    font-size: 62.5%;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+html::-webkit-scrollbar{
+    display: none;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #DA9B44;
+    overflow-y: auto;
+}
 .lds-ring {
     display: inline-block;
     position: absolute ;
@@ -19,10 +41,10 @@
     width: 64px;
     height: 64px;
     margin: 8px;
-    border: 8px solid #fff;
+    border: 3px solid #DA9B44;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #fff transparent transparent transparent;
+    border-color: #DA9B44 transparent transparent transparent;
   }
   .lds-ring div:nth-child(1) {
     animation-delay: -0.45s;
@@ -36,36 +58,23 @@
 .loader{
     background-color: black;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
     z-index: 1000000000000000000000;
     clip-path: circle(150% at 100% 0);
-    transition:  clip-path 0.3s ease-in-out ;
+    transition: clip-path 0.3s ease-in-out ;
 }
 .loader2{
     clip-path: circle(0% at 100% 0);
-}                                                           
-
-
-html{
-
-    font-size: 62.5%;
-    font-family: sans-serif;
-    font-size: 17px;
 }
-html::-webkit-scrollbar{
-    display: none;
-}
-html::-webkit-scrollbar-thumb{
-    background-color: #DA9B44;
-    overflow-y: auto;
-}
+  
 
 
 body{
+
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0,10);
@@ -140,8 +149,9 @@ aside::-webkit-scrollbar-track{
 
 }
 
+
 .contenedor_botones div{
-    padding: 10px;
+    padding: 10px
 }
 .contenedor_botones div:hover{
     transition: ease-in 0.4s;
@@ -197,14 +207,19 @@ aside::-webkit-scrollbar-track{
     
     background-color: #156064 ;
 }
+.perfil{
+    
+    margin-left: auto;
+   border-radius: 20px;
+}
+
 .box_registrarse{
     display: flex;
     justify-items: center;
     align-items: center;
+    
 }
-
 .perfil svg{
-    margin-left: auto;
     border-radius: 100px;
     width: 50px;
     fill: aliceblue;
@@ -216,35 +231,35 @@ aside::-webkit-scrollbar-track{
 
 }
 @media (max-width:1248px){
-  
-    
-
-aside{
-    margin-top: 4.4rem;
-    display: flex;
-    height: 100%;
-}
-.icono-menu{
-    display: block;
-}
-.contenedor_botones{
-    display: none;
-}
-.cajon-inicio{
-    margin-top: 17%;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    
-}
-.cajon-inicio h1 {
-    margin-bottom: 1rem;
-    color: #DA9B44;
-}
-
+    .imagen{
+        width: 400px ;
+    }
+    aside{
+        margin-top: 4.4rem;
+        display: flex;
+        height: 100%;
+    }
+    .icono-menu{
+        display: block;
+    }
+    .contenedor_botones{
+        display: none;
+    }
+    .cajon-inicio{
+        margin-top: 17%;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        
+    }
+    .cajon-inicio h1 {
+        margin-bottom: 1rem;
+        color: #DA9B44;
+    }
+   
 }
 @media  (max-width:768px)
 {
