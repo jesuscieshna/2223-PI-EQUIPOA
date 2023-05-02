@@ -1,11 +1,15 @@
 
 window.addEventListener("load", () => {
   
+
+    setTimeout(() => {
         document.getElementById("loader").classList.toggle("loader2")
         document.getElementById("html").classList.remove("block-sroll");
         document.getElementById("html").classList.add("block-sroll2");
    
    
+    }, 2000);
+     
  
    
 
@@ -41,6 +45,7 @@ function verify_usuario() {
         
        Object.values(datos).forEach(usuario => {
         if(($input_usuario.value==usuario["nombre"]) && ($input_contraseña.value==usuario["contraseña"])){
+            console.log("Estoy aqui")
             $input_usuario.style.backgroundColor="#7CFC00";
             $input_contraseña.style.backgroundColor="#7CFC00";
             setTimeout(() => {
