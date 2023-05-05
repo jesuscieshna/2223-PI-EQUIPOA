@@ -5,12 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "installAll": "pnpm --prefix ./backend install & pnpm --prefix ./frontend install & pnpm --prefix ./frontend/FilmRadar install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-
   }
 }
