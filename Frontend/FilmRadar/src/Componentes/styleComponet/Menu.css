@@ -1,0 +1,54 @@
+
+
+
+
+@media (max-width:360px) {
+    .caja-menu{
+        width: 100%;
+        
+        background-color: #9D1B51  ;
+        display: flex;
+        position: absolute;
+        flex-direction: row;
+        top:0;
+        align-items: center;
+        justify-content: space-around;
+        
+        }
+    
+    .buscador{
+        border: none;
+        border-radius: 20px;
+        display: block;
+        margin-right:0.5em;
+        width: 6em;
+    
+    
+    
+    }
+    .buscadorActive{
+        display: block;
+        background-color: aliceblue;
+    
+       
+    
+    
+    }
+    .titulo {
+        font-size: 1em;
+        line-height: 1em;
+    
+    }
+    .caja-buscaddor{
+        display: flex;
+        place-items: center;
+    }
+    .Lupa{
+        width: 20px;
+        height: 20px;
+    }
+    .caja-logo{
+        width: auto;
+    }
+}
+
