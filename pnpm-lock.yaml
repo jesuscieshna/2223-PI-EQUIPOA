@@ -1,1 +1,12 @@
 lockfileVersion: '6.0'
+
+dependencies:
+  backend:
+    specifier: link:backend
+    version: link:backend
+  filmradar:
+    specifier: link:frontend\FilmRadar
+    version: link:frontend/FilmRadar
+  frontend:
+    specifier: link:frontend
+    version: link:frontend
