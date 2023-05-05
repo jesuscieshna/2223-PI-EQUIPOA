@@ -1,8 +1,9 @@
 2223-PI-EQUIPO-A 
 
 # FILM RADAR
+## [Figma del proyecto](https://www.figma.com/proto/z9CoecW5NXQSLS44S0t7dD/Pagina-Pelis?node-id=11-3&scaling=scale-down&page-id=0%3A1)
 
-## ROLES:
+## <br />ROLES:
 
 ### <br />VISTA
 
@@ -22,7 +23,7 @@ Juan María Rangel y David Fernández. <br />
 
 ## <br /><br />INTRODUCCIÓN
 
-Aplicación MERN para la búsqueda, clasificación y puntuación de películas. Utilizando la api de IMDB y base de datos mongoDb.
+Aplicación MERN para la búsqueda, clasificación y puntuación de películas. Utilizando la api de IMDB y base de datos mongoDb. Se dará acceso a un registro de infinidad de películas, además de poder generar rankings y compartirlos con otros usarios
 
 ## <br />DETALLES
 
@@ -44,6 +45,10 @@ De momento en la base de datos guardaremos usuarios(nombre str, contraseña str,
 
 En cuanto a la fuente de datos externa en principio usaremos la API de IMDB para obtener las películas (títulos, portadas, categorías, director, reparto...).
 [IMDB API info](https://imdb-api.com/)
+
+ <br />[Figma del proyecto](https://www.figma.com/proto/z9CoecW5NXQSLS44S0t7dD/Pagina-Pelis?node-id=11-3&scaling=scale-down&page-id=0%3A1)
+
+
 
 
 
