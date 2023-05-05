@@ -4,9 +4,9 @@
 >Al hacer pull actualizais los package.json (guarda las dependencias entre otras cosas). Y después **```pnpm run installAll```** instala esas dependencias en cada uno de los directorios
 
 ## <br />Para ejecutar
-dentro de la carpeta backend
-**```pnpm run daemon```** <br />
-script para ejecutar nodemon
+Ejecutar backend: **```pnpm run bc```** <br />
+Ejecutar frontend: **```pnpm run ft```**
+
 
 # <br />INFO
 ## Dependencias

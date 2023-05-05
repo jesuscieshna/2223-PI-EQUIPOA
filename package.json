@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "installAll": "pnpm --prefix ./backend install & pnpm --prefix ./frontend install & pnpm --prefix ./frontend/FilmRadar install",
+    "ft": "(cd frontend/FilmRadar && pnpm run dev)",
+    "bc": "(cd backend && pnpm run daemon)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
