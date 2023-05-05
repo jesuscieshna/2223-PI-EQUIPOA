@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+
 import './App.css'
 import Menu from './Componentes/Menu'
 import MenuBot from './Componentes/MenuBot'
-import Video from './videos/FIMRadarVideo.mp4'
+import Video from './assets/videos/FIMRadarVideo.mp4'
 function App() {
 
 

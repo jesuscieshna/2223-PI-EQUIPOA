@@ -6,11 +6,14 @@
     justify-content: space-around;
     position: fixed;
     bottom: 0px;
-   
+    border: 0;
+
     background-color: #00001790;
 
 }
 button{
+    border: 0;
+    background-color: transparent;
     padding: 1em 2px;
     height: 100%;
     width: 100%;
