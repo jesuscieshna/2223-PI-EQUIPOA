@@ -4,10 +4,10 @@
 >Al hacer pull actualizais el package.json (guarda las dependencias entre otras cosas). Y después **```pnpm install```** instala esas dependencias
 #### Si esto no funciona puede ser porque no tengais instalado pnpm. Para instalarlo de manera global:
 **```npm install -g pnpm```**
-### Las variables de entorno tampoco irán al repo. estarán en Discord
 
 
 ## <br />Para ejecutar
+dentro de la carpeta backend
 **```pnpm run daemon```** <br />
 script para ejecutar nodemon
 
