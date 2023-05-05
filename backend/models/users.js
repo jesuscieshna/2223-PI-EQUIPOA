@@ -12,7 +12,34 @@ const userSchema = new mongoose.Schema(
         email:{
             type:String,
             unique:true
-        }
+        },
+        notas:[
+            {
+                nombre:{
+                    type:String
+                },
+                nota:{
+                    type:Number
+                }
+            }
+        ],
+        porVer:[
+            {
+                nombre:{
+                    type:String
+                },
+            }
+        ],
+        comentario:[
+            {
+                nombre:{
+                    type:String
+                },
+                comentario:{
+                    type:String
+                }
+            }
+        ]
     },
     {
     
