@@ -1,5 +1,5 @@
 import "./styleComponet/Menu.css"
-import busqueda from "./assests/icons8-búsqueda.svg"
+import busqueda from "./assets/icons8-búsqueda.svg"
 
 
   

@@ -17,9 +17,9 @@ function App() {
 
       <div className='cuerpo-principal'>
         <video width={"100px"} src={Video}></video>
-        <h1>asdasd</h1>
-        <h2>asdasdasdqasdasd</h2>
-        <div width={"20%"} ></div>
+        <h1></h1>
+        <h2></h2>
+        <div ></div>
         <MenuBot></MenuBot>                                                       
       </div>
 
