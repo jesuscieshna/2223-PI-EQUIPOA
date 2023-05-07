@@ -4,8 +4,8 @@
 
 @media (max-width:360px) {
     .caja-menu{
-        width: 100%;
-        
+        width: 100vw;
+        padding-top: 5px;
         background-color: #9D1B51  ;
         display: flex;
         position: absolute;
@@ -14,8 +14,9 @@
         align-items: center;
         justify-content: space-around;
         
+        
         }
-    
+   
     .buscador{
         border: none;
         border-radius: 20px;
@@ -35,7 +36,7 @@
     
     }
     .titulo {
-        font-size: 1em;
+        font-size: 1.5em;
         line-height: 1em;
     
     }
