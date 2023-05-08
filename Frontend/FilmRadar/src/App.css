@@ -3,7 +3,7 @@ body{
   padding:0;
   width:100%;
   height: 100vh;
-  
+  margin-top: 4em;
   
 }
 .cuerpo-principal{
@@ -14,7 +14,7 @@ body{
   align-items: center;
   width: 100vw;
   height: 100%;
-  margin-top: 6em;
+  margin-top: 17em;
 
 
 }
@@ -67,7 +67,12 @@ video{
   background-color: #DA9B44;
 }
 
+@media (max-width:1024px) {
+  .cuerpo-principal{
 
+    margin-top: 6.5em;
+  }
+}
 
 
 @media (max-width:768px) {
@@ -88,7 +93,7 @@ body{
   flex-direction: column;
   width: 100vw;
   height: 100%;
-  margin-top: 0.5em;
+  margin-top: 3em;
   
 
 

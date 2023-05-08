@@ -7,17 +7,44 @@
     flex-direction: row;
     top:0;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between
     
     
     }
+
+.BotonesMenTop{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    width: 20em;
+    padding: 10px;
+    
+    justify-content: space-around;
+}
+.BotonesMenTop button{
+    cursor: pointer;
+    font-size: 1em;
+    width: auto;
+    padding: 10px;
+    height: 100%;
+}
+.BotonesMenTop button:hover{
+    background-color:#DA9B44 ;
+}
 
 .buscador{
     border: none;
     border-radius: 20px;
     display: block;
     margin-right:0.5em;
-    width: 6em;
+    width: 25em;
+    color: black;
+    font-size:large ;
+    border: 0;
+    border-radius:10px;
+    
+    background-color: aliceblue;
 
 
 
@@ -30,7 +57,18 @@
 
 
 }
+.Lupa{
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 0;
+}
+.Lupa:hover{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #DA9B44;
+}
 .titulo {
+    display: none;
     font-size: 1.5em;
     line-height: 1em;
 
@@ -47,12 +85,31 @@
     width: auto;
 }
 
+@media (max-width: 1024px) {
+    .buscador{
+        width: 20em ;
+    }
+}
 
 
+@media (max-width:768px) {
+    .BotonesMenTop{
+        display: none;
+    }
+    .titulo{
+        display: block;
+    }
+    .buscador{
+        width: 8em;
+    }
+    .Lupa{
+        margin-right: 10px;
+    }
 
 
 
 @media (max-width:360px) {
+    
     .caja-menu{
         width: 100vw;
         padding-top: 5px;
@@ -69,11 +126,11 @@
    
     .buscador{
         border: none;
-        border-radius: 20px;
+        border-radius: 10px;
         display: block;
         margin-right:0.5em;
         width: 6em;
-    
+        
     
     
     }
@@ -95,6 +152,7 @@
         place-items: center;
     }
     .Lupa{
+        margin-right: 5px;
         width: 20px;
         height: 20px;
     }
@@ -103,3 +161,4 @@
     }
 }
 
+}
