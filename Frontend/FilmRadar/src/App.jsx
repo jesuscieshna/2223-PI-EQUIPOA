@@ -8,7 +8,7 @@ import Video from './assets/videos/FIMRadarVideo.mp4'
 
 
 function App() {
-
+  console.log("asdas")
 
   return (
     <>
@@ -22,17 +22,27 @@ function App() {
         <div className='caja-video'>
           <video controls="true" autoPlay="true" src={Video}></video>
         </div>
+
+        <h1 className='Bienvenido'>Bienvenidos a FilmRadar</h1>
+        <div className='caja-rollo'>
+          <p className='PrimerParrafo'>Bienvenidos a FILMRadar, aquí podrás encontrar todas las películas que puedas imaginar, desde las que marcaron tu infancia hasta las que acaban de ser estrenadas.</p>
+        </div>
+        <div className='botonesDeInicioSesion'>
+        <button>INICIAR SESION</button>
+        <button>REGISTRARSE</button>
+        </div>
         
-        <h1>Bienvenidos a FilmRadar</h1>
-        <h2>asdasd</h2>
-        <div ></div>
-        <MenuBot></MenuBot>                                                       
+      
+      </div>
+
+      <div >
+        <MenuBot></MenuBot>
       </div>
 
 
 
 
-    </>                                         
+    </>
   )
 }
 
