@@ -1,14 +1,11 @@
-*{
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-}
+
+  
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  width: max-content;
-  height: max-content;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+ 
   background-color: #000017;
 
   font-synthesis: none;
@@ -16,26 +13,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  max-width: 360px;
-  max-height: 811px;
 }
-
 
 body {
   margin: 0;
-  width: 100vw;
-  overflow: unset;
   display: flex;
-
- 
-}
-body::-webkit-scrollbar {
-  display: none;
+  place-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
-
+  font-size: 3.2em;
   line-height: 1.1;
 }
-
-

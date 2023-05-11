@@ -1,38 +1,24 @@
-import "./styleComponet/Menu.css"
-import busqueda from "./assets/icons8-búsqueda.svg"
+import {  NavLink} from "react-router-dom"
+import "./style/Menu.css"
 
-function expadirBuscador(){
-
-    const buscador = document.getElementById("buscador");
-    buscador.className.add="buscadorActive"
-}
-
-
-
-export default function Menu() {
-
+export default function Menu(){
     return (
 
-        <>
-            <header className="caja-menu">
-                <img width={"20px"} height={"20px"} src=""></img>
+        <nav className="Menu">
+            <form >
+                <input type="search" placeholder="Buscame" ></input>
+            </form>
+            <div className="Link-Menu">
+            <NavLink  to="/">Inicio</NavLink>
+            
+            <NavLink to="/Favoritos">Favoritos</NavLink>
+            <NavLink to="/TopPelis">TopPelis</NavLink>
+            <NavLink to="/Perfil">Perfil</NavLink> 
+        
+            </div>
                 
-                <h1 className="titulo">INICIO</h1>
-                <div className="caja-buscaddor">
-                    <input  id="buscador"className="buscador" placeholder="Buscame"></input>
-                    <img onClick={expadirBuscador} className="Lupa"id="botonLupa"  src={busqueda}></img>
-                </div>
-                <div className="BotonesMenTop">
-                    <button>Inicio<a ></a></button>
-                    <button>Favoritos</button>
-                    <button>TopPelis</button>
-                    <button>Perfil</button>
-                </div>
-            </header>
-
-        </>
-
+            
+        </nav>
 
     )
-
 }
