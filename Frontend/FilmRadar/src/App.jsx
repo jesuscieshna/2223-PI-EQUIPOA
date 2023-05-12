@@ -1,6 +1,6 @@
 
 import './App.css'
-import {Router ,BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Inicio from "./Paginas/Inicio"
 import TopPelis from "./Paginas/TopPelis"
 function App() {
@@ -11,8 +11,8 @@ function App() {
         <Routes >
           <Route path='/' Component={Inicio}></Route>
           <Route path='/TopPelis' Component={TopPelis}></Route>
+          
         </Routes>
-      
       </BrowserRouter>
   )
 }

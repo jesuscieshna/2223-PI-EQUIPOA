@@ -1,7 +1,32 @@
+.cajon-buscador{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.cajon-imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+}
+.logo{
+    width: 100%;
+    height: 2em;
+}
+.cajon-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    text-align: center;
+}
 .Menu{
     
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5emssssssssssssssssssssssss;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -24,11 +49,21 @@
 
 }
 .Link-Menu{
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     padding-right: 20px;
+}
+
+.tituloPagina{
+   
+    display: none;
 }
 a{
 
-    font-weight: 2em;
+    font-weight: 1em;
     font-size: 1em;
     text-shadow: black 0px 0px 10px;
     width: 25%;
@@ -42,18 +77,53 @@ a:hover{
     background-color: #DA9B44;
 }
 form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     width: 20em;
+    height: 100%;
     padding-left: 1em;
     padding-right: 1em;
     margin-left: 2em;
 }
 input{
+    height: 2em;
     background-color: aliceblue;
     color: black;
+    text-align: center;
+    font-size: 1em;
     border: 0;
-    border-radius: 10px;
-    width: 100%;
-    height: 2em;
+    border-radius:20px;
+  
+    width: 20em;
+  
     
+
+}
+@media (max-width: 768px) {
+    .Link-Menu{
+        display: none;
+
+    }
+    .tituloPagina{
+
+   
+        font-size: 1.2em;
+        display: block;
+        margin: 0;
+        color: #fff;
+    }
+    .Menu{
+        justify-content: space-around;
+    }
+    form{
+        width: 8em;
+    }
+    input{
+        width: 10em;
+        padding: 0;
+    }
 
 }
