@@ -1,0 +1,195 @@
+.puntuacion-top{
+    color: #DA9B44;
+}
+.fecha-h3{
+    color: #DA9B44;
+}
+.ver-mas-top{
+    border: none;
+    color: #fff;
+    text-shadow: none;
+    background-color: #DA9B44;
+    margin-top: 0.5em;
+    width: 93.4%;
+}
+.ver-mas-top:hover{
+    background-color:#9D1B51;
+}
+.ver-mas-top:active{
+    background-color: #9D1B51;
+}
+
+.tituloPeli-top{
+    font-size: 2.4em;
+}
+.datos-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30em;
+    text-align: center;
+    word-wrap: normal;
+    word-break: normal;
+
+}
+.cajon-imagen-top{
+    max-width: 20em;
+    max-height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-left: 2em;
+    width: 100%;
+    height: 20em;
+}
+.boton-trailer-top{
+    border: none;
+    color: #fff;
+    width: 8em;
+    height: 2.5em;
+    background-color: #DA9B44;
+}
+.boton-trailer-top:active{
+    background-color:#9D1B51;
+}
+.boton-trailer-top:hover{
+    background-color:#9D1B51;
+}
+.cajon-top{
+
+    text-align: center;
+    justify-content: space-around;
+
+    display: flex;
+    justify-content: row;
+    width: 100%;
+    height: 30em;
+    padding: 0;
+    margin-bottom: 3em;
+    gap: 2em;
+    background-color: transparent;
+    align-items: center;
+}
+@media (max-width:768px) {
+    .cajon-top{
+
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        display: flex;
+        justify-content: row;
+        width: 100%;
+        height: 20em;
+        padding: 0;
+        margin-bottom: 3em;
+        gap: 1em;
+        background-color: transparent;
+        align-items: center;
+    }
+    .cajon-imagen-top{
+        max-width: 15em;
+        max-height: 10em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        padding-left: 0.4em;
+        width: 15em;
+        height: 10em;
+    }
+    .datos-top{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        text-align: center;
+        word-wrap: normal;
+        word-break: normal;
+
+    }
+   
+    .numero-top{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        justify-content: center;
+        width: 1.5em;
+
+
+    }
+    .numero-top h1{
+        
+        margin: auto;
+        font-size: 3em;
+    }
+    .cartelera-top{
+     
+        width: 100%;
+        height: 100em;
+    }
+    .fecha-top{
+        font-size: 0.8em;
+    }
+    .tituloPeli-top{
+        margin: 0;
+        word-wrap: normal;
+        font-size: 1.5em;
+    
+    }
+   
+    
+    .cajon-boton-trailer{
+        
+    }   
+    .cajon-puntuacion-top{
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        justify-content: center;
+
+
+    }
+    .puntuacion-top{
+        color: #DA9B44;
+    }
+    .boton-trailer-top{
+        border: none;
+        color: #fff;
+        width: 8em;
+        height: 2.5em;
+        background-color: #DA9B44;
+    }
+    .boton-trailer-top:active{
+        background-color:#9D1B51;
+    }
+    .boton-trailer-top:hover{
+        background-color:#9D1B51;
+    }
+    .ver-mas-top{
+        border: none;
+        color: #fff;
+        text-shadow: none;
+        background-color: #DA9B44;
+        margin-top: 0.5em;
+        width: 10em;
+    }
+    .ver-mas-top:hover{
+        background-color:#9D1B51;
+    }
+    .ver-mas-top:active{
+        background-color: #9D1B51;
+    }
+
+
+}
+@media (max-width:368px) {
+    .tituloPeli-top{
+        margin: 0;
+        word-wrap: normal;
+        font-size: 1em;
+    
+    }
+    
+}

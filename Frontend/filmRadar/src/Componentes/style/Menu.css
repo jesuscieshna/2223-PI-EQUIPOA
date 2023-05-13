@@ -65,15 +65,18 @@ a{
 
     font-weight: 1em;
     font-size: 1em;
-    text-shadow: black 0px 0px 10px;
+    
     width: 25%;
     padding: 0.5em;
     color: azure;
     text-decoration: none;
     
 }
-a:hover{
+a:active{
 
+    background-color: #DA9B44;
+}
+a:hover{
     background-color: #DA9B44;
 }
 form{
@@ -122,7 +125,7 @@ input{
         width: 8em;
     }
     input{
-        width: 10em;
+        width: 14em;
         padding: 0;
     }
 

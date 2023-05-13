@@ -1,0 +1,67 @@
+.cuerpo-inicio{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+.subcaja-inicio{
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+}
+.formularioInicio{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+}
+.enlaceRecuCon{
+   
+    cursor: pointer;
+    padding-top: 1em;
+    padding: 0;
+    
+    width: 15em;
+    text-align: center;
+}
+.enlaceRecuCon:hover{
+    background-color: transparent;
+}
+.enlaceRegistro{
+    width: 8em;
+    font-size: 1em;
+    
+    background-color: transparent;
+}
+.botonIniciosesio{
+    width: 8em;
+    font-size: 1em;
+    border: 0;
+    color: #fff;
+    background-color: transparent;
+}
+.botonIniciosesio:hover{
+    background-color: #DA9B44;
+}
+.botonesDeRegistoroEInicioIni{
+    gap: 2em;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width:768px) {
+    .subcaja-inicio{
+        justify-content: flex-start;
+    }
+}
