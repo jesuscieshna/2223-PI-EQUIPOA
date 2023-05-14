@@ -23,7 +23,7 @@ export default function ButonVermas(){
         <>
         <div className="ver-mas-fav">
             <img onClick={() => {setFav(fav ? false  : true) }   } src={estrellaAc}></img>
-            <NavLink to="/PagPelis "className={"ver-mas-top"}>Ver más </NavLink>
+            <NavLink to="/PeliConcret " className={"ver-mas-top"}>Ver más </NavLink>
         </div>
        
         </>
