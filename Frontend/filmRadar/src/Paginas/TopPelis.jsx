@@ -18,7 +18,7 @@ export default function TopPelis() {
 
 
         return () => {
-            fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`).
+            fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=es`).
                 then(response => response.json()).then(data => {
                     setRe([data])
                     var total_results;

@@ -20,7 +20,7 @@ export default function PagPelisConcret() {
     const [ResultSearhc, setRS] = useState(false);
 
     let urlImagen = ``;
-    let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.id}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0 `
+    let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.id}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es `
 
     useEffect(() => {
 
@@ -41,7 +41,7 @@ export default function PagPelisConcret() {
 
         }
     }, [])
-    let urlDataTrailer = `https://api.themoviedb.org/3/movie/${datosPeli.id}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=en-US`
+    let urlDataTrailer = `https://api.themoviedb.org/3/movie/${datosPeli.id}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
     const [dataTrailer, setDataTrailer] = useState([])
     const obtenerDatosVideosTrailer=  useEffect(() => {
 
@@ -55,7 +55,7 @@ export default function PagPelisConcret() {
     try{
         obtenerDatosVideosTrailer
         let KeyTrailer = dataTrailer[dataTrailer.length-1]["key"]
-   
+        
      urlTrailerYoutube= `https://www.youtube.com/watch?v=${KeyTrailer}`
     }catch{
         console.log("error al leer la key")
@@ -81,11 +81,15 @@ export default function PagPelisConcret() {
         sinopsis = datos.overview
         estado = datos.status
         lenguajeOriginal = datos.original_language
-        linkTrailerOficial = urlTrailerYoutube
+       
+        if(urlTrailerYoutube == undefined){
+            urlTrailerYoutube=datos.homepage
+        }
+       
     } catch {
         console.log("error al cargar los datos")
     }
-
+   
 
     return (
         <>
@@ -108,7 +112,7 @@ export default function PagPelisConcret() {
                                     
                                     <h4>{fechaEstreno}</h4>
                                     <h4>{estado}</h4>
-                                    <h4>Doblaje {lenguajeOriginal}</h4>
+                                    <h4>D.original: {lenguajeOriginal}</h4>
                                 </div>
                                
                                 <div >
@@ -118,7 +122,7 @@ export default function PagPelisConcret() {
                             </div>
                             <p className="sinopsis-pc">{sinopsis} </p>
                         </div>
-                        <NavLink className={"trailer-pc"} to={linkTrailerOficial}>Trailer</NavLink>
+                        <NavLink className={"trailer-pc"} to={urlTrailerYoutube}>Trailer</NavLink>
                     </div>
                 </div>
             </div>

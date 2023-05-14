@@ -23,7 +23,7 @@ export default function PagPeli() {
 
 
     return () => {
-      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searh}&page=${page}`).
+      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searh}&page=${page}&language=es`).
         then(response => response.json()).then(data => {
           setRe([data])
           var total_results;

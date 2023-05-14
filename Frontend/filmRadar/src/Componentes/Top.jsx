@@ -23,7 +23,7 @@ export default function Top(props) {
         obtenerDatosVideosTrailer
         let KeyTrailer = dataTrailer[dataTrailer.length-1]["key"]
    
-     urlTrailerYoutube= `https://www.youtube.com/watch?v=${KeyTrailer}`
+     urlTrailerYoutube= `https://www.youtube.com/watch?v=${KeyTrailer}&language=es`
     }catch{
         console.log("error al leer la key")
     }

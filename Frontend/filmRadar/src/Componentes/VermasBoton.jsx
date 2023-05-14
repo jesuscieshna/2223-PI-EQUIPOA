@@ -5,7 +5,7 @@ import "./style/verMasBoton.css"
 import EstrellaFav from "./Estrella";
 export default function ButonVermas(props){
     
-    console.log(props)
+    
  
     return (
 
