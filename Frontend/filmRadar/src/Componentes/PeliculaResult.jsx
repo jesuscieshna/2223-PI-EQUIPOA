@@ -8,7 +8,7 @@ export default function PeliculaResult(props){
         let urlImage=`https://image.tmdb.org/t/p/w500${props.pathUrlImage}`
 
        
-
+   
     return (
         <>
             <div  className="cajon-prinicipal-prs" >
@@ -20,7 +20,7 @@ export default function PeliculaResult(props){
                     <img src={urlImage}></img>
                 </div>
                 <div className="cajon-verMas-prs">
-                    <ButonVermas></ButonVermas>
+                    <ButonVermas id={props.id} urlImage={urlImage}></ButonVermas>
                 </div>
             </div>
 

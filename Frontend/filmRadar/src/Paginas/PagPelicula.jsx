@@ -41,6 +41,8 @@ export default function PagPeli() {
     }
   }, [])
 
+  
+
 
   let data = [];
   if (ResultSearhc != false) {
@@ -71,9 +73,7 @@ export default function PagPeli() {
         {
           data.map((peli, i) => {
             return <PeliculaResult titulo={peli["title"]} key={i} pathUrlImage={peli["poster_path"]} id={peli["id"]}
-            puntuacion={peli["vote_average"]} 
-            
-            >
+            puntuacion={peli["vote_average"]}>
 
 
             </PeliculaResult>

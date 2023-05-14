@@ -24,11 +24,10 @@ export default function TopPelis() {
                     var total_results;
                     var total_page;
 
-                    console.log(data)
+                   
                     total_results = data["total_results"] ? true : false;
                     total_page = data["total_pages"];
 
-                    console.log(total_page)
                     setRS(total_results)
                 })
                 .catch(error => console.log(error))

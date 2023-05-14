@@ -1,0 +1,261 @@
+
+.caja-principal-pc{
+   
+    color: #fff;
+    gap: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+    align-content: center;
+
+    width: 100%;
+    height: 100%;
+}   
+.estrellita-pc{
+    width:100%;
+    height: 3em;
+}
+.estrellita-pc img{
+    width: 2em;
+    height: 2em;
+}
+.caja-imagen-pc{
+   
+    
+    padding: 2em;
+    padding-bottom: 2em;
+    padding-top: 3em;
+    width: 100%;
+    height: 100%;
+}
+.imagen-pc-peli img{
+
+    height: 50%;
+    width: 100%;
+
+}
+.sinopsis-pc{
+    word-wrap: normal;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+}
+
+
+.caja-datos-pc{
+    
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    
+}
+.datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    word-wrap: normal;
+    width: 100%;
+    
+}
+.titulo-pc{
+    margin: 0;
+    font-size: 3rem;
+    margin-bottom: 1em;
+}
+.fecha-puntuacion{
+    font-size: 2em;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+}
+.fecha-puntuacion h4{
+    margin: 0;
+}
+.cajon-puntuacion{
+
+    align-items: center;
+    width: 100%;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 3em;
+    
+}
+.cajon-puntuacion h5{
+    color: #DA9B44;
+}
+cajon-puntuacion{
+    padding-right:2em ;
+    margin: 0;
+}
+.datos-apate-fecha-etc{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: 0.9em;
+    gap: 1em;
+}
+.trailer-pc{
+    background-color: #DA9B44;
+    margin-bottom: 5em;
+    margin-top: 3rem;
+    padding: 1.2rem;
+    padding-right: 1.4rem;
+    padding-left: 1.4rem;
+}
+.trailer-pc:hover{
+background-color: #9D1B51;
+}
+@media (max-width:1024px) {
+    caja-peli-pc{
+
+        
+        display: flex;
+      
+        width: 100%;
+        height: 100%;
+    }
+    .caja-principal-pc{
+       
+        color: #fff;
+        gap: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+        height: 109%;
+    }   
+    .estrellita-pc{
+        width:100%;
+        height: 3em;
+    }
+    .estrellita-pc img{
+        width: 1.2em;
+        height: 1.2em;
+    }
+    .caja-imagen-pc{
+       
+        margin-top: 5em;
+        padding: 0;
+        width: 100%;
+        height: 40;
+    }
+    .imagen-pc-peli{
+
+        height: 100%;
+        width: 50%;
+
+    }
+    .sinopsis-pc{
+        
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 1.4rem;
+    }
+  
+    
+    .caja-datos-pc{
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        
+        width: 100%;
+        height: auto;
+        
+    }
+    .datos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        word-wrap: normal;
+        font-size: 0.8em;
+        width: 90%;
+        margin-bottom: 5em;
+    }
+    .titulo-pc{
+        margin: 0;
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+    .fecha-puntuacion{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+    }
+    .fecha-puntuacion h4{
+        margin: 0;
+    }
+    .cajon-puntuacion{
+
+        align-items: center;
+        width: 100%;
+        font-size: 1.2em;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        height: 3em;
+        
+    }
+    .cajon-puntuacion h5{
+        color: #DA9B44;
+    }
+    cajon-puntuacion{
+        padding-right:2em ;
+        margin: 0;
+    }
+    .datos-apate-fecha-etc{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        font-size: 0.7em;
+        gap: 1em;
+    }
+    .trailer-pc{
+            background-color: #DA9B44;
+            margin-bottom: 5em;
+            padding: 1.2rem;
+            padding-right: 1.4rem;
+            padding-left: 1.4rem;
+    }
+    .trailer-pc:hover{
+        background-color: #9D1B51;
+    }
+    @media (max-width:368px) {
+        .datos-apate-fecha-etc{
+            display: flex;
+            flex-direction: column;
+            font-size: 1.2em;
+        }
+        .fecha-puntuacion{
+            font-size: 1.2em;
+        }
+        .sinopsis-pc{
+            
+            font-size: 1.3em;
+        }
+        .trailer-pc{
+            background-color: #DA9B44;
+            margin-bottom: 5em;
+            padding: 1rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+        .trailer-pc:hover{
+            background-color: #9D1B51;
+        }
+    }
+}
+
