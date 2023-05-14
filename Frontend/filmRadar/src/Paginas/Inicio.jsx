@@ -11,7 +11,7 @@ export default function Inicio(){
         <Menu titulo="Inicio"></Menu>
             
         
-        <body className="cuerpo-principal">
+        <div className="cuerpo-principal">
             <video  src={Video}  controls autoPlay loop ></video>
             <div className="cajon-texto"> 
                 <h1>
@@ -30,7 +30,7 @@ export default function Inicio(){
 
             </div>
 
-        </body>
+        </div>
            <MenuBot></MenuBot>
         </>
     )

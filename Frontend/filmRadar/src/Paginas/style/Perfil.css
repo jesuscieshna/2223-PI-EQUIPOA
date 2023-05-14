@@ -38,10 +38,7 @@
 .texto-ranking-perfil h2{
     margin: 0;
     margin-bottom: 0.5em;
-    border: #fff solid;
-    border-top: 0;
-    border-left: 0;
-    border-bottom: 5px;
+  
 }
 .cajon-por-ver{
     display: flex;
@@ -94,10 +91,9 @@
         color: #fff;
     }
     .texto-ranking-perfil h2{
-        border: #fff solid;
-        border-top: 0;
-        border-left: 0;
-        border-bottom: 5px;
+        margin: 0;
+        margin-bottom: 0.5em;
+  
     }
     .cajon-por-ver{
         display: flex;

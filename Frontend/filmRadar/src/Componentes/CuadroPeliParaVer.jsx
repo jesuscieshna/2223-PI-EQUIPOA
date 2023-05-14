@@ -35,7 +35,7 @@ function CuadroPeliParaVer(){
                     </div>
                     <div className="cjpv-ver">
                         <NavLink to="/PagPelis">Ver</NavLink>
-                        <img onClick={() => {setFav(fav ? false  : true) }   } src={estrellaAc}></img>
+                        <img onClick={() => {setFav(fav ? false  : true) }} src={estrellaAc}></img>
                     </div>
                 </div>
             </li>

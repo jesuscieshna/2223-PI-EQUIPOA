@@ -1,9 +1,13 @@
-import {sayHello} from "./functions.js";
+import { returnMovieSearch, sayHello } from "./functions.js";
 import express from "express";
 import "dotenv/config.js";
 import cors from "cors";
 import dbConnect from "./config/mongodb.js";
 import routeuser from "./routes/users.js";
+import usermodel from "./models/users.js"
+
+
+
 
 const app = express();
 
@@ -19,5 +23,6 @@ app.listen(port, () => {
 })
 
 await dbConnect()
-console.log("Conectado a base de datos")
 
+
+console.log("Conectado a base de datos")

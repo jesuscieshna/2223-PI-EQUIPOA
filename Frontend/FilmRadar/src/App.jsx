@@ -9,6 +9,7 @@ import InicioSesion from "../../filmRadar/src/Paginas/InicioSesion"
 import  Registro  from '../../filmRadar/src/Paginas/Registro'
 import PagPelis from "../../filmRadar/src/Paginas/PagPelicula"
 import PagNotFound from "../../filmRadar/src/Paginas/PagNOTfound"
+import PagePelisConcret from "../../filmRadar/src/Paginas/PeliContre"
 function App() {
   
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/InicioSesion' Component={InicioSesion}></Route>
           <Route path='/Registro' Component={Registro}></Route>
           <Route path='/PagPelis' Component={PagPelis}></Route>
+          <Route path='/PeliConcret' Component={PagePelisConcret}></Route>
           <Route path="*" Component={PagNotFound} ></Route>
         </Routes>
       </BrowserRouter>

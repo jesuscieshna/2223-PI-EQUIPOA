@@ -3,7 +3,7 @@ import Menu from "../../../filmRadar/src/Componentes/Menu"
 import ImagenUserSinFoto from "../assets/blank-profile-picture-973460_640.webp"
 import MenuBot from "../Componentes/MenuBot"
 import "./style/Perfil.css"
-import flechaAbajo from "../assets/icons8-flecha-contraer-30.png"
+
 import ParaVerPerfil from "../Componentes/ParaVerPerfil"
 
 export default function Perfil() {

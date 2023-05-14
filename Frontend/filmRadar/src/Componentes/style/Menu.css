@@ -111,9 +111,7 @@ input{
 
     }
     .tituloPagina{
-
-   
-        font-size: 1.2em;
+        font-size: 1em;
         display: block;
         margin: 0;
         color: #fff;
@@ -125,7 +123,7 @@ input{
         width: 8em;
     }
     input{
-        width: 14em;
+        width: 100%;
         padding: 0;
     }
 

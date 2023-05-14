@@ -1,20 +1,28 @@
-import {  NavLink} from "react-router-dom"
+import {  NavLink, useNavigate  } from "react-router-dom"
 import "./style/Menu.css"
 
+
 export default function Menu({titulo}){
+    const navigate = useNavigate();
+    
+    function rederigirAresultados (){
+
+            navigate("/PagPelis"); 
+
+    }
+    
+
     return (
 
         <nav className="Menu">
             <div className="cajon-imagen">
              <img className="logo" width={"20px"} height={"20px"}></img>
             </div>
+      
+            <form className="cajon-buscador" onSubmit={rederigirAresultados}>
+                <input id="buscador"  type="search" placeholder="Buscame" ></input>
+            </form>
             
-                
-          
-            
-            <div className="cajon-buscador">
-                <input type="search" placeholder="Buscame" ></input>
-            </div>
             <div className="cajon-titulo">
                 <h1 className="tituloPagina"> {titulo}</h1>
             </div>
@@ -23,6 +31,7 @@ export default function Menu({titulo}){
                 <NavLink to="/Favoritos">Favoritos</NavLink>
                 <NavLink to="/TopPelis">TopPelis</NavLink>
                 <NavLink to="/Perfil">Perfil</NavLink> 
+            
             </div>
                 
             

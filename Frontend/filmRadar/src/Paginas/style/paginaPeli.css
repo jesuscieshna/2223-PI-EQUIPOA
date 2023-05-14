@@ -1,0 +1,11 @@
+.pelisResulSearch{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(5em, 15em));
+    grid-auto-flow: row dense;
+    justify-content: center;
+    padding-bottom: 5em;
+    padding-top: 2em;
+    
+    gap: 10em;
+}

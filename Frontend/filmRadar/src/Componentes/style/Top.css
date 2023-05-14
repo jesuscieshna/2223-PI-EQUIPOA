@@ -32,6 +32,19 @@
     word-break: normal;
 
 }
+.cajon-puntuacion-top{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+
+}
+.cajon-puntuacion-top img{
+        width: 20px;
+        height: 20px;
+
+    }
 .cajon-imagen-top{
     max-width: 20em;
     max-height: 20em;
@@ -148,10 +161,16 @@
         flex-direction: row;
         gap: 1em;
         justify-content: center;
+        align-items: center;
 
+    }
+    .cajon-puntuacion-top img{
+        width: 20px;
+        height: 20px;
 
     }
     .puntuacion-top{
+        width: ;
         color: #DA9B44;
     }
     .boton-trailer-top{
@@ -173,7 +192,7 @@
         text-shadow: none;
         background-color: #DA9B44;
         margin-top: 0.5em;
-        width: 10em;
+        width: auto;
     }
     .ver-mas-top:hover{
         background-color:#9D1B51;

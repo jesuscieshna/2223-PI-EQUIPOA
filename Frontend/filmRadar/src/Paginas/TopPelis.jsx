@@ -7,15 +7,13 @@ export default function TopPelis(){
     <>
     <Menu titulo="TopPelis"></Menu>
         
-    <body className="cuerpo-principal">
+    <div className="cuerpo-principal">
         <ol className="listTop">
             <Top></Top>
             <Top></Top>
         </ol>
         
-        
-       
-    </body>
+    </div>
         
     <MenuBot></MenuBot>
        
