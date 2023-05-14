@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom"
 import Menu from "../Componentes/Menu"
 import MenuBot from "../Componentes/MenuBot"
 import PeliculaResult from "../Componentes/PeliculaResult"
@@ -10,10 +11,11 @@ import { useEffect,  useState } from "react"
 
 export default function PagPeli(){
 
-        
+    let {searh} = useParams();
+    console.log(searh)
        
         const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
-        /*  fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}/)`) */
+        
        const [re, setRe]= useState([]);
      
         
@@ -21,7 +23,7 @@ export default function PagPeli(){
         
      
        return () => {
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${"mario"}`).
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searh}`).
         then(response => response.json()).then(data => setRe([data]))        
         .catch(error => console.log(error))
         

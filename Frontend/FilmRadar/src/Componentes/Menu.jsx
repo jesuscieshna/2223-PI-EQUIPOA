@@ -1,13 +1,14 @@
-import {  NavLink, useNavigate  } from "react-router-dom"
+import {  NavLink, useNavigate, useParams  } from "react-router-dom"
 import "./style/Menu.css"
 
 
 export default function Menu({titulo}){
+   
     const navigate = useNavigate();
     
     function rederigirAresultados (){
 
-            navigate("/PagPelis"); 
+            navigate(`/PagPelis/${document.getElementById('buscador').value}`); 
 
     }
     

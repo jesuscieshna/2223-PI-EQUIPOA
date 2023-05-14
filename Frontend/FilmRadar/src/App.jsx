@@ -22,7 +22,7 @@ function App() {
           <Route path="/Perfil" Component={Perfil}></Route>
           <Route path='/InicioSesion' Component={InicioSesion}></Route>
           <Route path='/Registro' Component={Registro}></Route>
-          <Route path='/PagPelis' Component={PagPelis}></Route>
+          <Route path='/PagPelis/:searh' Component={PagPelis}></Route>
           <Route path='/PeliConcret' Component={PagePelisConcret}></Route>
           <Route path="*" Component={PagNotFound} ></Route>
         </Routes>
