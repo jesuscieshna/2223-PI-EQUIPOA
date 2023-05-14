@@ -32,15 +32,7 @@
     height: 100%;
 }
 .cajon-verMas-prs{
-    padding: 0.5em;
+    
     text-align: center;
     background-color: #DA9B44;
-}
-.cajon-verMas-prs:hover{
-    background-color: #9D1B51;
-}
-
-.cajon-verMas-prs a:hover{
-
-    background-color: transparent;
 }

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import Menu from "../Componentes/Menu"
 import MenuBot from "../Componentes/MenuBot"
 import PeliculaResult from "../Componentes/PeliculaResult"
@@ -10,36 +10,46 @@ import "./style/paginaPeli.css"
 import { useEffect,  useState } from "react"
 
 export default function PagPeli(){
-
+    const navigate = useNavigate();
     let {searh} = useParams();
-    console.log(searh)
+ 
        
         const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
         
        const [re, setRe]= useState([]);
-     
+        const [ResultSearhc, setRS] = useState(false);
         
      useEffect(() => {
         
      
        return () => {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searh}`).
-        then(response => response.json()).then(data => setRe([data]))        
+        then(response => response.json()).then(data => {
+         setRe([data])
+         var total_results;
+        
+        total_results = data["total_results"] ? true : false;
+      
+        setRS(total_results)
+        })        
         .catch(error => console.log(error))
         
        }
      }, [])
      
 
-
-    
      let data=[];
-    re.map((peli)=> {
+     if (ResultSearhc !=false){
         
-        
-        data=peli["results"]
-        
-    })
+        re.map((peli)=> {
+            
+            
+            data=peli["results"]
+            
+        })
+     }else{
+      navigate("/ResultSearchNot")
+     }
    
    
  

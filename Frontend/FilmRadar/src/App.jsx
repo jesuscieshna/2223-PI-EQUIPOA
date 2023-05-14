@@ -10,6 +10,7 @@ import  Registro  from '../../filmRadar/src/Paginas/Registro'
 import PagPelis from "../../filmRadar/src/Paginas/PagPelicula"
 import PagNotFound from "../../filmRadar/src/Paginas/PagNOTfound"
 import PagePelisConcret from "../../filmRadar/src/Paginas/PeliContre"
+import ResultSearchNot from './Paginas/ResultSearchNOt'
 function App() {
   
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/Registro' Component={Registro}></Route>
           <Route path='/PagPelis/:searh' Component={PagPelis}></Route>
           <Route path='/PeliConcret' Component={PagePelisConcret}></Route>
+          <Route path="/ResultSearchNot" Component={ResultSearchNot}></Route>
           <Route path="*" Component={PagNotFound} ></Route>
         </Routes>
       </BrowserRouter>

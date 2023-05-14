@@ -4,20 +4,7 @@
 .fecha-h3{
     color: #DA9B44;
 }
-.ver-mas-top{
-    border: none;
-    color: #fff;
-    text-shadow: none;
-    background-color: #DA9B44;
-    margin-top: 0.5em;
-    width: 93.4%;
-}
-.ver-mas-top:hover{
-    background-color:#9D1B51;
-}
-.ver-mas-top:active{
-    background-color: #9D1B51;
-}
+
 
 .tituloPeli-top{
     font-size: 2.4em;
@@ -152,10 +139,7 @@
     
     }
    
-    
-    .cajon-boton-trailer{
-        
-    }   
+
     .cajon-puntuacion-top{
         display: flex;
         flex-direction: row;
@@ -170,7 +154,7 @@
 
     }
     .puntuacion-top{
-        width: ;
+       
         color: #DA9B44;
     }
     .boton-trailer-top{
@@ -185,20 +169,6 @@
     }
     .boton-trailer-top:hover{
         background-color:#9D1B51;
-    }
-    .ver-mas-top{
-        border: none;
-        color: #fff;
-        text-shadow: none;
-        background-color: #DA9B44;
-        margin-top: 0.5em;
-        width: auto;
-    }
-    .ver-mas-top:hover{
-        background-color:#9D1B51;
-    }
-    .ver-mas-top:active{
-        background-color: #9D1B51;
     }
 
 

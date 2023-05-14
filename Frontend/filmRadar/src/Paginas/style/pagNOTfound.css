@@ -1,6 +1,6 @@
 .cuerpo-nF{
     display: flex;
-    justify-content: center;
+    
     align-content: center;
     align-items: center;
     flex-direction: column;
@@ -9,6 +9,7 @@
 
 }
 .error{
+    font-size: 5em;
     color: #fff;
 
 }

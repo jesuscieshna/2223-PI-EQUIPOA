@@ -1,0 +1,71 @@
+.ver-mas-top{
+    border: none;
+    color: #fff;
+    text-shadow: none;
+    background-color: #DA9B44;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+
+}
+.ver-mas-top:hover{
+    background-color:#9D1B51;
+}
+.ver-mas-top:active{
+    background-color: #9D1B51;
+}
+.ver-mas-fav{
+    display: flex;
+    flex-direction: row;
+
+    background-color: #DA9B44;
+    width: 100%;
+   
+}
+.ver-mas-fav img{
+  
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 2em;
+}
+.ver-mas-fav img:hover {
+
+    background-color: #9D1B51;
+}
+@media (max-width: 768px) {
+    .ver-mas-top{
+        border: none;
+        color: #fff;
+        text-shadow: none;
+        background-color: #DA9B44;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    
+    }
+    .ver-mas-top:hover{
+        background-color:#9D1B51;
+    }
+    .ver-mas-top:active{
+        background-color: #9D1B51;
+    }
+    .ver-mas-fav{
+        display: flex;
+        flex-direction: row;
+    
+        background-color: #DA9B44;
+        width: 100%;
+       
+    }
+    .ver-mas-fav img{
+      
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 2em;
+        height: 100%;
+    }
+    .ver-mas-fav img:hover {
+    
+        background-color: #9D1B51;
+    }
+}
