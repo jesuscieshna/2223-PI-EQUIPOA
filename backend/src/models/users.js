@@ -13,16 +13,6 @@ const userSchema = new mongoose.Schema(
             type:String,
             unique:true
         },
-        notas:[
-            {
-                nombre:{
-                    type:String
-                },
-                nota:{
-                    type:Number
-                }
-            }
-        ],
         porVer:[
             {
                 nombre:{
@@ -30,16 +20,6 @@ const userSchema = new mongoose.Schema(
                 },
             }
         ],
-        comentario:[
-            {
-                nombre:{
-                    type:String
-                },
-                comentario:{
-                    type:String
-                }
-            }
-        ]
     },
     {
     

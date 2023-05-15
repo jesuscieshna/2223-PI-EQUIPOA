@@ -1,13 +1,11 @@
 import { returnMovieSearch, sayHello } from "./functions.js";
-import express from "express";
+import express, { response } from "express";
 import "dotenv/config.js";
 import cors from "cors";
 import dbConnect from "./config/mongodb.js";
 import routeuser from "./routes/users.js";
-import usermodel from "./models/users.js"
-
-
-
+import models from "./models/index.js"
+import routeUser from "./routes/users.js"
 
 const app = express();
 
@@ -23,6 +21,18 @@ app.listen(port, () => {
 })
 
 await dbConnect()
-
-
 console.log("Conectado a base de datos")
+
+const pepe = new models.usermodel({
+    username:"hsfk",
+    email:"mksdf@jh.com"
+})
+
+
+const usuarios = async () => {
+    const data = (await fetch("http://localhost:3001/api/users")).json()
+    console.log(data)
+    return data
+}
+
+console.log(await usuarios())

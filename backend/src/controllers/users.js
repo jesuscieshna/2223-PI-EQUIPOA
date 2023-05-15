@@ -1,10 +1,13 @@
-const getItems = (req, res) => {
-    const data = ["hola", "mundo"];
+import usermodel from "../models/users.js"
+
+const getItems = async (req, res) => {
+    const data = await usermodel.find();
     res.send(data);
 }
-const getItem = (req, res) => {}
-const createItem = (req, res) => {}
-const updateIteItem = (req, res) => {}
-const deleteIteItem = (req, res) => {}
+const getItem = async (req, res) => {
+    const user = req.params.user
+    const data = await usermodel.find({username:user})
+    res.send(data)
+}
 
-export {getItems, getItem, createItem,updateIteItem, deleteIteItem}
+export default {getItems, getItem}

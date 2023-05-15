@@ -24,9 +24,16 @@ function returnMovieSearch(name){
         .catch(error => console.log(error))
     return(re)
 }
+const usuarios = async () => {
+    const data = (await fetch("http://localhost:3001/api/users")).json()
+    console.log(data)
+    return data
+}
 
 export {
+    usuarios,
     sayHello,
     sayHello2,
     returnMovieSearch,
 }
+
