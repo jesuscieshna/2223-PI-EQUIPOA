@@ -8,12 +8,16 @@ import "./style/paginaPeli.css"
 
 
 import { useEffect, useState } from "react"
+import Loader from "../Componentes/loader"
 
 export default function PagPeli() {
+  
+
+
   const navigate = useNavigate();
   let { searh } = useParams();
 
-
+  const [loaderOn, setLoaderOn] = useState(false);
   const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
 
   const [re, setRe] = useState([]);
@@ -29,7 +33,7 @@ export default function PagPeli() {
           var total_results;
           var total_page;
 
-          console.log(data)
+        
           total_results = data["total_results"] ? true : false;
           total_page = data["total_pages"];
 
@@ -42,6 +46,7 @@ export default function PagPeli() {
   }, [])
 
   
+  
 
 
   let data = [];
@@ -53,11 +58,11 @@ export default function PagPeli() {
       data = peli["results"]
 
     })
-  } else {
+  } else { 
     navigate("/ResultSearchNot")
   }
 
-
+  let estadoCarga=false;
 
 
 
@@ -66,10 +71,12 @@ export default function PagPeli() {
 
   return (
     <>
+
+     
       <Menu titulo={"Resultados"}></Menu>
-      <ul className="pelisResulSearch">
-
-
+      <ul  className="pelisResulSearch">
+      
+        
         {
           data.map((peli, i) => {
             return <PeliculaResult titulo={peli["title"]} key={i} pathUrlImage={peli["poster_path"]} id={peli["id"]}
@@ -77,7 +84,10 @@ export default function PagPeli() {
 
 
             </PeliculaResult>
-          })
+
+          
+            })
+
         }
 
 

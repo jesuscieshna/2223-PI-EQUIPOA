@@ -3,13 +3,14 @@ import Menu from "../Componentes/Menu"
 import MenuBot from "../Componentes/MenuBot"
 import { useEffect, useState } from "react"
 import "./style/paginaConcret.css"
+import Ft from "../funtions/functions"
 import EstrellaFav from "../Componentes/Estrella"
 
 export default function PagPelisConcret() {
 
     const datosPeli = useParams()
 
-
+    
     const navigate = useNavigate();
 
 
@@ -77,19 +78,34 @@ export default function PagPelisConcret() {
         urlImage = `https://image.tmdb.org/t/p/w500${datos.poster_path}`
         titulo = datos.title
         fechaEstreno = datos.release_date
-        puntuacion = datos.vote_average
+        puntuacion =datos.vote_average
+        puntuacion= parseFloat(puntuacion).toFixed(2)
+        console.log(puntuacion)
         sinopsis = datos.overview
         estado = datos.status
         lenguajeOriginal = datos.original_language
        
         if(urlTrailerYoutube == undefined){
             urlTrailerYoutube=datos.homepage
-        }
+            if(urlTrailerYoutube != undefined){
+                console.log("No hay trailer")
+            }
        
+        }
     } catch {
-        console.log("error al cargar los datos")
+            console.log("error al cargar los datos")
     }
    
+    console.log(urlTrailerYoutube)
+    const HaveATrailer = function(urlTrailerYoutube){
+        console.log(urlTrailerYoutube)
+        if (urlTrailerYoutube==undefined){
+            return   <NavLink className={"trailer-pc"}>No hay Trailer</NavLink>            
+        }else{
+            return <NavLink className={"trailer-pc"} to={urlTrailerYoutube}>Trailer</NavLink>
+        }
+
+    }
 
     return (
         <>
@@ -98,7 +114,10 @@ export default function PagPelisConcret() {
 
                 <div className="caja-principal-pc">
                     <div className="caja-imagen-pc">
-                        <img className="imagen-pc-peli" src={urlImage}></img>
+                        {
+                            Ft.HaveImage(urlImage)
+
+                        }
                     </div>
                     <div className="caja-datos-pc">
 
@@ -122,7 +141,12 @@ export default function PagPelisConcret() {
                             </div>
                             <p className="sinopsis-pc">{sinopsis} </p>
                         </div>
-                        <NavLink className={"trailer-pc"} to={urlTrailerYoutube}>Trailer</NavLink>
+                        {
+
+                            HaveATrailer()
+                            
+                        }   
+                        
                     </div>
                 </div>
             </div>
