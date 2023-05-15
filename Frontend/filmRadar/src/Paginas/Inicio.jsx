@@ -1,21 +1,19 @@
 import Menu from "../Componentes/Menu"
 import "./style/inicio.css"
+
 import Video from "../assets/FIMRadarVideo.mp4"
 import MenuBot from "../Componentes/MenuBot"
 import { NavLink } from "react-router-dom"
-import {usuarios} from "../../../../backend/src/functions.js"
+
+import { useEffect } from "react"
 
 
 
 export default function Inicio(){
 
-    const getData = async () => {
-        console.log(await usuarios())
-    }
     
-    getData()
-    
-    
+
+
     return (
         <>
         

@@ -1,10 +1,11 @@
 import { NavLink, useNavigate, useParams } from "react-router-dom"
 import Menu from "../Componentes/Menu"
 import MenuBot from "../Componentes/MenuBot"
-import { useEffect, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 import "./style/paginaConcret.css"
 import Ft from "../funtions/functions"
 import EstrellaFav from "../Componentes/Estrella"
+import Loader from "../Componentes/loader"
 
 export default function PagPelisConcret() {
 
@@ -19,7 +20,7 @@ export default function PagPelisConcret() {
 
     const [re, setRe] = useState([]);
     const [ResultSearhc, setRS] = useState(false);
-
+   
     let urlImagen = ``;
     let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.id}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es `
 
@@ -42,6 +43,7 @@ export default function PagPelisConcret() {
 
         }
     }, [])
+    let urlTrailerYoutube ;
     let urlDataTrailer = `https://api.themoviedb.org/3/movie/${datosPeli.id}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
     const [dataTrailer, setDataTrailer] = useState([])
     const obtenerDatosVideosTrailer=  useEffect(() => {
@@ -51,13 +53,13 @@ export default function PagPelisConcret() {
             fetch(urlDataTrailer).then(response => response.json()).then(data => setDataTrailer(data["results"])).
                 catch(error => console.log(error))
         }
-    }, [urlDataTrailer])
-    let urlTrailerYoutube;
+    }, [])
+   
     try{
         obtenerDatosVideosTrailer
         let KeyTrailer = dataTrailer[dataTrailer.length-1]["key"]
         
-     urlTrailerYoutube= `https://www.youtube.com/watch?v=${KeyTrailer}`
+     urlTrailerYoutube=(`https://www.youtube.com/watch?v=${KeyTrailer}`)
     }catch{
         console.log("error al leer la key")
     }
@@ -79,30 +81,38 @@ export default function PagPelisConcret() {
         titulo = datos.title
         fechaEstreno = datos.release_date
         puntuacion =datos.vote_average
-        puntuacion= parseFloat(puntuacion).toFixed(2)
+        
         console.log(puntuacion)
         sinopsis = datos.overview
         estado = datos.status
         lenguajeOriginal = datos.original_language
-       
-        if(urlTrailerYoutube == undefined){
-            urlTrailerYoutube=datos.homepage
-            if(urlTrailerYoutube != undefined){
+        linkTrailerOficial=datos.homepage;
+
+            if(urlTrailerYoutube == undefined){
                 console.log("No hay trailer")
             }
        
-        }
+
     } catch {
             console.log("error al cargar los datos")
     }
    
-    console.log(urlTrailerYoutube)
+   
     const HaveATrailer = function(urlTrailerYoutube){
-        console.log(urlTrailerYoutube)
+      console.log(urlTrailerYoutube, linkTrailerOficial)
         if (urlTrailerYoutube==undefined){
             return   <NavLink className={"trailer-pc"}>No hay Trailer</NavLink>            
         }else{
-            return <NavLink className={"trailer-pc"} to={urlTrailerYoutube}>Trailer</NavLink>
+            if(linkTrailerOficial==undefined  || linkTrailerOficial==""){
+                return   <NavLink className={"trailer-pc"}>No hay Trailer</NavLink>   
+            }
+            if(urlTrailerYoutube==undefined){
+                return <NavLink className={"trailer-pc"} to={linkTrailerOficial}>Trailer</NavLink>
+            }
+            else{
+                return <NavLink className={"trailer-pc"} to={urlTrailerYoutube}>Trailer</NavLink>
+            }
+            
         }
 
     }
@@ -110,14 +120,32 @@ export default function PagPelisConcret() {
     return (
         <>
             <Menu></Menu>
+            <Suspense fallback={<Loader></Loader>}> 
+
+            
             <div className="caja-peli-pc">
 
                 <div className="caja-principal-pc">
                     <div className="caja-imagen-pc">
+                    <Suspense fallback={<Loader></Loader>}>
                         {
-                            Ft.HaveImage(urlImage)
+                           
+                               
+                                    
+                                        Ft.HaveImage(urlImage)
+                               
+                                    
+                                    
+                                    
+                        
+                                   
+                            
+                                
+                           
+                           
 
                         }
+                         </Suspense>
                     </div>
                     <div className="caja-datos-pc">
 
@@ -143,13 +171,14 @@ export default function PagPelisConcret() {
                         </div>
                         {
 
-                            HaveATrailer()
+                            HaveATrailer(urlTrailerYoutube)
                             
                         }   
                         
                     </div>
                 </div>
             </div>
+            </Suspense>
             <MenuBot></MenuBot>
         </>
 

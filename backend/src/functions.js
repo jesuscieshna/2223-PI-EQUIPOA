@@ -1,4 +1,4 @@
-import "dotenv/config.js"
+
 import { response } from "express";
 function sayHello(){
     console.log("Texto de prueba para comprobar que la funcion sayHello se exporta e importa correctamente desde el archivo functions.js")
@@ -25,7 +25,7 @@ function returnMovieSearch(name){
     return(re)
 }
 const usuarios = async () => {
-    const data = (await fetch("http://localhost:3001/api/users")).json()
+    const data = (await fetch("http://localhost:3004/api/users")).json()
     console.log(data)
     return data
 }

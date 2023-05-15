@@ -1,9 +1,12 @@
 import MenuBot from "../Componentes/MenuBot"
 import Menu from "../Componentes/Menu"
 import "./style/TopPelis.css"
-import Top from "../Componentes/Top"
-import { useEffect, useState } from "react";
+
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Loader from "../Componentes/loader";
+const Top = React.lazy(() =>import("../Componentes/Top.jsx"))
+
 export default function TopPelis() {
     const navigate = useNavigate();
 
@@ -13,7 +16,7 @@ export default function TopPelis() {
 
     const [re, setRe] = useState([]);
     const [ResultSearhc, setRS] = useState(false);
-    let page = 1;
+   
     useEffect(() => {
 
 
@@ -55,6 +58,7 @@ export default function TopPelis() {
 
             <div className="cuerpo-principal">
                 <ol className="listTop">
+                    <Suspense fallback={<Loader></Loader>}>
                     {
                         
                             data.map((peli, i) => {
@@ -67,6 +71,7 @@ export default function TopPelis() {
                             })
                           
                     }
+                    </Suspense>
                 </ol>
 
             </div>

@@ -13,6 +13,11 @@ const HaveImage = function(urlImage){
 
    }
 
+
+
+
+
 export default{
-    HaveImage
+    HaveImage,
+
 } 

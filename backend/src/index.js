@@ -30,9 +30,9 @@ const pepe = new models.usermodel({
 
 
 const usuarios = async () => {
-    const data = (await fetch("http://localhost:3001/api/users")).json()
+    const data = (await fetch("http://localhost:3004/api/users")).json()
     console.log(data)
     return data
 }
 
-console.log(await usuarios())
+

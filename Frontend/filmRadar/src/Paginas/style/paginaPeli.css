@@ -1,11 +1,40 @@
 .pelisResulSearch{
 
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(5em, 15em));
+    grid-template-columns: repeat(auto-fit,minmax(25px, 15em));
     grid-auto-flow: row dense;
     justify-content: center;
-    padding-bottom: 5em;
+    padding: 0;
+    padding-bottom: 4em;
     padding-top: 2em;
+    margin: 0;
+    gap: 8.7em;
+}
+#botonMostrarMas{
+    display: flex;
+    justify-content: center;
+}
+.botonMostrarMas{
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    background-color: #DA9B44;
+    padding: 2em;
+    margin-bottom: 10em;
+    justify-content: center;
+}
+.botonMostrarMas:hover{
+    background-color: #9D1B51;
+}
+#Cargador{
     
-    gap: 10em;
+    padding: 0;
+
+
+    margin-bottom: 10em;
+   justify-content: center;
+    height: 5em;
+    width: 5em;
+    margin-bottom: 2em;
+    display: none;
 }

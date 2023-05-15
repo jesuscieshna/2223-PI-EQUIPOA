@@ -1,10 +1,12 @@
 
 import { NavLink, useParams } from "react-router-dom"
-import imagen from "../assets/Avatar_El_sentido_del_agua-722646748-large.jpg"
+
 import "./style/pelicularesult.css"
 import ButonVermas from "./vermasBoton"
 import sinImage from "../assets/icons8-foto.svg"
 import Ft from "../funtions/functions"
+import { Suspense } from "react"
+import Loader from "./loader"
 
 export default function PeliculaResult(props){
       
@@ -14,7 +16,11 @@ export default function PeliculaResult(props){
     
    
     return (
-        <>
+        
+    <>
+    <Suspense fallback={<Loader></Loader>}>
+
+  
             <div  className="cajon-prinicipal-prs" >
                 <div className="titulo-peli-rsh" > 
                     <h3>{props.titulo}</h3>
@@ -25,14 +31,13 @@ export default function PeliculaResult(props){
                         Ft.HaveImage(urlImage)
 
                     }
-                    
                 </div>
                 <div className="cajon-verMas-prs">
                     <ButonVermas id={props.id} urlImage={urlImage}></ButonVermas>
                 </div>
             </div>
-
-        </>
+    </Suspense>
+    </>
 
     )
 

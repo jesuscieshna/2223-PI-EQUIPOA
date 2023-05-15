@@ -1,98 +1,148 @@
 import { useParams, useNavigate } from "react-router-dom"
 import Menu from "../Componentes/Menu"
 import MenuBot from "../Componentes/MenuBot"
-import PeliculaResult from "../Componentes/PeliculaResult"
+
+import React, { Suspense } from "react"
 import "./style/paginaPeli.css"
-
-
-
-
 import { useEffect, useState } from "react"
 import Loader from "../Componentes/loader"
+import InfiniteScroll from "react-infinite-scroll-component"
+
+const PeliculaResult = React.lazy(() =>
+
+  import("../Componentes/PeliculaResult")
+)
 
 export default function PagPeli() {
-  
-
 
   const navigate = useNavigate();
   let { searh } = useParams();
+  const [limitPage, setLimitPage] = useState(1);
 
-  const [loaderOn, setLoaderOn] = useState(false);
-  const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
-
+  const  api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
+  const [total_results, setTotalResults] = useState(0);
   const [re, setRe] = useState([]);
   const [ResultSearhc, setRS] = useState(false);
-  let page = 1;
+  const [finPag, setFinpag] = useState(false);
+  const [isloading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [hasMore,setHasMore] = useState(true);
+
+ function followPage(){
+ 
+  if(page<total_results){
+    
+      document.getElementById("botonMostrarMas").style.display="none";
+      document.getElementById("Cargador").style.display="block";
+      setTimeout(() => {
+        if(isloading==true){
+          document.getElementById("Cargador").style.display="none";
+          document.getElementById("botonMostrarMas").style.display="block";
+       
+        }
+        if(page==total_results){
+          document.getElementById("botonMostrarMas").style.display="none";
+          document.getElementById("Cargador").style.display="none";
+        }
+        setPage((previeMovis) => previeMovis+1)
+       }, 2000);
+       
+      
+  }  
+
+  
+   
+   
+   
+  }
+  
+ 
+  
   useEffect(() => {
-
-
+      
+    
     return () => {
+      
+     
       fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searh}&page=${page}&language=es`).
         then(response => response.json()).then(data => {
-          setRe([data])
-          var total_results;
+          setRe((previeMovis) => previeMovis.concat(data["results"]));
+         
+          var total_result;
           var total_page;
-
-        
-          total_results = data["total_results"] ? true : false;
-          total_page = data["total_pages"];
-
-          console.log(total_page)
-          setRS(total_results)
+          setTotalResults(data["total_results"])
+          total_result = data["total_results"] ? true : false;
+          setTotalResults(data["total_results"])
+          setLimitPage(total_page)
+          setHasMore(data.page<data["total_pages"])
+          setRS(total_result)
+          setIsLoading(true)
+          console.log(ResultSearhc)
         })
         .catch(error => console.log(error))
 
+    }}, [page,searh]);
+  
+    console.log(re)
+
+    if(ResultSearhc ==false){
+      navigate("/ResultSearchNot")
     }
-  }, [])
-
   
-  
-
-
-  let data = [];
-  if (ResultSearhc != false) {
-
-    re.map((peli) => {
-
-
-      data = peli["results"]
-
-    })
-  } else { 
-    navigate("/ResultSearchNot")
-  }
-
-  let estadoCarga=false;
-
-
-
-
 
 
   return (
-    <>
+    <>     
+      <Menu titulo={"Resultados"}></Menu>
+        
+      
 
      
-      <Menu titulo={"Resultados"}></Menu>
-      <ul  className="pelisResulSearch">
-      
+     
+          <Suspense fallback={<Loader></Loader>}>
+                <ul className="pelisResulSearch">
         
-        {
-          data.map((peli, i) => {
-            return <PeliculaResult titulo={peli["title"]} key={i} pathUrlImage={peli["poster_path"]} id={peli["id"]}
-            puntuacion={peli["vote_average"]}>
-
-
-            </PeliculaResult>
-
+        
+                {
+                  
+                    re.map((peli, id) => {
+                      
+                      return (
           
-            })
-
-        }
-
-
-
-      </ul>
+                          <PeliculaResult titulo={peli["title"]} key={id} pathUrlImage={peli["poster_path"]} id={peli["id"]}
+                          puntuacion={peli["vote_average"]}> </PeliculaResult>
+          
+          
+                      )
+                        
+                    
+        
+        
+                        
+                    })
+        
+                }
+               
+                </ul>
+            
+                <div>
+              <div id="botonMostrarMas">
+                  <button className="botonMostrarMas" onClick={
+                      followPage}>Mostrar más</button>
+                </div>    
+             
+            </div>
+                  <div id="Cargador"className="anim-box">
+                      <div className="anim-interieur">
+                          <div className="rect rect1"></div>
+                          <div className="rect rect2"></div>
+                          <div className="rect rect3"></div>
+                          <div className="rect rect4"></div>
+                          <div className="rect rect5"></div>
+                      </div>
+                  </div>
+           </Suspense>
+     
       <MenuBot></MenuBot>
     </>
   )
