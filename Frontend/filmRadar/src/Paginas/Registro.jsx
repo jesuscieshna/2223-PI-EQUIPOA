@@ -12,6 +12,7 @@ export default function Registro(){
                 <Menu ></Menu>
                 <body className="cuerpo-inicio">
                     <div className="subcaja-inicio">
+                        <h1>Registrarse</h1>
                         <form className="formularioInicio">
                             <h3>Usuario</h3>
                             <input type="text" placeholder="Nombre de usuario, telefono o email"></input>

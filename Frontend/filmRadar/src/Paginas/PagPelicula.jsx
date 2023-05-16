@@ -12,13 +12,10 @@ const PeliculaResult = React.lazy(() =>
 
   import("../Componentes/PeliculaResult")
 )
-
 export default function PagPeli() {
-
   const navigate = useNavigate();
   let { searh } = useParams();
   const [limitPage, setLimitPage] = useState(1);
-
   const  api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
   const [total_results, setTotalResults] = useState(0);
   const [re, setRe] = useState([]);
@@ -29,45 +26,27 @@ export default function PagPeli() {
   const [hasMore,setHasMore] = useState(true);
 
  function followPage(){
- 
   if(page<total_results){
-    
       document.getElementById("botonMostrarMas").style.display="none";
       document.getElementById("Cargador").style.display="block";
       setTimeout(() => {
         if(isloading==true){
           document.getElementById("Cargador").style.display="none";
           document.getElementById("botonMostrarMas").style.display="block";
-       
         }
-        if(page==total_results){
+        if(page==total_results-1){
           document.getElementById("botonMostrarMas").style.display="none";
           document.getElementById("Cargador").style.display="none";
         }
         setPage((previeMovis) => previeMovis+1)
-       }, 2000);
-       
-      
+       }, 1000 );
   }  
-
-  
-   
-   
-   
   }
-  
- 
-  
   useEffect(() => {
-      
-    
     return () => {
-      
-     
       fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searh}&page=${page}&language=es`).
         then(response => response.json()).then(data => {
-          setRe((previeMovis) => previeMovis.concat(data["results"]));
-         
+          setRe((previeMovis) => previeMovis.concat(data["results"]))
           var total_result;
           var total_page;
           setTotalResults(data["total_results"])
@@ -77,7 +56,6 @@ export default function PagPeli() {
           setHasMore(data.page<data["total_pages"])
           setRS(total_result)
           setIsLoading(true)
-          console.log(ResultSearhc)
         })
         .catch(error => console.log(error))
 
@@ -88,49 +66,24 @@ export default function PagPeli() {
     if(ResultSearhc ==false){
       navigate("/ResultSearchNot")
     }
-  
-
-
   return (
     <>     
       <Menu titulo={"Resultados"}></Menu>
-        
-      
-
-     
-     
           <Suspense fallback={<Loader></Loader>}>
                 <ul className="pelisResulSearch">
-        
-        
                 {
-                  
                     re.map((peli, id) => {
-                      
                       return (
-          
                           <PeliculaResult titulo={peli["title"]} key={id} pathUrlImage={peli["poster_path"]} id={peli["id"]}
                           puntuacion={peli["vote_average"]}> </PeliculaResult>
-          
-          
                       )
-                        
-                    
-        
-        
-                        
                     })
-        
                 }
-               
                 </ul>
-            
                 <div>
               <div id="botonMostrarMas">
-                  <button className="botonMostrarMas" onClick={
-                      followPage}>Mostrar más</button>
+                  <button className="botonMostrarMas" onClick={followPage}>Mostrar más</button>
                 </div>    
-             
             </div>
                   <div id="Cargador"className="anim-box">
                       <div className="anim-interieur">
@@ -142,7 +95,6 @@ export default function PagPeli() {
                       </div>
                   </div>
            </Suspense>
-     
       <MenuBot></MenuBot>
     </>
   )
