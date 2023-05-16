@@ -10,8 +10,7 @@ export default function InicioSesion(){
     const navigate = useNavigate()
     const [datos, setDatos] = useState([])
     useEffect(() => {
-      return () => { fetch("http://localhost:3004/api/users").then(respose => respose.json()).then(user => setDatos(user)).catch(error => console.log(error))
-      }
+      return () => { fetch("http://localhost:3004/api/users").then(respose => respose.json()).then(user => setDatos(user)).catch(error => console.log(error))}
     }, [])
     console.log(datos)
 const ObtencionDatosFomr = function(){

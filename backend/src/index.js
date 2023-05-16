@@ -15,17 +15,14 @@ const port = process.env.PORT || 8001;
 
 app.use('/api/users', routeuser)
 
-app.listen(port, () => {
-    console.log(`listening at http://localhost:${port}`);
-    sayHello()
-})
 
 await dbConnect()
 console.log("Conectado a base de datos")
 
 const pepe = new models.usermodel({
-    username:"hsfk",
-    email:"mksdf@jh.com"
+    username:"Angel",
+    email:"ange@jh.com",
+    password:"asdasd"
 })
 
 
@@ -36,3 +33,5 @@ const usuarios = async () => {
 }
 
 
+
+pepe.save()
