@@ -5,7 +5,6 @@ import cors from "cors";
 import dbConnect from "./config/mongodb.js";
 import routeuser from "./routes/users.js";
 
-
 const app = express();
 
 app.use(cors());
