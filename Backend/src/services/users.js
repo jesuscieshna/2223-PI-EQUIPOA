@@ -13,7 +13,6 @@ async function getUser(nombre) {
 }
 
 async function createUser(user){
-    const response = await 
 }
 
 export default {getUsers, getUser, createUser}
