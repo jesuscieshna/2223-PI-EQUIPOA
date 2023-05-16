@@ -10,4 +10,12 @@ const getItem = async (req, res) => {
     res.send(data)
 }
 
-export default {getItems, getItem}
+const createItem = async (req, res) => {
+    const { body } = req;
+    const data = await usermodel.create(body)
+    //const body = req.body; desestructuracion
+    res.send({data})
+
+}
+
+export default {getItems, getItem, createItem}
