@@ -4,7 +4,10 @@ import Video from "../assets/FIMRadarVideo.mp4"
 import MenuBot from "../Componentes/MenuBot"
 import { NavLink } from "react-router-dom"
 import { useEffect } from "react"
+
+
 export default function Inicio(){
+    
     return (
         <>
         <Menu titulo="Inicio"></Menu>

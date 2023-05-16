@@ -23,14 +23,16 @@ const ObtencionDatosFomr = function(){
         console.log(IsContraseñaNUll , IsUserNull)
         const validateInicio =  function(){
          return  functions.IniciarSesion(contraseña,userOrEmail,datos)
-           }
-      
+           }      
            log=validateInicio()
            console.log(log)
-         
-
+           if(log.userNotFound){
             navigate("/")
+           }else{
+                window.alert("Usuario no enconstrado, asegurese de que has introducido los datos correctamente")
+           }
            
+            
 
   }
     return(
@@ -42,9 +44,9 @@ const ObtencionDatosFomr = function(){
                     <h1>Inicio Sesion</h1>
                     <form  className="formularioInicio">
                         <h3>Usuario</h3>
-                        <input  id="userOrEmail" type="text" placeholder="Nombre de usuario, telefono o email"></input>
+                        <input className="usernameI" required={true} id="userOrEmail" type="text" placeholder="Nombre de usuario, telefono o email"></input>
                         <h3>Contraseña</h3>
-                        <input  id="contraseña" type="password" placeholder="Introduce la contraseña"></input>
+                        <input className="passwordI" required={true} id="contraseña" type="password" placeholder="Introduce la contraseña"></input>
                         <div  className="botonesDeRegistoroEInicioIni">
                             <input type="submit" onClick={ObtencionDatosFomr} className="botonIniciosesio" value={"Iniciar Sesion"}></input>
                             <NavLink className={"enlaceRegistro"} to="/Registro">Registrarse</NavLink>

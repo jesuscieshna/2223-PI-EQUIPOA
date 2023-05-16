@@ -49,7 +49,10 @@
 .botonIniciosesio{
     width: 8em;
     font-size: 1em;
+    margin-left: 0;
+    margin-right: 0;
     border: 0;
+    border-radius: 0;
     color: #fff;
     background-color: transparent;
 }
@@ -64,7 +67,11 @@
     flex-direction: row;
 }
 @media (max-width:768px) {
-    .formularioInicio input{
-        width: 20em;
-    }
+   .usernameI{
+    width: 19em;
+
+   }
+   .passwordI{
+    width: 19em;
+   }
 }
