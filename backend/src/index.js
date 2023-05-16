@@ -14,6 +14,9 @@ const port = process.env.PORT || 8001;
 
 app.use('/api/users', routeuser)
 
+app.listen(port, () => {
+    console.log(`listening at http://localhost:${port}`)
+})
 
 await dbConnect()
 console.log("Conectado a base de datos")
