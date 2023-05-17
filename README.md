@@ -41,13 +41,28 @@ Aplicación MERN para la búsqueda, clasificación y puntuación de películas. 
 
 ## <br />ESTRUCTURA DE DATOS
 
-De momento en la base de datos guardaremos usuarios(nombre str, contraseña str, notas int[], comentarios str[], por ver str[]). Estos datos serán introducidos por el usuario a lo largo del uso de la aplicación.
+BASE DE DATOS MONGO INTERNA<br />
+Users<br />
+-username:string unique <br />
+-email: string unique <br />
+-password: string <br />
 
-En cuanto a la fuente de datos externa en principio usaremos la API de IMDB para obtener las películas (títulos, portadas, categorías, director, reparto...).
-[IMDB API info](https://imdb-api.com/)
+Puntuations <br />
+-username:string<br />
+-films[{ <br />
+    film:string <br />
+    Puntuation:number <br />
+}]<br />
 
- <br />[Figma del proyecto](https://www.figma.com/proto/z9CoecW5NXQSLS44S0t7dD/Pagina-Pelis?node-id=11-3&scaling=scale-down&page-id=0%3A1)
-
+Comments <br />
+-username <br />
+-films[{ <br />
+    film:string <br />
+    comment:string <br />
+}] <br />
+<br />
+En cuanto a la fuente de datos externa usaremos la API de TMDB para obtener las películas (títulos, portadas, categorías, director, reparto...).
+[TMDB API info](https://developer.themoviedb.org/reference/intro/getting-started)
 
 
 
