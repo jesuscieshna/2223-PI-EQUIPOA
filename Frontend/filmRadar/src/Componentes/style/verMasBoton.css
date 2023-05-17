@@ -6,7 +6,8 @@
     padding-left: 0;
     padding-right: 0;
     width: 100%;
-
+    font-size: medium;
+    
 }
 .ver-mas-top:hover{
     background-color:#9D1B51;
@@ -17,16 +18,17 @@
 .ver-mas-fav{
     display: flex;
     flex-direction: row;
-
+    font-size: 1em;
     background-color: #DA9B44;
     width: 100%;
    
 }
 .ver-mas-fav img{
   
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 2em;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 1.2em;
+    height: auto;
 }
 .ver-mas-fav img:hover {
 

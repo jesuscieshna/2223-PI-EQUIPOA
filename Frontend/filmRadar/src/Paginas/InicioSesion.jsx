@@ -5,12 +5,13 @@ import "./style/inicioSesion.css"
 import functions from "../funtions/functions"
 import { useEffect } from "react"
 import { useState } from "react"
+import services from "../../../../backend/src/services/users"
 
 export default function InicioSesion(){
     const navigate = useNavigate()
     const [datos, setDatos] = useState([])
     useEffect(() => {
-      return () => { fetch("http://localhost:3004/api/users").then(respose => respose.json()).then(user => setDatos(user)).catch(error => console.log(error))}
+      return () => { services.getUsers().then(respose => setDatos(respose)).catch(error => console.log(error))}
     }, [])
     console.log(datos)
 const ObtencionDatosFomr = function(){
@@ -43,7 +44,7 @@ const ObtencionDatosFomr = function(){
                     <h1>Inicio Sesion</h1>
                     <form  className="formularioInicio">
                         <h3>Usuario</h3>
-                        <input className="usernameI" required={true} id="userOrEmail" type="text" placeholder="Nombre de usuario, telefono o email"></input>
+                        <input className="usernameI" required={true} id="userOrEmail" type="text" placeholder="Nombre de usuario o email"></input>
                         <h3>Contraseña</h3>
                         <input className="passwordI" required={true} id="contraseña" type="password" placeholder="Introduce la contraseña"></input>
                         <div  className="botonesDeRegistoroEInicioIni">

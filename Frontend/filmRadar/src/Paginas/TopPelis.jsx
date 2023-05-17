@@ -16,38 +16,60 @@ export default function TopPelis() {
 
     const [re, setRe] = useState([]);
     const [ResultSearhc, setRS] = useState(false);
-   
+    const [page, setPage] = useState(0);
+    const [total_results, setTotalResults] = useState(0);
+    const [isloading, setIsLoading] = useState(true);
+    function followPage(){
+        if(page<total_results){
+            document.getElementById("botonMostrarMas").style.display="none";
+            document.getElementById("Cargador").style.display="block";
+            setTimeout(() => {
+              if(isloading==true){
+                document.getElementById("Cargador").style.display="none";
+                document.getElementById("botonMostrarMas").style.display="block";
+              }
+              if(page==total_results-1){
+                document.getElementById("botonMostrarMas").style.display="none";
+                document.getElementById("Cargador").style.display="none";
+              }
+              setPage((page) => page+1)
+             }, 1000 );
+        }  
+        }
     useEffect(() => {
 
 
         return () => {
-            fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=es`).
+            fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=${page+1}&language=es`).
                 then(response => response.json()).then(data => {
-                    setRe([data])
+                    if(page==0){
+
+                        setRe(data["results"])
+                    }else{
+                        setRe((previeMovis) => previeMovis.concat(data["results"]))
+
+                    }
+                    console.log(page)
+                    console.log(re)
                     var total_results;
                     var total_page;
-
+                    
                    
                     total_results = data["total_results"] ? true : false;
                     total_page = data["total_pages"];
-
+                    setTotalResults(data["total_results"])
                     setRS(total_results)
                 })
                 .catch(error => console.log(error))
 
         }
-    }, [])
+    }, [page])
+    
  
     let data = [];
-    if (ResultSearhc != false) {
+    if (ResultSearhc == false) {
 
-        re.map((peli) => {
-
-
-            data = peli["results"]
-
-        })
-    } else {
+   
         navigate("/ResultSearchNot")
     }
 
@@ -61,21 +83,35 @@ export default function TopPelis() {
                     <Suspense fallback={<Loader></Loader>}>
                     {
                         
-                            data.map((peli, i) => {
-                                if(i<10){
+                            re.map((peli, i) => {
+                               
+                                
                                     return <Top fechaEstreno={peli["release_date"]} puntuacion={peli["vote_average"]} titulo={peli["title"]}
-                                    key={i} pathUrlImage={peli["poster_path"]}  numeroPos={i} haveTrailer={peli[""]}
+                                    key={peli["id"]} pathUrlImage={peli["poster_path"]}  numeroPos={i} haveTrailer={peli[""]}
                                   id={peli["id"]}></Top>
-                                }
+                              
+
                              
                             })
                           
                     }
                     </Suspense>
                 </ol>
-
+                <div id="botonMostrarMas">
+                  <button className="botonMostrarMas" onClick={followPage}>Mostrar más</button>
+                </div>    
             </div>
-
+                <div id="Cargador"className="anim-box">
+                      <div className="anim-interieur">
+                          <div className="rect rect1"></div>
+                          <div className="rect rect2"></div>
+                          <div className="rect rect3"></div>
+                          <div className="rect rect4"></div>
+                          <div className="rect rect5"></div>
+                      </div>
+                </div>
+            
+                    
             <MenuBot></MenuBot>
 
 

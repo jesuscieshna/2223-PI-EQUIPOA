@@ -1,14 +1,15 @@
 
 .listTop{
         
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(40px, 25em));
+    grid-auto-flow: row dense;
+    justify-content: center;
     padding: 0;
-    padding-top: 1em;
+    padding-bottom: 4em;
+   
     margin: 0;
-    list-style: none;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+    gap: 4em;
 }
 @media (max-width: 768px) {
 

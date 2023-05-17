@@ -15,7 +15,9 @@ export default function Registro(){
                         <h1>Registrarse</h1>
                         <form className="formularioInicio">
                             <h3>Usuario</h3>
-                            <input type="text" placeholder="Nombre de usuario, telefono o email"></input>
+                            <input type="text" placeholder="Nombre de usuario "></input>
+                            <h3>Email</h3>
+                            <input type="text" placeholder="Introduce tu email"></input>
                             <h3>Contraseña</h3>
                             <input type="password" placeholder="Introduce la contraseña"></input>
                             <div className="botonesDeRegistoroEInicioIni">
