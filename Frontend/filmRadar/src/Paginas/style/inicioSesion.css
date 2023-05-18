@@ -63,6 +63,9 @@
 .enlaceRegistro:hover{
     background-color: #DA9B44;
 }
+.enlaceRegistro:active{
+    background-color: #DA9B44;
+}
 .botonIniciosesio{
     cursor: pointer;
     width: 12em;
@@ -81,6 +84,9 @@
 .botonIniciosesio:hover{
     background-color: #DA9B44;
 }
+.botonIniciosesio:active{
+    background-color: #DA9B44;
+}
 .botonesDeRegistoroEInicioIni{
     gap: 2em;
     padding-top: 2em;
@@ -94,19 +100,25 @@
         margin-bottom: 2em;
     }
     input{
+        outline-offset: 0;
         width: 50%;
         width: 50%;
     }
    .usernameI{
+    outline-offset: 0;
     width: 5;
-
+    
    }
    .passwordI{
+    outline-style: none;
     width: 50%;
    }
    .botonesDeRegistoroEInicioIni{
     gap: 0;
    }
+   .botonIniciosesio:active{
+    background-color: #DA9B44;
+}
    .botonIniciosesio{
     width: 10em;
     padding-left: 0;
@@ -117,4 +129,10 @@
     padding-left: 0;
     padding-right: 0;
    }
+   .enlaceRegistro:hover{
+    background-color: #DA9B44;
+}
+.enlaceRegistro:active{
+    background-color: #DA9B44;
+}
 }

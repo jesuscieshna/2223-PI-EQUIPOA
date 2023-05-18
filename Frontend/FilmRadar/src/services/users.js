@@ -13,22 +13,46 @@ async function getUser(nombre) {
 }
 
 async function createUser(usernameData, emailData, passwordData){
-    try{
-    const response = await fetch(`http://localhost:${port}/api/users`,{
-        method: 'POST',
-        body: JSON.stringify({
-            username: usernameData,
-            email: emailData,
-            password: passwordData,
-        }),
-        headers: {"Content-type": "application/json; charset=UTF-8"}
-    })
-    let respuesta = response.json()
-    console.log(respuesta)
-    }catch(error){
-        console.log(error)
-    }
+
+    let usuarios=[];
+   await  getUsers().then(users => {
+        usuarios=users
+    });
+   
+   
+   let isTrue=true;
+    function comprobarUserExit(){
+       let filter= usuarios.filter(user => user.username ==usernameData)
+       let secondfilter = filter.filter(users => users.email == emailData)
+       console.log(filter)
+        console.log(secondfilter)
  
+        if (filter.length >= 1 || secondfilter.length >= 1) {
+            return true;
+        }else{
+            return false;
+        }
+        
+        }
+    
+    console.log(comprobarUserExit())
+       
+    if( comprobarUserExit() == false){
+        console.log("Estoy aqui")
+      
+            const response = await fetch(`http://localhost:${port}/api/users`,{
+                method: 'POST',
+                body: JSON.stringify({
+                    username: usernameData,
+                    email: emailData,
+                    password: passwordData,
+                }),
+                headers: {"Content-type": "application/json; charset=UTF-8"}
+            })
+            let respuesta = await response.json()
+            
+            return true
 }
 
+}
 export default {getUsers, getUser, createUser} 

@@ -14,17 +14,24 @@ function rederigirReg(){
 
 const createUserFun = function(event){
     event.preventDefault()
-    console.log(event.target)
+  
     var username= document.getElementById("username").value
     var email= document.getElementById("email").value
     var password= document.getElementById("password").value
     const user = async function (username,email,password) {
 
-       sv.createUser(username,email,password)
+      return await sv.createUser(username,email,password)
       
     }
-        user(username,email,password)
-        event.target.reset()
+    
+       if( user(username,email,password) == true){
+        console.log("Se ha creado")
+        navegate("/")
+
+       }else{
+        console.log("")
+       }
+       
 
     }
 
@@ -46,7 +53,7 @@ const createUserFun = function(event){
                             <input type="password"  className="password" id="password" placeholder="Introduce la contraseña"></input>
                             
                             <div className="botonesDeRegistoroEInicioIni">
-                                <button onClick={createUserFun}  className="botonIniciosesio" value={"Registrase"}>Registrarse</button>
+                                <button onClick={createUserFun}  className="botonIniciosesio">Registrarse</button>
                                 <button className="enlaceRegistro" onClick={rederigirReg}>Iniciar Sesion </button>
                             </div>
                             

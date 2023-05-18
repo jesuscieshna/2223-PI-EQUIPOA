@@ -1,5 +1,5 @@
 .caja-windowAlert{
-       
+       z-index: 100;
     display: none;
     flex-direction: column;
     gap: 5em;

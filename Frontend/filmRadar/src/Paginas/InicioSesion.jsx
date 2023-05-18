@@ -9,7 +9,8 @@ import sv from "../services/users"
 import WindowAlertUserNotFound from "../Componentes/WindowAlertUserNotFound"
 
 export default function InicioSesion(){
-    
+
+
     const [datos, setDatos] = useState([])
     useEffect(() => {
 
@@ -18,31 +19,38 @@ export default function InicioSesion(){
       }
     }, [])
     const navegate = useNavigate()
+
 function rederigirReg(){
     navegate("/Registro")
         
         
 }
 const ObtencionDatosFomr = function(event){
-         event.preventDefault()
+    event.preventDefault()
         let contraseña = document.getElementById("contraseña").value
         let userOrEmail = document.getElementById("userOrEmail").value
         let log=[];
+        if(contraseña!=null && userOrEmail!=null ){
+            const validateInicio =  function(){
+                return  functions.IniciarSesion(contraseña,userOrEmail,datos)
+                  }      
+                  log=validateInicio()
+                
+                  if(log.userNotFound==true && log.userName!=''){
+                   navegate("/")
+                   console.log(log)
+                }else{
+                    event.target.reset()
+                    document.getElementById("alertU").style.display="flex"
+                   }
+        }
 
-        const validateInicio =  function(){
-         return  functions.IniciarSesion(contraseña,userOrEmail,datos)
-           }      
-           log=validateInicio()
-         
-           if(log.userNotFound){
-            navegate("/")
-           }else{
-              document.getElementById("alertU").style.display="flex"
-           }
+    }
+           
            
             
 
-  }
+  
     return(
 
         <>
@@ -51,13 +59,13 @@ const ObtencionDatosFomr = function(event){
             <div className="cuerpo-inicio">
                 <div className="subcaja-inicio">
                     <h1>Inicio Sesion</h1>
-                    <form  className="formularioInicio">
+                    <form onSubmit={ObtencionDatosFomr} className="formularioInicio">
                         <h3>Usuario</h3>
-                        <input className="usernameI"  id="userOrEmail" type="text" placeholder="Nombre de usuario o email"></input>
+                        <input className="usernameI"   id="userOrEmail" type="text" placeholder="Nombre de usuario o email"></input>
                         <h3>Contraseña</h3>
-                        <input className="passwordI"  id="contraseña" type="password" placeholder="Introduce la contraseña"></input>
+                        <input className="passwordI"   id="contraseña" type="password" placeholder="Introduce la contraseña"></input>
                         <div  className="botonesDeRegistoroEInicioIni">
-                            <button  onClick={ObtencionDatosFomr} className="botonIniciosesio">Iniciar Sesion</button>
+                            <button  onClick={ObtencionDatosFomr}  className="botonIniciosesio">Iniciar Sesion</button>
                             <button className={"enlaceRegistro"} onClick={rederigirReg}>Registrarse</button>
                         </div>
                     </form>

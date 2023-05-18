@@ -19,7 +19,7 @@ const IniciarSesion = function(Constraseña, User, datos) {
     let userNotFound = false;
     datos.forEach(userAc => {
             if(Constraseña == userAc.password && (User == userAc.username || User == userAc.email) ) {
-                console.log("encontrado")
+               
                 userNotFound=true
                 userName=userAc.username
             }
