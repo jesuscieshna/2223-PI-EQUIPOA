@@ -1,3 +1,4 @@
+import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
@@ -22,7 +23,8 @@ const userSchema = new mongoose.Schema(
         ],
     },
     {
-    versionKey:false
+        versionKey:false,
+        Timestamp:true
     }
 )
 

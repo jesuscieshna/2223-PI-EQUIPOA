@@ -3,7 +3,7 @@ import usermodel from "../models/users.js"
 const getItems = async (req, res) => {
     console.log("obtener items");
     const data = await usermodel.find({});
-    res.send(data);
+    res.send(data)
 }
 const getItem = async (req, res) => {
     console.log("obtener 1 item");
