@@ -14,8 +14,7 @@ export default function PagPelisConcret() {
     const [re, setRe] = useState([]);
     const [ResultSearhc, setRS] = useState(false);
     let urlImagen = ``;
-    let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.idPeli}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es `
-
+    let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.idPeli}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
     useEffect(() => {
         return () => {
             fetch(urlDatoId).
@@ -39,7 +38,7 @@ export default function PagPelisConcret() {
     }, [])
     try{
         obtenerDatosVideosTrailer
-        let KeyTrailer = dataTrailer[dataTrailer.length-1]["key"]
+        let KeyTrailer = dataTrailer[dataTrailer.length-2]["key"]
         urlTrailerYoutube=(`https://www.youtube.com/watch?v=${KeyTrailer}`)
     }catch{
         console.log("error al leer la key")
@@ -68,12 +67,6 @@ export default function PagPelisConcret() {
     } catch {
             console.log("error al cargar los datos")
     }
-   
-   
-
-
-    
-
     return (
         <>
             <Menu></Menu>
@@ -88,7 +81,6 @@ export default function PagPelisConcret() {
                          </Suspense>
                     </div>
                     <div className="caja-datos-pc">
-
                         <div className="estrellita-pc">
                             <EstrellaFav ></EstrellaFav>
                         </div>
@@ -102,22 +94,18 @@ export default function PagPelisConcret() {
                                 </div>
                                 <div >
                                     <h5 className="cajon-puntuacion">IMB<h5>{puntuacion}/10</h5></h5>
-
                                 </div>
                             </div>
                             <p className="sinopsis-pc">{sinopsis} </p>
                         </div>
                         {
                            Ft.HaveATrailer(urlTrailerYoutube,linkTrailerOficial)   
-                        }   
-                        
+                        }  
                     </div>
                 </div>
             </div>
             </Suspense>
             <MenuBot></MenuBot>
         </>
-
     )
-
 }

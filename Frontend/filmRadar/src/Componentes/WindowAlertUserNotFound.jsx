@@ -3,7 +3,7 @@ import "./style/windowAlertUserNotFound.css"
 import "react-router-dom"
 export default function WindowAlertUserNotFound(props){
 
-    const navigate = useNavigate()
+   
     function desactive(){
         document.getElementById("alertU").style.display="none"
     }
@@ -17,7 +17,6 @@ export default function WindowAlertUserNotFound(props){
             <div id="alertU" className="caja-windowAlert">
                 <h1 className="TextAlert">{props.text}</h1>
                 <span className="lineaCierreAlert">
-                    
                     <button onClick={desactive} className="continueOpeAlert">Continuar</button>
                 </span>
             </div>
