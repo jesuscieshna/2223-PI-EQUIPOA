@@ -20,18 +20,19 @@ const createUserFun = function(event){
     var password= document.getElementById("password").value
     const user = async function (username,email,password) {
 
-      return await sv.createUser(username,email,password)
+      return await sv.createUser(username,email,password).then(res => console.log(res))
       
     }
-    
-       if( user(username,email,password) == true){
-        console.log("Se ha creado")
-        navegate("/")
-
-       }else{
-        console.log("")
-       }
        
+          if(  user(username,email,password)  == true){
+            console.log("Se ha creado")
+            navegate("/")
+
+        }else{
+            document.getElementById("alertU").style.display="flex"
+            console.log("No creado")
+        }
+        
 
     }
 
@@ -40,7 +41,7 @@ const createUserFun = function(event){
     
             <>
                 <Menu ></Menu>
-                <WindowAlertUserNotFound id="alertU"></WindowAlertUserNotFound>
+                <WindowAlertUserNotFound tipe="R" textB="Iniciar Sesion"  text="No se pudo crear el usuaro, revise los datos" id="alertU"></WindowAlertUserNotFound>
                 <div className="cuerpo-inicio">
                     <div className="subcaja-inicio">
                         <h1 className="Reg">Registrarse</h1>

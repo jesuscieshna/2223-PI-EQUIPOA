@@ -40,7 +40,7 @@ const ObtencionDatosFomr = function(event){
                    navegate("/")
                    console.log(log)
                 }else{
-                    event.target.reset()
+                    
                     document.getElementById("alertU").style.display="flex"
                    }
         }
@@ -55,8 +55,8 @@ const ObtencionDatosFomr = function(event){
 
         <>
             <Menu></Menu>
-            <WindowAlertUserNotFound id="alertU"></WindowAlertUserNotFound>
-            <div className="cuerpo-inicio">
+            <WindowAlertUserNotFound textB="Registrarse" text="No se pudo iniciar sesion, revise los datos" id="alertU"></WindowAlertUserNotFound>
+           
                 <div className="subcaja-inicio">
                     <h1>Inicio Sesion</h1>
                     <form onSubmit={ObtencionDatosFomr} className="formularioInicio">
@@ -71,7 +71,7 @@ const ObtencionDatosFomr = function(event){
                     </form>
                         <a className="enlaceRecuCon">¿Olvidaste la contraseña?</a>
                 </div>
-            </div>
+           
             <MenuBot>
             </MenuBot>
 

@@ -20,12 +20,11 @@ async function createUser(usernameData, emailData, passwordData){
     });
    
    
-   let isTrue=true;
+  
     function comprobarUserExit(){
        let filter= usuarios.filter(user => user.username ==usernameData)
        let secondfilter = filter.filter(users => users.email == emailData)
-       console.log(filter)
-        console.log(secondfilter)
+       
  
         if (filter.length >= 1 || secondfilter.length >= 1) {
             return true;
@@ -35,10 +34,10 @@ async function createUser(usernameData, emailData, passwordData){
         
         }
     
-    console.log(comprobarUserExit())
+    
        
     if( comprobarUserExit() == false){
-        console.log("Estoy aqui")
+    
       
             const response = await fetch(`http://localhost:${port}/api/users`,{
                 method: 'POST',
@@ -50,9 +49,11 @@ async function createUser(usernameData, emailData, passwordData){
                 headers: {"Content-type": "application/json; charset=UTF-8"}
             })
             let respuesta = await response.json()
-            
+
             return true
-}
+        }else{
+            return false
+        }
 
 }
 export default {getUsers, getUser, createUser} 
