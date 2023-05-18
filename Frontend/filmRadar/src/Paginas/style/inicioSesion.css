@@ -67,11 +67,18 @@
     flex-direction: row;
 }
 @media (max-width:768px) {
+    .Reg{
+        margin-bottom: 2em;
+    }
+    input{
+        width: 19em;
+        width: 19em;
+    }
    .usernameI{
-    width: 19em;
+    width: 15em;
 
    }
    .passwordI{
-    width: 19em;
+    width: 15em;
    }
 }

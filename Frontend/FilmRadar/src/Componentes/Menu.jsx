@@ -1,6 +1,6 @@
 import {  NavLink, useNavigate, useParams  } from "react-router-dom"
 import "./style/Menu.css"
-
+import filmRadar from "../assets/FilmRadar-removebg-preview.png"
 
 export default function Menu({titulo}){
    
@@ -17,7 +17,8 @@ export default function Menu({titulo}){
 
         <nav className="Menu">
             <div className="cajon-imagen">
-             <img className="logo" width={"20px"} height={"20px"}></img>
+             <h1 className="logo" >FilmRadar</h1>
+             <h1 className="logo2" >FR</h1>
             </div>
       
             <form className="cajon-buscador" onSubmit={rederigirAresultados}>

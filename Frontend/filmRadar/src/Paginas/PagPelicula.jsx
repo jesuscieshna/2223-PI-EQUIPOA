@@ -18,7 +18,7 @@ export default function PagPeli() {
   const [limitPage, setLimitPage] = useState(1);
   const  api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
   const [total_results, setTotalResults] = useState(0);
-  const [re, setRe] = useState([]);
+  const [re, setRe] = useState(null);
   const [ResultSearhc, setRS] = useState(false);
   const [finPag, setFinpag] = useState(false);
   const [isloading, setIsLoading] = useState(true);
@@ -72,10 +72,10 @@ export default function PagPeli() {
           <Suspense fallback={<Loader></Loader>}>
                 <ul className="pelisResulSearch">
                 {
-                    re.map((peli, id) => {
+                    re.map((peli) => {
                       return (
-                          <PeliculaResult titulo={peli["title"]} key={id} pathUrlImage={peli["poster_path"]} id={peli["id"]}
-                          puntuacion={peli["vote_average"]}> </PeliculaResult>
+                          <PeliculaResult titulo={peli["title"]} key={peli["id"]} pathUrlImage={peli["poster_path"]}
+                          puntuacion={peli["vote_average"]}></PeliculaResult>
                       )
                     })
                 }

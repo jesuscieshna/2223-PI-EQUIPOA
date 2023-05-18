@@ -1,0 +1,33 @@
+
+@media (max-width:768px) {
+    
+    .caja-windowAlert{
+       
+        display: flex;
+     
+     
+        word-wrap: normal;
+        justify-content: center;
+        align-items: center;
+        bottom: 0px;
+        top:0px;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%);;
+    }
+    
+    .TextAlert{
+        position: fixed;
+        
+        width: 50%;
+        font-size: 1em;
+        margin: 0;
+        
+    }
+
+
+
+}

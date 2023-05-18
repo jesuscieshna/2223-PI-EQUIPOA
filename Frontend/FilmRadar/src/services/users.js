@@ -13,18 +13,26 @@ async function getUser(nombre) {
 }
 
 async function createUser(usernameData, emailData, passwordData){
-
-    console.log(usernameData,emailData,passwordData)
-    const response = await fetch(`http://localhost:${port}/api/users`, {
+    
+    try{
+    const response = await fetch(`http://localhost:${port}/api/users`,{
         method: 'POST',
         body: JSON.stringify({
             username: usernameData,
             email: emailData,
-            password: passwordData
-        })
+            password: passwordData,
+        }),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
     })
     let respuesta = response.json()
     console.log(respuesta)
+}catch(error){
+    console.log(error)
+}
+
+   
+  
+   
 }
 
 export default {getUsers, getUser, createUser} 

@@ -46,6 +46,8 @@ const HaveATrailer = function(urlTrailerYoutube,linkTrailerOficial){
           
       }
     }
+
+    
 export default{
     HaveImage,
     IniciarSesion,

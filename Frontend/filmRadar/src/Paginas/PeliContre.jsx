@@ -8,19 +8,11 @@ import EstrellaFav from "../Componentes/Estrella"
 import Loader from "../Componentes/loader"
 
 export default function PagPelisConcret() {
-
     const datosPeli = useParams()
-    console.log(datosPeli)
-    
     const navigate = useNavigate();
-
-
-
     const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
-
     const [re, setRe] = useState([]);
     const [ResultSearhc, setRS] = useState(false);
-   
     let urlImagen = ``;
     let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.idPeli}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es `
 
@@ -66,8 +58,6 @@ export default function PagPelisConcret() {
         titulo = datos.title
         fechaEstreno = datos.release_date
         puntuacion =datos.vote_average
-        
-        console.log(puntuacion)
         sinopsis = datos.overview
         estado = datos.status
         lenguajeOriginal = datos.original_language
@@ -106,15 +96,12 @@ export default function PagPelisConcret() {
                             <h1 className="titulo-pc">{titulo}</h1>
                             <div className="fecha-puntuacion">
                                 <div className="datos-apate-fecha-etc">
-                                    
                                     <h4>{fechaEstreno}</h4>
                                     <h4>{estado}</h4>
                                     <h4>D.original: {lenguajeOriginal}</h4>
                                 </div>
-                               
                                 <div >
                                     <h5 className="cajon-puntuacion">IMB<h5>{puntuacion}/10</h5></h5>
-                                    
                                 </div>
                             </div>
                             <p className="sinopsis-pc">{sinopsis} </p>

@@ -6,6 +6,7 @@ import functions from "../funtions/functions"
 import { useEffect } from "react"
 import { useState } from "react"
 import sv from "../services/users"
+import WindowAlertUserNotFound from "../Componentes/WindowAlertUserNotFound"
 
 export default function InicioSesion(){
     const navigate = useNavigate()
@@ -16,20 +17,16 @@ export default function InicioSesion(){
         sv.getUsers().then(res => setDatos(res))
       }
     }, [])
-    
-    console.log(datos)
 const ObtencionDatosFomr = function(){
         let contraseña = document.getElementById("contraseña").value
         let userOrEmail = document.getElementById("userOrEmail").value
         let log=[];
-        const IsUserNull = userOrEmail==='' ? true : false;
-        const IsContraseñaNUll = contraseña==='' ? true : false;
-        console.log(IsContraseñaNUll , IsUserNull)
+
         const validateInicio =  function(){
          return  functions.IniciarSesion(contraseña,userOrEmail,datos)
            }      
            log=validateInicio()
-           console.log(log)
+         
            if(log.userNotFound){
             navigate("/")
            }else{
@@ -43,6 +40,7 @@ const ObtencionDatosFomr = function(){
 
         <>
             <Menu></Menu>
+            <WindowAlertUserNotFound></WindowAlertUserNotFound>
             <div className="cuerpo-inicio">
                 <div className="subcaja-inicio">
                     <h1>Inicio Sesion</h1>
