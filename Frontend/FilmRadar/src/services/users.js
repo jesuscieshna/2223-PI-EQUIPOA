@@ -14,10 +14,14 @@ async function getUser(nombre) {
     return user;
 }
 
-async function createUser(user){
+async function createUser(usernameData, emailData, passwordData){
     const response = await fetch(`http://localhost:${port}/api/users`, {
         method: 'POST',
-        body: json.stringify(user)
+        body: json.stringify({
+            username: usernameData,
+            email: emailData,
+            password: passwordData
+        })
     })
     respuesta = response.json()
     console.log(response)
