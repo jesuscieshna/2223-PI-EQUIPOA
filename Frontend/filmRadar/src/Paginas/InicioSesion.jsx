@@ -5,14 +5,18 @@ import "./style/inicioSesion.css"
 import functions from "../funtions/functions"
 import { useEffect } from "react"
 import { useState } from "react"
-import services from "../services/users.js"
+import sv from "../services/users"
 
 export default function InicioSesion(){
     const navigate = useNavigate()
     const [datos, setDatos] = useState([])
     useEffect(() => {
-      return () => { services.getUsers().then(respose => setDatos(respose)).catch(error => console.log(error))}
+
+      return () => {
+        sv.getUsers().then(res => setDatos(res))
+      }
     }, [])
+    
     console.log(datos)
 const ObtencionDatosFomr = function(){
         let contraseña = document.getElementById("contraseña").value

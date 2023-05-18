@@ -1,7 +1,5 @@
-import { json } from "express";
 
-const port = process.env.PORT
-
+const port = 3004
 async function getUsers() {
     const response = await fetch(`http://localhost:${port}/api/users`);
     const users = await response.json();
@@ -15,16 +13,18 @@ async function getUser(nombre) {
 }
 
 async function createUser(usernameData, emailData, passwordData){
+
+    console.log(usernameData,emailData,passwordData)
     const response = await fetch(`http://localhost:${port}/api/users`, {
         method: 'POST',
-        body: json.stringify({
+        body: JSON.stringify({
             username: usernameData,
             email: emailData,
             password: passwordData
         })
     })
-    respuesta = response.json()
-    console.log(response)
+    let respuesta = response.json()
+    console.log(respuesta)
 }
 
-export default {getUsers, getUser, createUser}
+export default {getUsers, getUser, createUser} 
