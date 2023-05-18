@@ -28,4 +28,4 @@ const userSchema = new mongoose.Schema(
     }
 )
 
-export default mongoose.model('users', userSchema); //TODO Corregir esta sintaxis
+export default mongoose.model('users', userSchema);

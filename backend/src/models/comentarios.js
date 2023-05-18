@@ -2,9 +2,9 @@ import mongoose, { Schema } from "mongoose";
 
 const commentSchema = new Schema(
     {
-        username: String,
+        id: String,
         comments:[{
-            film:String,
+            username:String,
             comment: String
         }],
     },

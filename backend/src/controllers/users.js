@@ -20,4 +20,8 @@ const createItem = async (req, res) => {
     res.send({data})
 
 }
+
+const updateItem = async (req, res) => {
+    //TODO permitir añadir pelis a `por ver` y cambiar contraseña
+}
 export default {getItems, getItem, createItem}

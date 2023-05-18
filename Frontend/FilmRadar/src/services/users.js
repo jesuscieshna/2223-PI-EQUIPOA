@@ -1,5 +1,5 @@
 
-const port = 3004
+const port = 3004 //TODO
 async function getUsers() {
     const response = await fetch(`http://localhost:${port}/api/users`);
     const users = await response.json();
@@ -13,7 +13,6 @@ async function getUser(nombre) {
 }
 
 async function createUser(usernameData, emailData, passwordData){
-    
     try{
     const response = await fetch(`http://localhost:${port}/api/users`,{
         method: 'POST',
@@ -26,13 +25,10 @@ async function createUser(usernameData, emailData, passwordData){
     })
     let respuesta = response.json()
     console.log(respuesta)
-}catch(error){
-    console.log(error)
-}
-
-   
-  
-   
+    }catch(error){
+        console.log(error)
+    }
+ 
 }
 
 export default {getUsers, getUser, createUser} 
