@@ -5,7 +5,7 @@ import "./style/inicioSesion.css"
 import functions from "../funtions/functions"
 import { useEffect } from "react"
 import { useState } from "react"
-import services from "../../../../backend/src/services/users"
+import services from "../services/users.js"
 
 export default function InicioSesion(){
     const navigate = useNavigate()

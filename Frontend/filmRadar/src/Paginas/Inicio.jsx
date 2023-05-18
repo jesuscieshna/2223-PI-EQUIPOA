@@ -7,7 +7,7 @@ import { useEffect } from "react"
 
 
 export default function Inicio(){
-    
+
     return (
         <>
         <Menu titulo="Inicio"></Menu>
