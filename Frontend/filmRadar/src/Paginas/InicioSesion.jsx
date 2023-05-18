@@ -9,7 +9,7 @@ import sv from "../services/users"
 import WindowAlertUserNotFound from "../Componentes/WindowAlertUserNotFound"
 
 export default function InicioSesion(){
-    const navigate = useNavigate()
+    
     const [datos, setDatos] = useState([])
     useEffect(() => {
 
@@ -17,7 +17,14 @@ export default function InicioSesion(){
         sv.getUsers().then(res => setDatos(res))
       }
     }, [])
-const ObtencionDatosFomr = function(){
+    const navegate = useNavigate()
+function rederigirReg(){
+    navegate("/Registro")
+        
+        
+}
+const ObtencionDatosFomr = function(event){
+         event.preventDefault()
         let contraseña = document.getElementById("contraseña").value
         let userOrEmail = document.getElementById("userOrEmail").value
         let log=[];
@@ -28,9 +35,9 @@ const ObtencionDatosFomr = function(){
            log=validateInicio()
          
            if(log.userNotFound){
-            navigate("/")
+            navegate("/")
            }else{
-                window.alert("Usuario no enconstrado, asegurese de que has introducido los datos correctamente")
+              document.getElementById("alertU").style.display="flex"
            }
            
             
@@ -40,18 +47,18 @@ const ObtencionDatosFomr = function(){
 
         <>
             <Menu></Menu>
-            <WindowAlertUserNotFound></WindowAlertUserNotFound>
+            <WindowAlertUserNotFound id="alertU"></WindowAlertUserNotFound>
             <div className="cuerpo-inicio">
                 <div className="subcaja-inicio">
                     <h1>Inicio Sesion</h1>
                     <form  className="formularioInicio">
                         <h3>Usuario</h3>
-                        <input className="usernameI" required={true} id="userOrEmail" type="text" placeholder="Nombre de usuario o email"></input>
+                        <input className="usernameI"  id="userOrEmail" type="text" placeholder="Nombre de usuario o email"></input>
                         <h3>Contraseña</h3>
-                        <input className="passwordI" required={true} id="contraseña" type="password" placeholder="Introduce la contraseña"></input>
+                        <input className="passwordI"  id="contraseña" type="password" placeholder="Introduce la contraseña"></input>
                         <div  className="botonesDeRegistoroEInicioIni">
-                            <input type="submit" onClick={ObtencionDatosFomr} className="botonIniciosesio" value={"Iniciar Sesion"}></input>
-                            <NavLink className={"enlaceRegistro"} to="/Registro">Registrarse</NavLink>
+                            <button  onClick={ObtencionDatosFomr} className="botonIniciosesio">Iniciar Sesion</button>
+                            <button className={"enlaceRegistro"} onClick={rederigirReg}>Registrarse</button>
                         </div>
                     </form>
                         <a className="enlaceRecuCon">¿Olvidaste la contraseña?</a>

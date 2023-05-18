@@ -1,10 +1,17 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import Menu from "../Componentes/Menu"
 import MenuBot from "../Componentes/MenuBot"
 import "./style/inicioSesion.css"
 import sv from "../services/users"
+import WindowAlertUserNotFound from "../Componentes/WindowAlertUserNotFound"
 export default function Registro(){
-    
+
+    const navegate = useNavigate()
+function rederigirReg(){
+    navegate("/InicioSesion")
+
+}
+
 const createUserFun = function(event){
     event.preventDefault()
     console.log(event.target)
@@ -19,27 +26,28 @@ const createUserFun = function(event){
         user(username,email,password)
         event.target.reset()
 
-}
+    }
 
 
         return(
     
             <>
                 <Menu ></Menu>
+                <WindowAlertUserNotFound id="alertU"></WindowAlertUserNotFound>
                 <div className="cuerpo-inicio">
                     <div className="subcaja-inicio">
                         <h1 className="Reg">Registrarse</h1>
                         <form onSubmit={createUserFun} className="formularioInicio">
                             <h3>Usuario</h3>
-                            <input type="text" required={true} className="username" id="username"placeholder="Nombre de usuario "></input>
+                            <input type="text"  className="username" id="username"placeholder="Nombre de usuario "></input>
                             <h3>Email</h3>
-                            <input type="text" required={true} id="email" className="email" placeholder="Introduce tu email"></input>
+                            <input type="text"  id="email" className="email" placeholder="Introduce tu email"></input>
                             <h3>Contraseña</h3>
-                            <input type="password" required={true} className="password" id="password" placeholder="Introduce la contraseña"></input>
+                            <input type="password"  className="password" id="password" placeholder="Introduce la contraseña"></input>
                             
                             <div className="botonesDeRegistoroEInicioIni">
-                                <input onClick={createUserFun} type="submit" className="botonIniciosesio" value={"Registrase"}></input>
-                                <NavLink className={"enlaceRegistro"} to="/InicioSesion">Iniciar Sesion </NavLink>
+                                <button onClick={createUserFun}  className="botonIniciosesio" value={"Registrase"}>Registrarse</button>
+                                <button className="enlaceRegistro" onClick={rederigirReg}>Iniciar Sesion </button>
                             </div>
                             
                         

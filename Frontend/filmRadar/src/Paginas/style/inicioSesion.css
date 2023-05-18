@@ -1,9 +1,13 @@
 .cuerpo-inicio{
     height: 100%;
     display: flex;
-    justify-content: center;
+   
     flex-direction: column;
     color: #fff;
+}
+.Reg{
+    margin-top: 0;
+    margin-bottom: 2em;
 }
 .subcaja-inicio{
     justify-content: center;
@@ -41,13 +45,31 @@
     background-color: transparent;
 }
 .enlaceRegistro{
-    width: 8em;
+    cursor: pointer;
+    width: 12em;
+    padding-left: 2em;
+    padding-right: 2em;
     font-size: 1em;
-    
+    margin-left: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: 0;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
     background-color: transparent;
+
+}
+.enlaceRegistro:hover{
+    background-color: #DA9B44;
 }
 .botonIniciosesio{
-    width: 8em;
+    cursor: pointer;
+    width: 12em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     font-size: 1em;
     margin-left: 0;
     margin-right: 0;
@@ -68,17 +90,31 @@
 }
 @media (max-width:768px) {
     .Reg{
+        margin-top: 0;
         margin-bottom: 2em;
     }
     input{
-        width: 19em;
-        width: 19em;
+        width: 50%;
+        width: 50%;
     }
    .usernameI{
-    width: 15em;
+    width: 5;
 
    }
    .passwordI{
-    width: 15em;
+    width: 50%;
+   }
+   .botonesDeRegistoroEInicioIni{
+    gap: 0;
+   }
+   .botonIniciosesio{
+    width: 10em;
+    padding-left: 0;
+    padding-right: 0;
+   }
+   .enlaceRegistro{
+    width: 10em;
+    padding-left: 0;
+    padding-right: 0;
    }
 }
