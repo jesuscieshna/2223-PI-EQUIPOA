@@ -74,7 +74,7 @@ export default function PagPeli() {
                 {
                     re.map((peli, id) => {
                       return (
-                          <PeliculaResult  titulo={peli["title"]} key={peli["id"]} pathUrlImage={peli["poster_path"]} id={peli["id"]}
+                          <PeliculaResult  titulo={peli["title"]} key={id} pathUrlImage={peli["poster_path"]} id={peli["id"]}
                           puntuacion={peli["vote_average"]}> </PeliculaResult>
                       )
                     })

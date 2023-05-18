@@ -29,10 +29,11 @@ export default function PeliculaResult(props){
                 <div className="cajon-img-prs">
                     {
                         Ft.HaveImage(urlImage)
+
                     }
                 </div>
                 <div className="cajon-verMas-prs">
-                    <ButonVermas id={props.key} urlImage={urlImage}></ButonVermas>
+                    <ButonVermas id={props.id} urlImage={urlImage}></ButonVermas>
                 </div>
             </div>
     </Suspense>

@@ -9,13 +9,12 @@ import Loader from "../Componentes/loader"
 
 export default function PagPelisConcret() {
     const datosPeli = useParams()
-    console.log(datosPeli)
     const navigate = useNavigate();
     const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
     const [re, setRe] = useState([]);
     const [ResultSearhc, setRS] = useState(false);
     let urlImagen = ``;
-    let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.key}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es `
+    let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.idPeli}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es `
 
     useEffect(() => {
         return () => {
@@ -103,6 +102,7 @@ export default function PagPelisConcret() {
                                 </div>
                                 <div >
                                     <h5 className="cajon-puntuacion">IMB<h5>{puntuacion}/10</h5></h5>
+
                                 </div>
                             </div>
                             <p className="sinopsis-pc">{sinopsis} </p>
