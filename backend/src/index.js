@@ -5,6 +5,7 @@ import cors from "cors";
 import dbConnect from "./config/mongodb.js";
 import routeuser from "./routes/users.js";
 import routecomment from "./routes/comentarios.js";
+import routePuntuation from "./routes/puntuaciones.js";
 
 
 const app = express();
@@ -15,6 +16,7 @@ const port = process.env.PORT || 8001;
 
 app.use('/api/users', routeuser)
 app.use('/api/comments', routecomment)
+app.use('/api/puntuation', routePuntuation)
 
 app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`)
