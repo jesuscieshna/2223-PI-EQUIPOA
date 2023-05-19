@@ -20,7 +20,7 @@ const createUserFun = function(e){
     const user = async function (username,email,password) {
       return await sv.createUser(username,email,password).then(res => console.log(res))
     }
-          if(  user(username,email,password) == true){
+        if(user(username,email,password) === true){
             console.log("Se ha creado")
             navegate("/")
         }else{
@@ -41,7 +41,7 @@ const createUserFun = function(e){
                 <div className="cuerpo-inicio">
                     <div className="subcaja-inicio">
                         <h1 className="Reg">Registrarse</h1>
-                        <form id="form" onSubmit={createUserFun} className="formularioInicio">
+                        <form id="form"  className="formularioInicio">
                             <h3>Usuario</h3>
                             <input type="text"  className="username" id="username"placeholder="Nombre de usuario "></input>
                             <h3>Email</h3>

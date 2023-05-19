@@ -6,14 +6,12 @@ import "./style/paginaConcret.css"
 import Ft from "../funtions/functions"
 import EstrellaFav from "../Componentes/Estrella"
 import Loader from "../Componentes/loader"
+import Comentario from "../Componentes/comentario"
 
 export default function PagPelisConcret() {
     const datosPeli = useParams()
-    const navigate = useNavigate();
-    const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
     const [re, setRe] = useState([]);
     const [ResultSearhc, setRS] = useState(false);
-    let urlImagen = ``;
     let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.idPeli}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
     useEffect(() => {
         return () => {
@@ -44,14 +42,7 @@ export default function PagPelisConcret() {
         console.log("error al leer la key")
     }
     const datos = re[0]
-    let urlImage;
-    let titulo;
-    let fechaEstreno;
-    let puntuacion;
-    let sinopsis;
-    let estado;
-    let lenguajeOriginal;
-    let linkTrailerOficial;
+    let urlImage, titulo,fechaEstreno, puntuacion,sinopsis,estado,lenguajeOriginal,linkTrailerOficial;
     try {
         urlImage = `https://image.tmdb.org/t/p/w500${datos.poster_path}`
         titulo = datos.title
@@ -103,6 +94,10 @@ export default function PagPelisConcret() {
                         }  
                     </div>
                 </div>
+                
+            </div>
+            <div className="Caja-comentario">
+                <Comentario></Comentario>
             </div>
             </Suspense>
             <MenuBot></MenuBot>

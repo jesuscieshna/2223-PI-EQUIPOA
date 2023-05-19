@@ -242,6 +242,15 @@ background-color: #9D1B51;
     .trailer-pc:hover{
         background-color: #9D1B51;
     }
+    .Caja-comentario{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 13em;
+        padding-bottom: 3.5em;
+        margin-bottom: 3em;
+
+    }
     @media (max-width:368px) {
         .datos-apate-fecha-etc{
             display: flex;
@@ -265,6 +274,7 @@ background-color: #9D1B51;
         .trailer-pc:hover{
             background-color: #9D1B51;
         }
+        
     }
 }
 

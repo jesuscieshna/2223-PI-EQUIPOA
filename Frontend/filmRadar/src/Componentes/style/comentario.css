@@ -1,0 +1,32 @@
+
+@media (max-width:768px) {
+    .caja-comentBOx{
+        border-radius: 10px;
+        width: 80%;
+        height: max-content;
+        word-wrap: normal;
+        background-color: #000040;
+    
+    }
+    .UserNameComent{
+        text-align: left;
+        width: 100%;
+        height: 10%;
+        margin: 0;
+        background-color: #000040;
+    
+    }
+    .UserNameComent h6 {
+        padding-top: 0.5em;
+        padding-left: 0.5em;
+        color: #fff;
+        padding-bottom: 0.9em;
+        font-size: 1em;
+        margin: 0;
+    }
+    .textComent{
+        text-align: justify, center;
+        width: 90%;
+        height: 100%;
+    }
+}
