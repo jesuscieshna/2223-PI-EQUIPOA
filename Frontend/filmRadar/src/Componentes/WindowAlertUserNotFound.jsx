@@ -15,7 +15,8 @@ export default function WindowAlertUserNotFound(props){
 
         <>
             <div id="alertU" className="caja-windowAlert">
-                <h1 className="TextAlert">{props.text}</h1>
+                <h2 className="TextAlert">{props.text1}</h2>
+                <h2 className="TextAlert2">{props.text2}</h2>
                 <span className="lineaCierreAlert">
                     <button onClick={desactive} className="continueOpeAlert">Continuar</button>
                 </span>

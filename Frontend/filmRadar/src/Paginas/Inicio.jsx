@@ -11,18 +11,19 @@ export default function Inicio(){
         <>
         <Menu titulo="Inicio"></Menu>
         <div className="cuerpo-principal">
-            <video  src={Video}  controls autoPlay loop ></video>
             <div className="cajon-texto"> 
-                <h1>
-                    Bienvenidos a FilmRadar
-                    <div className=" cajon-parrafo">
-                         <p className="parrafo">Bienvenidos a FILMRadar, aquí podrás encontrar todas las películas que puedas imaginar, desde las que marcaron tu infancia hasta las que acaban de ser estrenadas.</p>           
-                    </div>
+                <div>
+                <h1 className="textoINI">
+                    FilmRadar
                 </h1>
-                <div className="linksinicio">
+                 <div className="linksinicio">
                     <NavLink to="/InicioSesion">Iniciar Sesion</NavLink>
                     <NavLink to="/Registro" >Registrarse</NavLink> 
                 </div>
+                </div>             
+                    <div className=" cajon-parrafo">
+                        <p className="parrafo">Bienvenidos a FILMRadar, aquí podrás encontrar todas las películas que puedas imaginar, desde las que marcaron tu infancia hasta las que acaban de ser estrenadas.</p>           
+                    </div>
             </div>
         </div>
            <MenuBot></MenuBot>

@@ -18,27 +18,24 @@ async function createUser(usernameData, emailData, passwordData){
    await  getUsers().then(users => {
         usuarios=users
     });
-   
-   
-  
     function comprobarUserExit(){
+       let estrucutraEmail="@gmail.com"
        let filter= usuarios.filter(user => user.username ==usernameData)
        let secondfilter = filter.filter(users => users.email == emailData)
-       
- 
+       console.log(filter,secondfilter)
         if (filter.length >= 1 || secondfilter.length >= 1) {
-            return true;
+            if(emailData.includes(estrucutraEmail)){
+                console.log("contiene")
+                
+                return true;
+            }else{
+                return false;
+            }
         }else{
             return false;
         }
-        
         }
-    
-    
-       
-    if( comprobarUserExit() == false){
-    
-      
+    if( comprobarUserExit() == true){
             const response = await fetch(`http://localhost:${port}/api/users`,{
                 method: 'POST',
                 body: JSON.stringify({
@@ -49,7 +46,6 @@ async function createUser(usernameData, emailData, passwordData){
                 headers: {"Content-type": "application/json; charset=UTF-8"}
             })
             let respuesta = await response.json()
-
             return true
         }else{
             return false

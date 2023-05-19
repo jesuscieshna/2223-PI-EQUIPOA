@@ -55,7 +55,7 @@ const ObtencionDatosFomr = function(event){
 
         <>
             <Menu></Menu>
-            <WindowAlertUserNotFound textB="Registrarse" text="No se pudo iniciar sesion, revise los datos" id="alertU"></WindowAlertUserNotFound>
+            <WindowAlertUserNotFound textB="Registrarse" text1="No se pudo iniciar sesion, revise los datos" id="alertU"></WindowAlertUserNotFound>
                 <div className="subcaja-inicio">
                     <h1>Inicio Sesion</h1>
                     <form onSubmit={ObtencionDatosFomr} className="formularioInicio">

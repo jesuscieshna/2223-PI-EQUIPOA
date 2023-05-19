@@ -3,14 +3,21 @@
     height: auto;
     background-color: #000017;  
     display: flex;
-    padding-top:2em ;
-    padding-bottom: 2em;
+    
     flex-direction: column;
     color: #fff;
 }
 
-h1{
-    margin-top: 1.3em;
+.textoINI{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
+    padding: 2em;
+    font-size: 3em;
+   
 }
 video{
     width: 100%;
@@ -32,7 +39,8 @@ video{
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-bottom: 0em;   
+    margin-bottom: 0em; 
+    width: 100%; 
     flex-direction: row;
 }
 .parrafo {
@@ -43,7 +51,7 @@ video{
     flex-direction: column;
     justify-content: center;
     word-wrap: normal;
-    font-size: 0.5em ;
+    font-size: 1.5em ;
     padding: 3em;
 
 }
@@ -53,3 +61,29 @@ video{
     padding-bottom:1em ;
 }
 
+@-webkit-keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-contract {
+    0% {
+      letter-spacing: 1em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      opacity: 1;
+    }
+  }
