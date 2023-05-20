@@ -16,6 +16,7 @@ export default function PagPelisConcret() {
     const datosPeli = useParams()
     console.log(datosPeli)
     const [re, setRe] = useState([]);
+    const [ dysplayComent, setDysplayComent ] = useState(false);
     let urlTrailerYoutube ;
     let urlDataTrailer = `https://api.themoviedb.org/3/movie/${datosPeli.idPeli}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
     const [dataTrailer, setDataTrailer] = useState([])
@@ -69,9 +70,16 @@ export default function PagPelisConcret() {
     } catch {
             console.log("error al cargar los datos")
     }
+    
+
+    const dysplayComentSent = function(){
+         document.getElementById("cajon-createcomenet").style.display = "flex";
+        
+    } 
+
     return (
         <>
-        <CajonCreateComent></CajonCreateComent>
+        <CajonCreateComent idPelli={`${datosPeli.idPeli}`}></CajonCreateComent>
             <Menu></Menu>
             
             <Suspense fallback={null}> 
@@ -111,7 +119,7 @@ export default function PagPelisConcret() {
             </div>
             <div className="tituloComent">
                 <h1>Comentarios</h1>
-                <button id="btnUpComent">+</button>
+                <button onClick={dysplayComentSent} id="btnUpComent">+</button>
             </div>
            
             <div className="Caja-comentario">

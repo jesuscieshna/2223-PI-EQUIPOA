@@ -11,10 +11,7 @@ import Loader from "./loader"
 export default function PeliculaResult(props){
       
         let urlImage=`https://image.tmdb.org/t/p/w500${props.pathUrlImage}`
-
-        
     
-   
     return (
         
     <>

@@ -9,7 +9,7 @@ export default function Top(props) {
     const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
     let urlImage = `https://image.tmdb.org/t/p/w500${props.pathUrlImage}`
     console.log(props.id)
-    let urlDataTrailer = `https://api.themoviedb.org/3/movie/${props.id}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=en-US`
+    let urlDataTrailer = `https://api.themoviedb.org/3/movie/${props.id}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
     const [dataTrailer, setDataTrailer] = useState([])
     const obtenerDatosVideosTrailer=  useEffect(() => {
 

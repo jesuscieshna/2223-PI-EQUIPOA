@@ -5,7 +5,7 @@ import "./style/inicioSesion.css"
 import sv from "../services/users"
 import WindowAlertUserNotFound from "../Componentes/WindowAlertUserNotFound"
 import { useState } from "react"
-import Cookies from "../services/CookiesServices"
+import Cookie from "universal-cookie"
 export default function Registro(){
 
     const navegate = useNavigate()
@@ -23,10 +23,11 @@ const createUserFun = function(e){
     const user =  function (username,email,password) {
         
          sv.createUser(username,email,password).then(res => {
+            console.log(res)
             if(res==true) {
                 console.log(respuestaReg)
                 console.log("Se ha creado")
-                const cookies = new Cookies();
+                const cookies = new Cookie();
                 cookies.set("username",username, {path: "/"} )
                 navegate("/")
             }else{

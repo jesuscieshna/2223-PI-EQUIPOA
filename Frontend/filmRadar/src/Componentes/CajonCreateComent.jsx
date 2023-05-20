@@ -1,9 +1,15 @@
+import svck from "../services/CookiesServices"
 import "./style/cajonCreateComent.css"
-export default function CajonCreateComent(){
+export default function CajonCreateComent(props){
+    console.log(props)
+    
+    const user=svck.getUserNameForCookies
+
+
 
     return(
 
-        <div className="cajon-createcomenet">
+        <div id="cajon-createcomenet" className="cajon-createcomenet">
             <form  className="form-createComent"> 
             <div>
                  <h1>Tu Comentario</h1>

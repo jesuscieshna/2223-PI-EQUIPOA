@@ -11,6 +11,13 @@ const verifiCookiesUnserName = function (){
         navigator("/InicioSesion")
     }
 }
+const getUserNameForCookies = function(){
+    const cookies = new Cookies();    
+    return cookies.get("username"); 
+
+
+}
 export  default {
     verifiCookiesUnserName,
+    getUserNameForCookies,
 }
