@@ -8,7 +8,7 @@
         justify-content: space-between;
         width: 100%;
         height: auto;
-        gap: 0.5em;
+        gap: 1sem;
         background-color: transparent;
         align-items: center;
     }
@@ -111,12 +111,12 @@
     .cajon-top{
         word-wrap: normal;
         text-align: center;
-        gap: 1em;
+        
         padding-bottom: 2em;
         
         align-content: center;
         display: flex;
-        
+        max-width: 100%;
         width: 100%;
         height: auto;
 
@@ -127,18 +127,18 @@
     }
     .cajon-imagen-top{
         padding-left: 2em;
-        max-height: 52%;
+        max-height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
         
-        width: auto;
+        width: 50%;
         height: 100%;
     }
     .datos-top{
         max-height: 48%;
-        width: 30em;
+        width: 30%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -181,11 +181,11 @@
         padding: 0;
         margin: 0;
         width: 100%;
-        font-size: 1.5em;
+        font-size: 1.1em;
     }
 
     .cajon-puntuacion-top{
-        font-size: 1.2em;
+        font-size: 1em;
         display: flex;
         flex-direction: row;
         gap: 1em;

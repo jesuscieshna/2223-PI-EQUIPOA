@@ -15,17 +15,16 @@ async function getUser(nombre) {
 async function createUser(usernameData, emailData, passwordData){
     let estrucutraEmail="@gmail.com"
     let usuarios=[];
-   await  getUsers().then(users => {
+    await  getUsers().then(users => {
         usuarios=users
     });
 
     function comprobarUserExit(){
-        console.log(usuarios)
-        console.log(usernameData,emailData,passwordData);
+      
        
        let filter= usuarios.filter(user => user.username ==usernameData)
        let secondfilter = filter.filter(users => users.email == emailData)
-       console.log(filter,secondfilter)
+
         if (filter.length < 1 || secondfilter.length < 1) {
            return true; 
         }else{
@@ -34,10 +33,10 @@ async function createUser(usernameData, emailData, passwordData){
     }
     function comprobarEstructuraEmail(estrucutraEmail,emailData){
         if(emailData.includes(estrucutraEmail)){
-            console.log("contiene")
+
             return true;
         }else{
-            console.log("no contirne")
+
             return false;
         }
     } 

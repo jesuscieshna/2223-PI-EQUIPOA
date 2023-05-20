@@ -4,6 +4,7 @@ import MenuBot from "../Componentes/MenuBot"
 import "./style/inicioSesion.css"
 import sv from "../services/users"
 import WindowAlertUserNotFound from "../Componentes/WindowAlertUserNotFound"
+import { useState } from "react"
 export default function Registro(){
 
     const navegate = useNavigate()
@@ -11,25 +12,31 @@ function rederigirReg(){
     navegate("/InicioSesion")
 
 }
-
+const [respuestaReg, setResReg] = useState(false)
 const createUserFun = function(e){
     e.preventDefault()
     var username= document.getElementById("username").value
     var email= document.getElementById("email").value
     var password= document.getElementById("password").value
-    const user = async function (username,email,password) {
-      return await sv.createUser(username,email,password).then(res => console.log(res))
+    
+    const user =  function (username,email,password) {
+        
+         sv.createUser(username,email,password).then(res => {
+            if(res==true) {
+                console.log(respuestaReg)
+                console.log("Se ha creado")
+                navegate("/")
+            }else{
+                document.getElementById("username").value=null
+                document.getElementById("email").value=null
+                document.getElementById("password").value=null
+                console.log(respuestaReg)
+                document.getElementById("alertU").style.display="flex"
+                console.log("No creado")
+            }
+         })
     }
-        if(user(username,email,password) === true){
-            console.log("Se ha creado")
-            navegate("/")
-        }else{
-            document.getElementById("alertU").style.display="flex"
-            console.log("No creado")
-        }
-        document.getElementById("username").value=null
-        document.getElementById("email").value=null
-        document.getElementById("password").value=null
+    user(username,email,password)
     }
 
 
@@ -52,13 +59,8 @@ const createUserFun = function(e){
                                 <button onClick={createUserFun}   className="botonIniciosesio">Registrarse</button>
                                 <button className="enlaceRegistro" onClick={rederigirReg}>Iniciar Sesion </button>
                             </div>
-                            
-                        
                         </form>
-                            
-    
                     </div>
-    
                 </div>
                 <MenuBot>
     

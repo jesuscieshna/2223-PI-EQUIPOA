@@ -11,7 +11,12 @@ import Comentario from "../Componentes/comentario"
 export default function PagPelisConcret() {
     const datosPeli = useParams()
     const [re, setRe] = useState([]);
+    let urlTrailerYoutube ;
+    let urlDataTrailer = `https://api.themoviedb.org/3/movie/${datosPeli.idPeli}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
+    const [dataTrailer, setDataTrailer] = useState([])
     const [ResultSearhc, setRS] = useState(false);
+    const datos = re[0]
+    let urlImage, titulo,fechaEstreno, puntuacion,sinopsis,estado,lenguajeOriginal,linkTrailerOficial;
     let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.idPeli}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
     useEffect(() => {
         return () => {
@@ -25,9 +30,7 @@ export default function PagPelisConcret() {
                 .catch(error => console.log(error))
         }
     }, [])
-    let urlTrailerYoutube ;
-    let urlDataTrailer = `https://api.themoviedb.org/3/movie/${datosPeli.idPeli}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
-    const [dataTrailer, setDataTrailer] = useState([])
+    
     const obtenerDatosVideosTrailer=  useEffect(() => {
         return () => {
             fetch(urlDataTrailer).then(response => response.json()).then(data => setDataTrailer(data["results"])).
@@ -41,8 +44,7 @@ export default function PagPelisConcret() {
     }catch{
         console.log("error al leer la key")
     }
-    const datos = re[0]
-    let urlImage, titulo,fechaEstreno, puntuacion,sinopsis,estado,lenguajeOriginal,linkTrailerOficial;
+   
     try {
         urlImage = `https://image.tmdb.org/t/p/w500${datos.poster_path}`
         titulo = datos.title
@@ -96,7 +98,14 @@ export default function PagPelisConcret() {
                 </div>
                 
             </div>
+            <div className="tituloComent">
+                <h1>Comentarios</h1>
+                <button>+</button>
+            </div>
+           
             <div className="Caja-comentario">
+                <Comentario></Comentario>
+                <Comentario></Comentario>
                 <Comentario></Comentario>
             </div>
             </Suspense>

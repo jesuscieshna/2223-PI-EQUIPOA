@@ -10,7 +10,8 @@ export default function Comentario() {
                 <span className="UserNameComent">
                     <h6>El menda lironda</h6>
                 </span>
-                <p className="textComent">La película Sueños de Aurora es un viaje mágico a través de la imaginación y la esperanza. Con una dirección brillante
+                <div className="comentBOXtext">
+                <p  className="textComent">La película Sueños de Aurora es un viaje mágico a través de la imaginación y la esperanza. Con una dirección brillante
                          y una narrativa cautivadora, esta película te transporta a un mundo de maravillas donde los sueños se convierten en realidad.
                           Los personajes están llenos de carisma y profundidad, y te
                           encuentras emocionalmente conectado con cada uno de ellos. La cinematografía es impresionante
@@ -19,6 +20,7 @@ export default function Comentario() {
                             es una película que te hace creer en la magia y te inspira a perseguir tus sueños sin límites. Es una 
                          experiencia cinematográfica verdaderamente encantadora que no te puedes perder. 
                  </p>
+                 </div>
             </div>
 
 
