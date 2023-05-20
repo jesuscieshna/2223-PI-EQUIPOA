@@ -1,15 +1,20 @@
 import { NavLink, useNavigate, useParams } from "react-router-dom"
 import Menu from "../Componentes/Menu"
 import MenuBot from "../Componentes/MenuBot"
-import { Suspense, useEffect, useState } from "react"
+import React, { Suspense, lazy, useEffect, useState } from "react"
 import "./style/paginaConcret.css"
 import Ft from "../funtions/functions"
 import EstrellaFav from "../Componentes/Estrella"
 import Loader from "../Componentes/loader"
-import Comentario from "../Componentes/comentario"
+
+import CajonCreateComent from "../Componentes/CajonCreateComent"
+import svCk from "../services/CookiesServices"
+const Comentario = React.lazy(() =>import("../Componentes/Comentario"))
 
 export default function PagPelisConcret() {
+    svCk.verifiCookiesUnserName()
     const datosPeli = useParams()
+    console.log(datosPeli)
     const [re, setRe] = useState([]);
     let urlTrailerYoutube ;
     let urlDataTrailer = `https://api.themoviedb.org/3/movie/${datosPeli.idPeli}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
@@ -17,7 +22,7 @@ export default function PagPelisConcret() {
     const [ResultSearhc, setRS] = useState(false);
     const datos = re[0]
     let urlImage, titulo,fechaEstreno, puntuacion,sinopsis,estado,lenguajeOriginal,linkTrailerOficial;
-    let urlDatoId = ` http://api.themoviedb.org/3/movie/${datosPeli.idPeli}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
+    let urlDatoId = `http://api.themoviedb.org/3/movie/${datosPeli.idPeli}?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
     useEffect(() => {
         return () => {
             fetch(urlDatoId).
@@ -33,13 +38,17 @@ export default function PagPelisConcret() {
     
     const obtenerDatosVideosTrailer=  useEffect(() => {
         return () => {
-            fetch(urlDataTrailer).then(response => response.json()).then(data => setDataTrailer(data["results"])).
+            fetch(urlDataTrailer).then(response => response.json()).then(data => {setDataTrailer(data["results"])
+                console.log(data)}).
                 catch(error => console.log(error))
         }
     }, [])
+ 
     try{
         obtenerDatosVideosTrailer
-        let KeyTrailer = dataTrailer[dataTrailer.length-2]["key"]
+        console.log(dataTrailer)
+        let KeyTrailer = dataTrailer[dataTrailer.length-1]["key"]
+        console.log(KeyTrailer)
         urlTrailerYoutube=(`https://www.youtube.com/watch?v=${KeyTrailer}`)
     }catch{
         console.log("error al leer la key")
@@ -62,8 +71,10 @@ export default function PagPelisConcret() {
     }
     return (
         <>
+        <CajonCreateComent></CajonCreateComent>
             <Menu></Menu>
-            <Suspense fallback={<Loader></Loader>}> 
+            
+            <Suspense fallback={null}> 
             <div className="caja-peli-pc">
                 <div className="caja-principal-pc">
                     <div className="caja-imagen-pc">
@@ -100,13 +111,11 @@ export default function PagPelisConcret() {
             </div>
             <div className="tituloComent">
                 <h1>Comentarios</h1>
-                <button>+</button>
+                <button id="btnUpComent">+</button>
             </div>
            
             <div className="Caja-comentario">
-                <Comentario></Comentario>
-                <Comentario></Comentario>
-                <Comentario></Comentario>
+               <Comentario></Comentario>
             </div>
             </Suspense>
             <MenuBot></MenuBot>

@@ -5,12 +5,13 @@ import "./style/TopPelis.css"
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../Componentes/loader";
+import svCk from "../services/CookiesServices"
 const Top = React.lazy(() =>import("../Componentes/Top.jsx"))
 
 export default function TopPelis() {
     const navigate = useNavigate();
 
-
+    svCk.verifiCookiesUnserName();
 
     const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
 
@@ -78,28 +79,31 @@ export default function TopPelis() {
         <>
             <Menu titulo="TopPelis"></Menu>
 
-            <div className="cuerpo-principal">
+            <div className="cuerpo-principal-top">
                 <ol className="listTop">
-                    <Suspense fallback={<Loader></Loader>}>
+                   
                     {
                         
                             re.map((peli, i) => {
                                
-                                
+                             
                                     return <Top fechaEstreno={peli["release_date"]} puntuacion={peli["vote_average"]} titulo={peli["title"]}
-                                    key={peli["id"]} pathUrlImage={peli["poster_path"]}  numeroPos={i} haveTrailer={peli[""]}
+                                    key={i} pathUrlImage={peli["poster_path"]}  numeroPos={i} haveTrailer={peli[""]}
                                   id={peli["id"]}></Top>
-                              
+                          
 
                              
                             })
                           
                     }
-                    </Suspense>
+                 
                 </ol>
+                <Suspense fallback={<Loader></Loader>}>
                 <div id="botonMostrarMas">
                   <button className="botonMostrarMas" onClick={followPage}>Mostrar más</button>
-                </div>    
+                </div> 
+                </Suspense>
+                   
             </div>
                 <div id="Cargador"className="anim-box">
                       <div className="anim-interieur">

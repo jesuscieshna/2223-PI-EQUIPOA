@@ -2,12 +2,13 @@ import "./style/Top.css"
 
 import { NavLink , Link} from "react-router-dom"
 import ButonVermas from "./vermasBoton"
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
+import Loader from "./loader"
 
 export default function Top(props) {
     const api_key = "bfb974e89e4e9ffecd6c9f124bd05ec0"
     let urlImage = `https://image.tmdb.org/t/p/w500${props.pathUrlImage}`
-    
+    console.log(props.id)
     let urlDataTrailer = `https://api.themoviedb.org/3/movie/${props.id}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=en-US`
     const [dataTrailer, setDataTrailer] = useState([])
     const obtenerDatosVideosTrailer=  useEffect(() => {
@@ -37,6 +38,7 @@ export default function Top(props) {
     return (
 
         <>
+        <Suspense fallback={<Loader></Loader>}>
             <div className="cajon-top">
 
                 <div className="cajon-imagen-top">
@@ -67,7 +69,7 @@ export default function Top(props) {
 
 
             </div>
-
+            </Suspense>
 
         </>
 

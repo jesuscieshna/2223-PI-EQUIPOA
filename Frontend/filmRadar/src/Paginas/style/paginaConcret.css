@@ -14,7 +14,12 @@
     height: 100%;
 }   
 .tituloComent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     color: #fff;
+    gap: 2em;
 }
 .Caja-comentario{
     justify-content: center;
@@ -36,10 +41,9 @@
     background-color: #DA9B44;
     border-radius: 100px;
     cursor: pointer;
-    width: 5.5em;
-    padding-top:2em;
-    padding-bottom: 2em;
-    margin-bottom: 2em;
+    width: 2.5em;
+    height: 2.5em;
+ 
     color: #fff;
 }
 .tituloComent button:hover{
@@ -281,24 +285,21 @@ background-color: #9D1B51;
         background-color: #9D1B51;
     }
     .tituloComent{
-        align-content: center;
-        align-items: center;
-        border-bottom: #fff;
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        gap: 2em;
-        flex-direction: column;
+        align-items: center;
         color: #fff;
+        gap: 2em;
     }
     .tituloComent button{
         border: 0;
         background-color: #DA9B44;
         border-radius: 100px;
         cursor: pointer;
-        width: 5.5em;
-        padding-top:2em;
-        padding-bottom: 2em;
-        margin-bottom: 2em;
+        width: 2.5em;
+        height: 2.5em;
+     
         color: #fff;
     }
     .tituloComent button:hover{

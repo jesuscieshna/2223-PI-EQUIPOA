@@ -6,13 +6,13 @@ import React, { Suspense } from "react"
 import "./style/paginaPeli.css"
 import { useEffect, useState } from "react"
 import Loader from "../Componentes/loader"
-import InfiniteScroll from "react-infinite-scroll-component"
-
+import svCk from "../services/CookiesServices"
 const PeliculaResult = React.lazy(() =>
-
   import("../Componentes/PeliculaResult")
 )
 export default function PagPeli() {
+  svCk.verifiCookiesUnserName()
+
   const navigate = useNavigate();
   let { searh } = useParams();
   const [limitPage, setLimitPage] = useState(1);
@@ -25,11 +25,11 @@ export default function PagPeli() {
   const [page, setPage] = useState(1);
   const [hasMore,setHasMore] = useState(true);
 
- function followPage(){
+function followPage(){
   if(page<total_results){
       document.getElementById("botonMostrarMas").style.display="none";
       document.getElementById("Cargador").style.display="block";
-      setTimeout(() => {
+   
         if(isloading==true){
           document.getElementById("Cargador").style.display="none";
           document.getElementById("botonMostrarMas").style.display="block";
@@ -39,9 +39,11 @@ export default function PagPeli() {
           document.getElementById("Cargador").style.display="none";
         }
         setPage((previeMovis) => previeMovis+1)
-       }, 500 );
+      
   }  
   }
+
+ 
   useEffect(() => {
     return () => {
       fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searh}&page=${page}&language=es`).
@@ -60,12 +62,11 @@ export default function PagPeli() {
         .catch(error => console.log(error))
 
     }}, [page,searh]);
-  
-  
-
     if(ResultSearhc ==false){
       navigate("/ResultSearchNot")
+      
     }
+
   return (
     <>     
       <Menu titulo={"Resultados"}></Menu>

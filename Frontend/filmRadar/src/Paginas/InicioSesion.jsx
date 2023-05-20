@@ -7,7 +7,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import sv from "../services/users"
 import WindowAlertUserNotFound from "../Componentes/WindowAlertUserNotFound"
-
+import Cookies from "universal-cookie"
 export default function InicioSesion(){
 
 
@@ -35,13 +35,15 @@ const ObtencionDatosFomr = function(event){
                 return  functions.IniciarSesion(contraseña,userOrEmail,datos)
                   }      
                   log=validateInicio()
-                
                   if(log.userNotFound==true && log.userName!=''){
-                   navegate("/")
+                  
                    console.log(log)
+                   const cookies = new Cookies();
+                   cookies.set("username",userOrEmail, {path: "/"} )
+                   navegate("/")
                 }else{
-                    
                     document.getElementById("alertU").style.display="flex"
+                    document.getElementById("alertU").style.animation="aparecer 0.5s ease-in-out forwards"
                    }
         }
 
@@ -57,18 +59,19 @@ const ObtencionDatosFomr = function(event){
             <Menu></Menu>
             <WindowAlertUserNotFound textB="Registrarse" text1="No se pudo iniciar sesion, revise los datos" id="alertU"></WindowAlertUserNotFound>
                 <div className="subcaja-inicio">
-                    <h1>Inicio Sesion</h1>
                     <form onSubmit={ObtencionDatosFomr} className="formularioInicio">
+                        <h1>Inicio Sesion</h1>
                         <h3>Usuario</h3>
-                        <input className="usernameI"   id="userOrEmail" type="text" placeholder="Nombre de usuario o email"></input>
+                        <input className="usernameI" autoComplete="off"  id="userOrEmail" type="text" placeholder="Nombre de usuario o email"></input>
                         <h3>Contraseña</h3>
-                        <input className="passwordI"   id="contraseña" type="password" placeholder="Introduce la contraseña"></input>
+                        <input className="passwordI" autoComplete="off"  id="contraseña" type="password" placeholder="Introduce la contraseña"></input>
                         <div  className="botonesDeRegistoroEInicioIni">
                             <button  onClick={ObtencionDatosFomr}  className="botonIniciosesio">Iniciar Sesion</button>
                             <button className={"enlaceRegistro"} onClick={rederigirReg}>Registrarse</button>
                         </div>
+                          <a className="enlaceRecuCon">¿Olvidaste la contraseña?</a>
                     </form>
-                        <a className="enlaceRecuCon">¿Olvidaste la contraseña?</a>
+                      
                 </div>
             <MenuBot>
             </MenuBot>

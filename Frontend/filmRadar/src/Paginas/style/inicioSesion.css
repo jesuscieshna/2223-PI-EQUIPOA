@@ -1,15 +1,10 @@
-.cuerpo-inicio{
-    height: 100%;
-    display: flex;
-   
-    flex-direction: column;
-    color: #fff;
-}
+
 .Reg{
-    margin-top: 0;
-    margin-bottom: 2em;
+    margin-top: 0.5em;
+
 }
 .subcaja-inicio{
+    
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -18,11 +13,12 @@
     display: flex;
     
     flex-direction: column;
-    height: 80%;
+    height: 100%;
     width: 100%;
    color: #fff;
 }
 .formularioInicio{
+
     padding: 0;
     margin: 0;
     display: flex;
@@ -68,7 +64,7 @@
 }
 .botonIniciosesio{
     cursor: pointer;
-    width: 12em;
+    width: 10em;
     padding-left: 2em;
     padding-right: 2em;
     padding-top: 1em;
@@ -94,38 +90,98 @@
     display: flex;
     flex-direction: row;
 }
-@media (max-width:768px) {
-    .Reg{
-        margin-top: 0;
-        margin-bottom: 2em;
-    }
-    input{
-        outline-offset: 0;
-        width: 50%;
-        width: 50%;
-    }
-   .usernameI{
+.formularioInicio input:focus::placeholder {
+    
+    opacity: 0;
+    transition: opacity .3s;
+}
+.formularioInicio input:focus{
+    box-shadow: 0px 0px 100px rgba(218, 155, 68,100);
+    
+    outline-style: groove;
+    outline-color : #DA9B44 ;
+    outline-width: 1px; 
+    transition: outline-width  10s  cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.usernameI{
+    outline-style: none;
+    width: 80%;
+    height: max-content;
+    text-align: left;
+    border-radius: 5px;
     outline-offset: 0;
-    width: 5;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+   }
+   .email{
+    text-align: left;
+    outline-style: none;
+    width: 80%;
+    height: max-content;
+    
+    border-radius: 5px;
+    outline-offset: 0;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     
    }
    .passwordI{
+    text-align: left;
+    width: 80%;
     outline-style: none;
-    width: 50%;
+    height: max-content;
+    border-radius: 5px;
+    outline-offset: 0;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+   }
+   .username{
+    text-align: left;
+    outline-style: none;
+    width: 80%;
+    height: max-content;
+   
+    border-radius: 5px;
+    outline-offset: 0;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+   }
+   .password{
+    text-align: left;
+    outline-style: none;
+    width: 80%;
+    height: max-content;
+   
+    border-radius: 5px;
+    outline-offset: 0;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
    }
    .botonesDeRegistoroEInicioIni{
-    gap: 0;
+    width: 90%;
+    font-size: 1em;
+    gap: 1em;
    }
    .botonIniciosesio:active{
     background-color: #DA9B44;
 }
    .botonIniciosesio{
-    width: 10em;
+    width: 100%;
     padding-left: 0;
     padding-right: 0;
    }
    .enlaceRegistro{
-    width: 10em;
+    margin-top: 5px;
+    width: 100%;
     padding-left: 0;
     padding-right: 0;
    }
@@ -135,4 +191,130 @@
 .enlaceRegistro:active{
     background-color: #DA9B44;
 }
+.formularioInicio{
+    margin-top: 0em;
+    margin-bottom: 3em;
+    animation:dyspley 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    background-color: #000040;
+    width: 80%;
+    height: auto;
+    padding-bottom: 1em;
+    transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+@media (max-width:768px) {
+    .Reg{
+        margin-top: 0;
+        margin-bottom: 2em;
+    }
+    .formularioInicio input:focus::placeholder {
+        opacity: 0;
+        
+        transition: opacity .6s;
+       
+        
+    }
+ 
+   .usernameI{
+    
+    width: 80%;
+    height: max-content;
+    text-align: left;
+    border-radius: 5px;
+    outline-offset: 0;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    
+   }
+   .username{
+    text-align: left;
+    outline-style: none;
+    width: 80%;
+    height: max-content;
+   
+    border-radius: 5px;
+    outline-offset: 0;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    
+   }
+   .password{
+    text-align: left;
+    outline-style: none;
+    width: 80%;
+    height: max-content;
+   
+    border-radius: 5px;
+    outline-offset: 0;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    
+   }
+   .email{
+    text-align: left;
+    outline-style: none;
+    width: 80%;
+    height: max-content;
+    
+    border-radius: 5px;
+    outline-offset: 0;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+    
+   }
+   .passwordI{
+    text-align: left;
+    width: 80%;
+    outline-style: none;
+    height: max-content;
+    border-radius: 5px;
+    outline-offset: 0;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+
+   }
+   .botonesDeRegistoroEInicioIni{
+    width: 90%;
+    font-size: 1em;
+    gap: 1em;
+   }
+   .botonIniciosesio:active{
+    background-color: #DA9B44;
+}
+   .botonIniciosesio{
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+   }
+   .enlaceRegistro{
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+   }
+   .enlaceRegistro:hover{
+    background-color: #DA9B44;
+}
+.enlaceRegistro:active{
+    background-color: #DA9B44;
+}
+.formularioInicio{
+    background-color: #000040;
+    width: 80%;
+    height: auto;
+    margin-bottom: 6em;
+}
+}
+@keyframes dyspley {
+    
+    0%{
+        opacity: 0;
+        height: 0;
+    }
+    30%{
+       
+    }
+    100%{
+        opacity: 1;
+        height: 60%;
+    }
+}
+

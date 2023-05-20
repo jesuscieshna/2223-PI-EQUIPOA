@@ -1,4 +1,6 @@
 
+import usersManagment from "../utils/usersManagment"
+ 
 const port = 3004 //TODO
 async function getUsers() {
     const response = await fetch(`http://localhost:${port}/api/users`);
@@ -18,30 +20,9 @@ async function createUser(usernameData, emailData, passwordData){
     await  getUsers().then(users => {
         usuarios=users
     });
-
-    function comprobarUserExit(){
-      
-       
-       let filter= usuarios.filter(user => user.username ==usernameData)
-       let secondfilter = filter.filter(users => users.email == emailData)
-
-        if (filter.length < 1 || secondfilter.length < 1) {
-           return true; 
-        }else{
-            return false;
-        }
-    }
-    function comprobarEstructuraEmail(estrucutraEmail,emailData){
-        if(emailData.includes(estrucutraEmail)){
-
-            return true;
-        }else{
-
-            return false;
-        }
-    } 
+  
         
-    if( comprobarUserExit() == true && comprobarEstructuraEmail(estrucutraEmail,emailData) == true){
+    if( usersManagment.comprobarUserExit(usuarios,usernameData,emailData)== true && usersManagment.comprobarEstructuraEmail(estrucutraEmail,emailData) == true){
             const response = await fetch(`http://localhost:${port}/api/users`,{
                 method: 'POST',
                 body: JSON.stringify({

@@ -15,10 +15,10 @@
     
 }
 .UserNameComent h6 {
-    color: #DA9B44;
+    color: #fff;
     padding-top: 0.5em;
     padding-left: 0.5em;
-    border-bottom: #fff solid;
+    border-bottom: #DA9B44 solid;
     padding-bottom: 0.9em;
     font-size: 1em;
     margin: 0;
@@ -54,10 +54,10 @@
         
     }
     .UserNameComent h6 {
-        color: #DA9B44;
+        color: #fff;
         padding-top: 0.5em;
         padding-left: 0.5em;
-        border-bottom: #fff solid;
+        border-bottom: #DA9B44 solid;
         padding-bottom: 0.9em;
         font-size: 1em;
         margin: 0;

@@ -18,17 +18,28 @@
     left: 10%;
    
 }
-#linkRegAlert{
-    background-color: #22C1C3;
-}
-.continueOpeAlert{ 
+
+.continueOpeAlert{
     cursor: pointer;
     font-size: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0);
     border: 0;
-    background-color: #FDBB2D;
+    background:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
     color: azure;
-    width: 25%;
+    width: auto;
+
 }
+.continueOpeAlert:hover{
+    box-shadow: 0px 0px 10px rgba(0,0,0,2);
+    transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+} 
+
 .TextAlert{
     padding: 1em;
     width: 70%;
@@ -64,26 +75,40 @@
         background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
         height: 100%;
         width: 100%;
-        animation-timing-function: ease-in-out;
-        animation: aparecer;
-        animation-duration: 0.2s;
+        
+       
+       
         left: 0px;
         right: 0px;
         position: fixed;;
        
        
     }
-    #linkRegAlert{
-        background-color: #22C1C3;
-    }
+  
     .continueOpeAlert{
         cursor: pointer;
         font-size: 1em;
-        border: 0;
-        background-color: #22C1C3;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 2em;
+        padding-right: 2em;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 10px 5px 10px rgba(0,0,0,0);
+        transition:    box-shadow 8s cubic-bezier(0.075, 0.82, 0.165, 1);
+        background:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
         color: azure;
-        width: 25%;
+        width: auto;
+
     }
+
+    .continueOpeAlert:hover{
+       
+        box-shadow: 0px 0px 10px rgba(0,0,0,2);
+        transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+       
+    }
+    
     .TextAlert{
         color: aliceblue;
         padding: 2em;
@@ -115,5 +140,16 @@
     100%{
         opacity: 1;
         transform: scale(1);
+    }
+}
+@keyframes desactive {
+    0%{
+        opacity: 1;
+
+        
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0);
     }
 }

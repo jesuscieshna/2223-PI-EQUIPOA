@@ -18,9 +18,11 @@ export default function PeliculaResult(props){
     return (
         
     <>
-    <Suspense fallback={<Loader></Loader>}>
+    
 
-  
+        <Suspense fallback={<Loader></Loader>}>
+
+       
             <div  className="cajon-prinicipal-prs" >
                 <div className="titulo-peli-rsh" > 
                     <h3>{props.titulo}</h3>
@@ -36,7 +38,7 @@ export default function PeliculaResult(props){
                     <ButonVermas id={props.id} urlImage={urlImage}></ButonVermas>
                 </div>
             </div>
-    </Suspense>
+        </Suspense>
     </>
 
     )

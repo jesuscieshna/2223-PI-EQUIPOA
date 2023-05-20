@@ -34,7 +34,7 @@ const IniciarSesion = function(Constraseña, User, datos) {
 
 const HaveATrailer = function(urlTrailerYoutube,linkTrailerOficial){
     console.log(urlTrailerYoutube, linkTrailerOficial)
-      if (urlTrailerYoutube==undefined || urlTrailerYoutube==null){
+      if (urlTrailerYoutube==undefined || linkTrailerOficial==undefined) {
           return   <NavLink className={"trailer-pc"}>No hay Trailer</NavLink>            
       }else{
           if(urlTrailerYoutube==undefined){

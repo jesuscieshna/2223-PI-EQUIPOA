@@ -5,7 +5,7 @@ export default function WindowAlertUserNotFound(props){
 
    
     function desactive(){
-        document.getElementById("alertU").style.display="none"
+            document.getElementById("alertU").style.animation="desactive 0.6s cubic-bezier(0.075, 0.82, 0.165, 1)  forwards"	
     }
   
 

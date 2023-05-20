@@ -21,7 +21,7 @@ export default function Menu({titulo}){
              <h1 className="logo2" >FR</h1>
             </div>
             <form className="cajon-buscador" onSubmit={rederigirAresultados}>
-                <input id="buscador"  type="search" placeholder="Buscame" ></input>
+                <input id="buscador"  autoComplete="off" type="search" placeholder="Buscame" ></input>
             </form>
             <div className="cajon-titulo">
                 <h1 className="tituloPagina"> {titulo}</h1>

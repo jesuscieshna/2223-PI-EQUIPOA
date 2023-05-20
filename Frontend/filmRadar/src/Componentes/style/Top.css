@@ -1,6 +1,8 @@
  
  
     .cajon-top{
+        animation: aprarecer 1s cubic-bezier(0.62, 0, 0.19, 1)  forwards;
+        color: #fff;
         word-wrap: normal;
         text-align: center;
         align-content: center;
@@ -8,20 +10,39 @@
         justify-content: space-between;
         width: 100%;
         height: auto;
-        gap: 1sem;
+        gap: 1em;
         background-color: transparent;
         align-items: center;
     }
     .cajon-imagen-top{
       
-        max-height: 50%;
+    
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
         padding: 0;
         width: 10em;
-        height: auto;
+        height: max-content;
+    }
+    .cajon-imagen-top:hover{
+        box-shadow: 0px 0px 100px rgba(218, 155, 68,100);
+    
+        outline-style: groove;
+        outline-color : #DA9B44 ;
+        outline-width: 1px; 
+        transition: outline-width  10s  cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+    }
+    .cajon-imagen-top:focus{
+        box-shadow: 0px 0px 100px rgba(218, 155, 68,100);
+    
+        outline-style: groove;
+        outline-color : #DA9B44 ;
+        outline-width: 1px; 
+        transition: outline-width  10s  cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     .datos-top{
         max-height: 50%;
@@ -113,12 +134,12 @@
         text-align: center;
         
         padding-bottom: 2em;
-        
+        padding-right: 0;
         align-content: center;
         display: flex;
         max-width: 100%;
-        width: 100%;
-        height: auto;
+        width:  100%;
+        height: 100%;
 
     
    
@@ -126,23 +147,23 @@
         align-items: center;
     }
     .cajon-imagen-top{
-        padding-left: 2em;
+     
         max-height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
-        
+        margin-left: 5px;
         width: 50%;
         height: 100%;
     }
     .datos-top{
         max-height: 48%;
-        width: 30%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        padding-right: 0;
         text-align: center;
         word-wrap: normal;
         word-break: normal;
@@ -232,4 +253,15 @@
         font-size: 0.8em;
     }
   
+}
+@keyframes aprarecer {
+    0%{
+
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
 }

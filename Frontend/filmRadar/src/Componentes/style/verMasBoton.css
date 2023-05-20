@@ -1,4 +1,5 @@
 .ver-mas-top{
+    
     border: none;
     color: #fff;
     text-shadow: none;
@@ -36,6 +37,7 @@
 }
 @media (max-width: 768px) {
     .ver-mas-top{
+        
         border: none;
         color: #fff;
         text-shadow: none;

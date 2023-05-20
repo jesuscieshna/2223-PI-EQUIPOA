@@ -1,11 +1,12 @@
 
+import { Suspense } from "react"
 import "./style/comentario.css"
 export default function Comentario() {
 
 
     return (
 
-        <>
+        <Suspense fallback={null}>
             <div className="caja-comentBOx">
                 <span className="UserNameComent">
                     <h6>El menda lironda</h6>
@@ -25,7 +26,7 @@ export default function Comentario() {
 
 
 
-        </>
+        </Suspense>
 
 
 
