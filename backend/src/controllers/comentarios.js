@@ -13,14 +13,19 @@ const getItem = async (req, res) => {
     res.send(data);
 }
 
-const createItem = async (req, res) => {
-     const { body } = req
-     data = await commentmodel.create(body)
-     res.send(data)     
+const pushItem = async (req, res) => {
+    const film = req.params.film
+    const { username, comment } = req.body
+
+    const data = await commentmodel.findOneAndUpdate(
+        {id : film},
+        {$push: {comments: {username, comment}}},
+        {upsert:true, new: true}
+    )
+
+    res.send(data)
 }
 
-const updateItem = async (req, res) => {
-    //TODO
-}
 
-export default {getItems, getItem, createItem, updateItem}
+
+export default {getItems, getItem, pushItem}

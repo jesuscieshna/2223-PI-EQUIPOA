@@ -15,11 +15,10 @@ function comprobarUserExit(usuarios, usernameData,emailData){
 
      if (filter.length < 1 || secondfilter.length < 1) {
         return true; 
-     }else{
-        0
-         return false;
-     }
- }
+    }else{
+    return false;
+    }
+}
 
 export default {
     comprobarEstructuraEmail,
