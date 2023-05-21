@@ -39,4 +39,18 @@ async function createUser(usernameData, emailData, passwordData){
         }
 
 }
-export default {getUsers, getUser, createUser} 
+
+async function addPorVer(usernameData, idFilm){
+    const response = await fetch(`http://localhost:${port}/api/users/update`,{
+        method:'POST',
+        body: JSON.stringify({
+            username:usernameData,
+            idFilm:idFilm
+        }),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    });
+    const respuesta = response.json()
+    return respuesta
+}
+
+export default {getUsers, getUser, createUser, addPorVer} 

@@ -5,8 +5,16 @@ const getItems = async (req,res) => {
     res.send(data)
 }
 
-const cretaeItems = async (req,res) => {
-    //TODO
+const pushItem = async (req,res) => {
+    const {idFilm , nota} = req.body
+    console.log(nota, idFilm)
+    const user = req.params.user
+    const data = await punctuationmodel.findOneAndUpdate(
+        {username: user},
+        {$push:{puntuations: {film: idFilm, puntuation:nota}}},
+        {upsert: true, new: true}
+    )
+    res.send(data)
 }
 
-export default {getItems, cretaeItems}
+export default {getItems, pushItem}

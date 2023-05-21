@@ -16,9 +16,7 @@ const userSchema = new mongoose.Schema(
         },
         porVer:[
             {
-                nombre:{
-                    type:String
-                },
+                nombre: String
             }
         ],
     },

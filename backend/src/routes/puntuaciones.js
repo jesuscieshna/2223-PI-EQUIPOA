@@ -3,7 +3,7 @@ import punctuationController from "../controllers/puntuaciones.js"
 
 const routePunctuation = express.Router()
 routePunctuation.get('/', punctuationController.getItems)
-routePunctuation.post('/', punctuationController.cretaeItems)
+routePunctuation.post('/:user', punctuationController.pushItem)
 
 
 export default routePunctuation;

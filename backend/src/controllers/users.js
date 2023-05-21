@@ -14,14 +14,20 @@ const getItem = async (req, res) => {
 
 const createItem = async (req, res) => {
     console.log("crear items");
-    const { body } = req;
+    const { username, idFilm } = req;
     const data = await usermodel.create(body)
     //const body = req.body; desestructuracion
     res.send({data})
 
 }
-
+//TODO arreglar el por ver
 const updateItem = async (req, res) => {
-    //TODO permitir añadir pelis a `por ver` y cambiar contraseña
+    const { username, idFilm } = req
+    const data = await usermodel.findOneAndUpdate(
+        {username: username},
+        {$push: {porVer: {nombre: idFilm}}},
+        {upsert: true}
+    )
+    res.send(data)
 }
-export default {getItems, getItem, createItem}
+export default {getItems, getItem, createItem, updateItem}
