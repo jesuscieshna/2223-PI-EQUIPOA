@@ -23,9 +23,6 @@ export default function Comentario() {
                  </p>
                  </div>
             </div>
-
-
-
         </Suspense>
 
 
