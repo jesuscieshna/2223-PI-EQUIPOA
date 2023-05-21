@@ -43,7 +43,7 @@ export default function PagPelisConcret() {
         
           return () => {
             svCom.getFilmComments(datosPeli.idPeli).then(res => {
-                console.log("COMENTARIOS ", res["0"].comments)
+                console.log("COMENTARIOS ", res["0"])
                 setComent(res["0"].comments)
             }
             )}
@@ -107,6 +107,10 @@ export default function PagPelisConcret() {
                             Ft.HaveImage(urlImage)
                         }
                          </Suspense>
+                         <div className="lineaPuntucaion">
+                              <button className="btnViewPunt">Puntuar</button>
+                         </div>
+
                     </div>
                     <div className="caja-datos-pc">
                         <div className="estrellita-pc">
@@ -133,13 +137,20 @@ export default function PagPelisConcret() {
                 </div>
                 
             </div>
+          
             <div className="tituloComent">
                 <h1>Comentarios</h1>
                 <button onClick={dysplayComentSent} id="btnUpComent">+</button>
             </div>
            
             <div className="Caja-comentario">
-               <Comentario></Comentario>
+               {
+                dataComent.map((comments) => {
+
+                    return <Comentario key={coment._id} user={comments.username} comment={comments.comment}></Comentario>
+
+                })
+               }
             </div>
             </Suspense>
             <MenuBot></MenuBot>

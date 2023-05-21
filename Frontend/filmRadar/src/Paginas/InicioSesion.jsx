@@ -10,8 +10,7 @@ import WindowAlertUserNotFound from "../Componentes/WindowAlertUserNotFound"
 import Cookies from "universal-cookie"
 export default function InicioSesion(){
 
-
-    const [datos, setDatos] = useState([])
+const [datos, setDatos] = useState([])
     useEffect(() => {
 
       return () => {

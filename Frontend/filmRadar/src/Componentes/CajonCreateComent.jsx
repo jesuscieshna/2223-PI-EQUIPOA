@@ -19,7 +19,7 @@ export default function CajonCreateComent(props){
         console.log(user, textComent)
         const sendComent = async function(idPeli,user,textComent){
         console.log(  await  svCom.createComment(idPeli,user,textComent))
-
+        document.getElementById("cajon-createcomenet").style.display="none"
 
 
         }   
