@@ -6,7 +6,7 @@ import "./style/paginaConcret.css"
 import Ft from "../funtions/functions"
 import EstrellaFav from "../Componentes/Estrella"
 import Loader from "../Componentes/loader"
-
+import svCom from "../services/comentarios"
 import CajonCreateComent from "../Componentes/CajonCreateComent"
 import svCk from "../services/CookiesServices"
 const Comentario = React.lazy(() =>import("../Componentes/Comentario"))
@@ -16,6 +16,7 @@ export default function PagPelisConcret() {
     const datosPeli = useParams()
     console.log(datosPeli)
     const [re, setRe] = useState([]);
+    const [dataComent,setComent] = useState([])
     const [ dysplayComent, setDysplayComent ] = useState(false);
     let urlTrailerYoutube ;
     let urlDataTrailer = `https://api.themoviedb.org/3/movie/${datosPeli.idPeli}/videos?api_key=bfb974e89e4e9ffecd6c9f124bd05ec0&language=es`
@@ -36,7 +37,21 @@ export default function PagPelisConcret() {
                 .catch(error => console.log(error))
         }
     }, [])
+    const getComents = function(){
+        useEffect(() => {
+ 
+        
+          return () => {
+            svCom.getFilmComments(datosPeli.idPeli).then(res => {
+                setComent(res)
+            }
+            )}
+        }, [])
     
+      
+    }
+   getComents()
+   console.log(dataComent)
     const obtenerDatosVideosTrailer=  useEffect(() => {
         return () => {
             fetch(urlDataTrailer).then(response => response.json()).then(data => {setDataTrailer(data["results"])
