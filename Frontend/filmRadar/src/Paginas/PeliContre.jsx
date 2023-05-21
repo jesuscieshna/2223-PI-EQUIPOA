@@ -76,10 +76,10 @@ export default function PagPelisConcret() {
          document.getElementById("cajon-createcomenet").style.display = "flex";
         
     } 
-
+    console.log(datosPeli.idPeli + "IdPEliCOn")
     return (
         <>
-        <CajonCreateComent idPelli={`${datosPeli.idPeli}`}></CajonCreateComent>
+        <CajonCreateComent idPeli={`${datosPeli.idPeli}`}></CajonCreateComent>
             <Menu></Menu>
             
             <Suspense fallback={null}> 
