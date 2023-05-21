@@ -43,7 +43,8 @@ export default function PagPelisConcret() {
         
           return () => {
             svCom.getFilmComments(datosPeli.idPeli).then(res => {
-                setComent(res)
+                console.log("COMENTARIOS ", res["0"].comments)
+                setComent(res["0"].comments)
             }
             )}
         }, [])
