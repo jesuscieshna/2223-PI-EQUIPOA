@@ -28,7 +28,7 @@ export default function Menu({titulo}){
             </div>
             <div className="Link-Menu">
                 <NavLink to="/">Inicio</NavLink>
-                <NavLink to="/Favoritos">Favoritos</NavLink>
+               
                 <NavLink to="/TopPelis">TopPelis</NavLink>
                 <NavLink to="/Perfil">Perfil</NavLink> 
             
