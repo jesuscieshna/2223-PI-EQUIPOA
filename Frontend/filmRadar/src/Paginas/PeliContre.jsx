@@ -9,6 +9,7 @@ import Loader from "../Componentes/loader"
 import svCom from "../services/comentarios"
 import CajonCreateComent from "../Componentes/CajonCreateComent"
 import svCk from "../services/CookiesServices"
+import HoverPunt from "../Componentes/HoverPunt"
 const Comentario = React.lazy(() =>import("../Componentes/Comentario"))
 
 export default function PagPelisConcret() {
@@ -96,6 +97,7 @@ export default function PagPelisConcret() {
     return (
         <>
         <CajonCreateComent idPeli={`${datosPeli.idPeli}`}></CajonCreateComent>
+        
             <Menu></Menu>
             
             <Suspense fallback={null}> 
@@ -108,9 +110,8 @@ export default function PagPelisConcret() {
                         }
                          </Suspense>
                          <div className="lineaPuntucaion">
-                              <button className="btnViewPunt">Puntuar</button>
+                         <HoverPunt idFilm={datosPeli.idPeli}></HoverPunt>
                          </div>
-
                     </div>
                     <div className="caja-datos-pc">
                         <div className="estrellita-pc">

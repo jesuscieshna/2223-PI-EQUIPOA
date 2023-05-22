@@ -16,7 +16,7 @@ const port = process.env.PORT || 8001;
 
 app.use('/api/users', routeuser)
 app.use('/api/comments', routecomment)
-app.use('/api/puntuation', routePuntuation)
+app.use('/api/puntuations', routePuntuation)
 
 app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`)

@@ -1,0 +1,148 @@
+.cajon-puntUp{
+
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    width: 20em;
+    height: 100%;
+    top: 0;
+    bottom: 50%;
+}
+.send{
+    display: none;
+    cursor: pointer;
+    padding: 0.3em;
+    background-color: #DA9B44;
+    border: transparent;
+    border-radius: 100px;
+}
+.send img:hover{
+    border: 0;
+    outline: 0
+}
+.send:hover{
+    background-color: #9D1B51;
+}
+.PuntSlider{
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    display: none;
+    gap: 1em;
+    width: 100%;
+    background-color: #000040;
+    height: 100%;
+  
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 50px;
+ 
+    transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.ButV{
+    cursor: pointer;
+    border: 0;
+    color: #fff;
+    height: 100%;
+    gap: 1em;
+    width: 100%;
+    background-color: #DA9B44;
+    height: 2.1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    text-align: center;
+}
+.ButV:hover{
+    background-color: #9D1B51;
+}
+
+#punt{
+    display: none;
+    color: #fff;
+    width: 2em;
+    margin: 0;
+}
+#slider{
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+ 
+
+    border-radius: 50px ;
+    cursor: default;
+    background-color: #9D1B51;
+    
+   
+    width: 60%;
+    margin-left: 5px;
+    transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.PuntSlider:hover{
+    box-shadow: 0px 0px 10px rgba(218, 155, 68,100);
+ 
+    transition: outline-width  10s  cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#slider::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    border-radius: 50px;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #DA9B44; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+@keyframes sliderView {
+    0%{
+        
+        opacity: 0;
+        transform: scale(0);
+    }
+    50%{
+        opacity: 0.7;
+        
+    }
+    100%{
+        display: block;
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+}
+@keyframes puntViev {
+    0%{
+        
+        opacity: 0;
+        width: 0;
+    }
+    50%{
+        opacity: 0.7;
+    
+    }
+    100%{
+        display: block;
+        opacity: 1;
+ 
+    }
+
+}
+@keyframes desView {
+    0%{
+        
+        opacity: 1;
+        width: 0;
+    }
+    50%{
+        opacity: 0.7;
+    
+    }
+    100%{
+        display: none;
+        opacity: 0;
+ 
+    }
+
+}

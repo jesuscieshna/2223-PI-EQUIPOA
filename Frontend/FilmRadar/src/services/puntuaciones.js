@@ -1,13 +1,13 @@
 const port=3004 //TODO solucionar dotenv en vite
 
 async function getNotas(){
-    const response = await fetch(`http://localhost:${port}/api/punctuations`);
+    const response = await fetch(`http://localhost:${port}/api/puntuations`);
     const notas = await response.json();
     return notas;
 }
 
 async function putNota(user, idFilm, nota){
-    const response = await fetch(`http://localhost:${port}/api/punctuations/${user}`,{
+    const response = await fetch(`http://localhost:${port}/api/puntuations/${user}`,{
         method:'POST',
         body: JSON.stringify({
             idFilm: idFilm,
