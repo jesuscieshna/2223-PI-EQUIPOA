@@ -7,6 +7,10 @@ async function getNotas(){
 }
 
 async function putNota(user, idFilm, nota){
+   
+    
+    
+
     const response = await fetch(`http://localhost:${port}/api/puntuations/${user}`,{
         method:'POST',
         body: JSON.stringify({

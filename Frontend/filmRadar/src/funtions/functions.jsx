@@ -5,7 +5,7 @@ import svPunt from "../services/puntuaciones"
 
 
 const HaveImage = function(urlImage){
-    if(urlImage=="https://image.tmdb.org/t/p/w500null"){
+    if(urlImage=="https://image.tmdb.org/t/p/w500null"  || urlImage=="https://image.tmdb.org/t/p/w500undefined"){
         return <img src={sinImage}></img>
     }else{
         return <img src={urlImage}></img>

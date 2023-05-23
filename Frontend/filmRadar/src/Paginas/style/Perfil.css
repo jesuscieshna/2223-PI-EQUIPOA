@@ -3,12 +3,14 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 100%;
 
 }
 .cajon-imagen-pag-perfil{
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 .cajon-imagen-pag-perfil img{
@@ -31,7 +33,7 @@
     border-width: 2em;
 }
 .texto-ranking-perfil{
-    width: 98%;
+    width: 100%;
     margin-top: 1em;
     color: #fff;
 }
@@ -40,14 +42,8 @@
     margin-bottom: 0.5em;
   
 }
-.cajon-por-ver{
-    display: flex;
-    flex-direction: row;
-    overflow-y: scroll;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-
+.text_POR_Ver{
+    color: #fff;
 }
 .caja-rankis-objects{
     justify-content: center;
@@ -58,8 +54,35 @@
     margin: 0;
     padding-top: 0.7em;
     color: #fff;
+}.caja-lista-paraVer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30px, 9em));
+    grid-auto-flow: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 4em;
+   
+    margin: 0;
+    gap: 4em;
 }
-
+.caja-lista-paraVer h2{
+    color: #fff;
+}
+.cajon-Raanking{
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30px, 9em));
+    grid-auto-flow: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+ 
+   
+    margin: 0;
+    gap: 4em;
+}
 @media (max-width:768px) {
     .cajon-imagen-pag-perfil{
         display: flex;

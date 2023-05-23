@@ -1,5 +1,5 @@
 .caja-superior-cuadro-para-ver{
-    height: 10em;
+    height: auto;
     width: 9em;
     color: #fff;
 }
@@ -31,7 +31,7 @@
     width: 1em;
     height: 1em;
     margin: 0;
-    padding: 0.5em;
+  
 }
 .cjpv-ver img:hover{
     background-color: #9D1B51 ;

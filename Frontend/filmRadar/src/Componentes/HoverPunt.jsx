@@ -4,7 +4,7 @@ import send from "../assets/icons8-email-send-24.png"
 import ft from "../funtions/functions"
 import svCk from "../services/CookiesServices"
 export default function HoverPunt(props){
-    const [puntUI, setPuntUI] = useState(0)
+    const [puntUI, setPuntUI] = useState(10)
     const userName = svCk.getUserNameForCookies()
     const idFilm = props.idFilm;
    const setValue =(() => {
