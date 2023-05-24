@@ -53,22 +53,8 @@ export default function Perfil() {
                         
 
                     }
-                 
-
 
                 </div>
-
-                <div className="caja-rankis-objects">
-                    <h2 className="text_POR_Ver">Por ver</h2>
-                   
-                    <ol className="caja-lista-paraVer">
-                        
-                     </ol>
-                  
-                </div>
-
-
-            
             <MenuBot></MenuBot>
         </>
     )
