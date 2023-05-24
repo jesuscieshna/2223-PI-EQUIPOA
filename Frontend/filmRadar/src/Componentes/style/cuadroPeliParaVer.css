@@ -1,8 +1,35 @@
 .caja-superior-cuadro-para-ver{
     height: auto;
     width: 9em;
+    padding-top: 0.2em;
+  
+ 
+    
+    
     color: #fff;
+
 }
+.caja-superior-cuadro-para-ver h6{
+    height: auto;
+    margin: 0;
+    
+    font-size: 1em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    color: #fff;
+
+}
+.caja-superior-cuadro-para-ver:hover{
+    box-shadow: 0px 0px 20px rgba(218, 155, 68,100);
+    outline: #DA9B44;
+     
+    outline-style: groove;
+    outline-width: 1px;
+    transition: all  1s  cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
 .principal-pv{
     display: flex;
     justify-content: flex-start;
