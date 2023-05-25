@@ -17,4 +17,10 @@ const pushItem = async (req,res) => {
     res.send(data)
 }
 
+const getItem = async (req,res) => {
+    const user = req.params.user
+    const data = await punctuationmodel.find({username: user})
+    
+}
+
 export default {getItems, pushItem}
