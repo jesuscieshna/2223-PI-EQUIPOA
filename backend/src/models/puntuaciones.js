@@ -2,17 +2,16 @@ import mongoose, { Schema } from "mongoose";
 
 const punctuationSchema = new Schema(
     {
-        username: String,
+        username: {
+            type: String,
+        },
         puntuations:[{
             
             film:{
                 type:String,
-                unique:true,
             }, 
-            puntuation: 
-            {
-                type:Number,
-                unique:true,
+            puntuation: {
+                type:String,
             } ,
         }],
     },
