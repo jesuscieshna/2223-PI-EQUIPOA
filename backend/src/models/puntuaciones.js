@@ -4,11 +4,13 @@ const punctuationSchema = new Schema(
     {
         username: {
             type: String,
+            
         },
         puntuations:[{
             
             film:{
                 type:String,
+                unique:true,
             }, 
             puntuation: {
                 type:String,
