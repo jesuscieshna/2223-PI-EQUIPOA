@@ -10,7 +10,7 @@ const punctuationSchema = new Schema(
             
             film:{
                 type:String,
-                unique:true,
+                
             }, 
             puntuation: {
                 type:String,
