@@ -8,6 +8,7 @@ import routecomment from "./routes/comentarios.js";
 import routePuntuation from "./routes/puntuaciones.js";
 
 
+
 const app = express();
 
 app.use(cors());
