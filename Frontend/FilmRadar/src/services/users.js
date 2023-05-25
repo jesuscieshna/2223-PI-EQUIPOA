@@ -3,13 +3,13 @@ import usersManagment from "../utils/usersManagment"
  
 const port = 3004 //TODO
 async function getUsers() {
-    const response = await fetch(`http://localhost:${port}/api/users`);
+    const response = await fetch(`https://lm2223equipoa.onrender.com/api/users`);
     const users = await response.json();
     return users;
 }
 
 async function getUser(nombre) {
-    const response = await fetch(`http://localhost:${port}/api/users/${nombre}`);
+    const response = await fetch(`https://lm2223equipoa.onrender.com$/api/users/${nombre}`);
     const user = await response.json();
     return user;
 }
@@ -23,7 +23,7 @@ async function createUser(usernameData, emailData, passwordData){
   
         
     if( usersManagment.comprobarUserExit(usuarios,usernameData,emailData)== true && usersManagment.comprobarEstructuraEmail(estrucutraEmail,emailData) == true){
-            const response = await fetch(`http://localhost:${port}/api/users`,{
+            const response = await fetch(`https://lm2223equipoa.onrender.com/api/users`,{
                 method: 'POST',
                 body: JSON.stringify({
                     username: usernameData,
@@ -41,7 +41,7 @@ async function createUser(usernameData, emailData, passwordData){
 }
 
 async function addPorVer(usernameData, idFilm){
-    const response = await fetch(`http://localhost:${port}/api/users/update`,{
+    const response = await fetch(`https://lm2223equipoa.onrender.com/api/users/update`,{
         method:'POST',
         body: JSON.stringify({
             username:usernameData,
