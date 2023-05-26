@@ -18,9 +18,8 @@ const createItem = async (req, res) => {
     const data = await usermodel.create(body)
     //const body = req.body; desestructuracion
     res.send({data})
-
 }
-//TODO arreglar el por ver
+
 const updateItem = async (req, res) => {
     const { username, idFilm } = req
     const data = await usermodel.findOneAndUpdate(
