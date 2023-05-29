@@ -49,28 +49,30 @@ function followPage(){
       fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searh}&page=${page}&language=es`).
         then(response => response.json()).then(data => {
           setRe((previeMovis) => previeMovis.concat(data["results"]))
+          
           var total_result;
           var total_page;
-          setTotalResults(data["total_results"])
           total_result = data["total_results"] ? true : false;
           setTotalResults(data["total_results"])
           setLimitPage(total_page)
           setHasMore(data.page<data["total_pages"])
           setRS(total_result)
           setIsLoading(true)
+         
         })
         .catch(error => console.log(error))
 
-    }}, [page,searh]);
-    if(ResultSearhc ==false){
+    }}, [page]);
+
+    if(ResultSearhc==false){
       navigate("/ResultSearchNot")
       
     }
-
+ 
   return (
     <>     
       <Menu titulo={"Resultados"}></Menu>
-          <Suspense fallback={<Loader></Loader>}>
+          
                 <ul className="pelisResulSearch">
                 {
                     re.map((peli, id) => {
@@ -95,7 +97,7 @@ function followPage(){
                           <div className="rect rect5"></div>
                       </div>
                   </div>
-           </Suspense>
+        
       <MenuBot></MenuBot>
     </>
   )

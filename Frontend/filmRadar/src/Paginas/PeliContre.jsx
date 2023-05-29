@@ -1,7 +1,7 @@
 import { NavLink, useNavigate, useParams } from "react-router-dom"
 import Menu from "../Componentes/Menu"
 import MenuBot from "../Componentes/MenuBot"
-import React, { Suspense, lazy, useEffect, useState } from "react"
+import React, { Suspense, useEffect, useState } from "react"
 import "./style/paginaConcret.css"
 import Ft from "../funtions/functions"
 import EstrellaFav from "../Componentes/Estrella"
