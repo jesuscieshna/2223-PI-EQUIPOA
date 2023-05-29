@@ -1,0 +1,1 @@
+import{j as e,r as a}from"./index-40e9aad7.js";function t(s){return e.jsx(a.Suspense,{fallback:null,children:e.jsxs("div",{className:"caja-comentBOx",children:[e.jsx("span",{className:"UserNameComent",children:e.jsx("h6",{children:s.user})}),e.jsx("div",{className:"comentBOXtext",children:e.jsx("p",{className:"textComent",children:s.comment})})]})})}export{t as default};
