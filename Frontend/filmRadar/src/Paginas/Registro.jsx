@@ -57,11 +57,11 @@ const createUserFun = function(e){
                         <form id="form"  className="formularioInicio">
                             <h1>Registrarse</h1>
                             <h3>Usuario</h3>
-                            <input type="text" minLength={5} autoComplete="off" className="username" id="username"placeholder="Nombre de usuario "></input>
+                            <input type="text" minLength={2} autoComplete="off" className="username" id="username"placeholder="Nombre de usuario "></input>
                             <h3>Email</h3>
-                            <input type="text" minLength={7} autoComplete="off" id="email" className="email" placeholder="Introduce tu email"></input>
+                            <input type="text" minLength={2} autoComplete="off" id="email" className="email" placeholder="Introduce tu email"></input>
                             <h3>Contraseña</h3>
-                            <input type="password" minLength={8} className="password" id="password" placeholder="Introduce la contraseña"></input>
+                            <input type="password" minLength={2} className="password" id="password" placeholder="Introduce la contraseña"></input>
                             <div className="botonesDeRegistoroEInicioIni">
                                 <button onClick={createUserFun}   className="botonIniciosesio">Registrarse</button>
                                 <button className="enlaceRegistro" onClick={rederigirReg}>Iniciar Sesion </button>
